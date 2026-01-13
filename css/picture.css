@@ -1,0 +1,35 @@
+/* ---------- 头像卡片 ---------- */
+.card-hover {
+  border: 2px solid #dee2e6;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #fff;
+  padding: .75rem;          /* 关键：四周留出间隙 */
+  display: flex;            /*  flex 列布局 */
+  flex-direction: column;
+  align-items: center;      /* 水平居中 */
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* ---------- 图片容器（1:1 正方形） ---------- */
+.card-hover .card-img-top {
+  width: 100%;              /* 占满卡片宽度（不含 padding） */
+  aspect-ratio: 1 / 1;      /* 强制正方形 */
+  object-fit: contain;        /* 整张图都显示，留白处用背景色填充 */
+  border-radius: .35rem;    /* 图片自身微圆角，可选 */
+}
+
+/* ---------- 文字区域 ---------- */
+.card-hover .card-body {
+  padding: .5rem 0 0;       /* 只留上方少量间距 */
+  width: 100%;              /* 与图片同宽，保证居中 */
+}
+
+/* 鼠标悬停时：绿色阴影 + 轻微上浮 */
+
+.card-hover:hover {
+  transform: translateY(-4px);                 /* 可选：轻微抬升 */
+  box-shadow: 0 12px 24px #3793ee; /* 绿色阴影 */
+}
+

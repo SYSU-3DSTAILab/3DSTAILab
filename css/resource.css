@@ -1,0 +1,66 @@
+/* =============== 数据资源页面专用样式 =============== */
+
+/* 手风琴按钮样式 */
+.accordion-button {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* 展开时按钮变为灰色 */
+.accordion-button:not(.collapsed) {
+  background-color: #6c757d !important;
+  color: white !important;
+  box-shadow: none;
+}
+
+/* 焦点状态 */
+.accordion-button:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* 手风琴内容区域 */
+.accordion-body {
+  border-left: 3px solid #0d6efd;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+}
+
+/* 数据集描述文字 */
+.accordion-body p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* GitHub 链接按钮样式 */
+.dataset-btn {
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dataset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 申请数据按钮样式 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .accordion-body {
+    padding: 1rem;
+  }
+  
+  .dataset-btn, .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}

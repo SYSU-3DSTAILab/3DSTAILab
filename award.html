@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>荣誉奖项 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点 */
+    .award-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .award-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">荣誉奖项</h1>
+          <p class="text-gray-500 text-lg">Honors & Awards</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 个人学术奖 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            个人学术奖 <span class="text-base font-normal text-gray-400 ml-2">Academic Awards</span>
+          </h2>
+          
+          <ul class="award-list text-gray-700 text-lg pl-2">
+            <li>中国遥感应用协会青年女科学家奖 <span class="font-bold text-slate-800">特等奖</span>，2023</li>
+            <li>GEO-DIGITALIZATION FOR SUSTAINABLE DEVELOPMENT GOALS... <span class="font-bold text-slate-800">最佳报告奖</span>，2025</li>
+            <li>ISPRS-ISDE <span class="font-bold text-slate-800">最佳报告奖</span>，2025</li>
+            <li>第八届全国激光雷达大会 <span class="font-bold text-slate-800">优秀论文奖</span>，2025</li>
+            <li>《测绘学报》2024 年度 <span class="font-bold text-slate-800">优秀审稿专家</span>，2024</li>
+            <li>Wily 论文高被引奖，2024</li>
+            <li>第二届空间信息全球可持续发展国际高端论坛 <span class="font-bold text-slate-800">最佳论文奖</span>，2024</li>
+            <li>第七届全国激光雷达大会 <span class="font-bold text-slate-800">优秀论文奖</span>，2024</li>
+            <li>《The Photogrammetric Record》期刊 <span class="font-bold text-slate-800">最佳国际编委</span>，2023</li>
+            <li>《International Journal of Applied Earth Observation and Geoinformation》期刊 <span class="font-bold text-slate-800">最佳论文奖</span>，2023</li>
+            <li>首届空间信息全球可持续发展国际高端论坛 <span class="font-bold text-slate-800">最佳论文奖</span>，2023</li>
+            <li>国际数字地球学会中国国家委员会 <span class="font-bold text-slate-800">优秀论文奖</span>，2023</li>
+            <li>IEEE JSTARS <span class="font-bold text-slate-800">杰出审稿人奖</span>，2019</li>
+          </ul>
+        </div>
+
+        <!-- ==================== 2. 个人教学奖 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            个人教学奖 <span class="text-base font-normal text-gray-400 ml-2">Teaching Awards</span>
+          </h2>
+          
+          <ul class="award-list text-gray-700 text-lg pl-2">
+            <li>全国高校 GIS 论坛“优秀教学成果奖”，2024 (<span class="font-bold text-slate-800">排 1</span>)</li>
+            <li>第八届全国激光雷达数据处理比赛 <span class="font-bold text-slate-800">特等奖指导老师</span>，2025</li>
+            <li>第七届全国激光雷达讲课比赛 <span class="font-bold text-slate-800">特等奖</span>，2024</li>
+            <li>第七届全国激光雷达 <span class="font-bold text-slate-800">优秀博士生导师奖</span>，2024</li>
+            <li>第七届全国激光雷达数据处理比赛 <span class="font-bold text-slate-800">特等奖指导老师</span>，2024</li>
+            <li>首届地球系统科学专业赛共享杯 <span class="font-bold text-slate-800">优秀奖</span>，2024</li>
+          </ul>
+        </div>
+
+        <!-- ==================== 3. 产业创新奖 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            产业创新奖 <span class="text-base font-normal text-gray-400 ml-2">Innovation Awards</span>
+          </h2>
+          
+          <ul class="award-list text-gray-700 text-lg pl-2">
+            <li>公路交通数智化关键技术与工程化应用， <span class="font-bold text-slate-800">中国测绘学会科学技术二等奖</span>，2022 (<span class="font-bold text-slate-800">排 1</span>)</li>
+            <li>复杂环境下跨江越海特长隧道精密测量关键技术研究及应用， <span class="font-bold text-slate-800">中国地理信息产业协会地理信息科技进步奖二等奖</span>，2024 (<span class="font-bold text-slate-800">排 2</span>)</li>
+            <li>三维点云智能化目标检测的理论与方法， <span class="font-bold text-slate-800">福建省自然科学奖三等奖</span>，2019 (<span class="font-bold text-slate-800">排 2</span>)</li>
+            <li>道路交通时空信息融合与建模关键技术及应用， <span class="font-bold text-slate-800">中国地理信息产业协会地理信息科技进步奖一等奖</span>，2025 (<span class="font-bold text-slate-800">排 3</span>)</li>
+            <li>复杂环境下跨江越海特长隧道精密测量关键技术研究及应用， <span class="font-bold text-slate-800">中国地理信息产业协会地理信息科技进步奖二等奖</span>，2024 (<span class="font-bold text-slate-800">排 7</span>)</li>
+            <li>光量子矢量遥感数理基础与低空观测关键技术突破，<span class="font-bold text-slate-800">北京市技术发明一等奖</span>，2024 (<span class="font-bold text-slate-800">排 15</span>)</li>
+            <li>2023 年度中国遥感领域十大事件 <span class="font-bold text-slate-800">我国卫星遥感在极地科考中取得重大成果</span>，2024 (<span class="font-bold text-slate-800">排 9</span>)</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>主页 | 3DAILab</title>
+  
+  <!-- 1. 核心框架 -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- 2. 插件库 -->
+  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.1/src/wordcloud2.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="js/common.js"></script>
+  <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
+
+  <style>
+    /* 隐藏滚动条 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 动画 */
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+    .word-float { animation: float 6s ease-in-out infinite; }
+    .word-float:nth-child(2n) { animation-delay: 1s; }
+
+    .gallery-track { display: flex; animation: scrollGallery 40s linear infinite; }
+    .gallery-container:hover .gallery-track { animation-play-state: paused; }
+    @keyframes scrollGallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .partners-grid img { opacity: 0.9; transition: all 0.3s; }
+    .partners-grid img:hover { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+    
+    .news-scroll::-webkit-scrollbar { width: 6px; }
+    .news-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+    .news-scroll::-webkit-scrollbar-track { background-color: #f1f5f9; }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen text-slate-800 bg-gray-50 flex flex-col">
+
+  <!-- LAYER 1: 导航栏 (由 common.js 加载) -->
+  <div id="nav-placeholder" class="fixed top-0 w-full z-50"></div>
+
+  <!-- SCROLL CONTAINER: 主滚动容器 -->
+  <main class="w-full max-w-4xl mx-auto px-6 lg:px-8 py-20 pt-32 space-y-20">
+
+    <!-- ==========================
+         1. 个人简介板块 (Biography)
+         ========================== -->
+    <section>
+      <!-- 标题 (卡片外) -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">个人简介</h1>
+          <p class="text-gray-500 text-lg">Biography</p>
+        </div>
+      </div>
+
+      <!-- 卡片内容 -->
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+          
+          <!-- 左侧：照片卡片 -->
+          <div class="lg:w-1/3 bg-blue-50/30 p-8 flex flex-col items-center justify-center border-r border-gray-100">
+            <div class="relative group">
+              <div class="w-48 h-64 rounded-2xl overflow-hidden shadow-lg border-4 border-white transform transition-transform duration-500 group-hover:scale-105">
+                <img src="img/people/YipingChen.jpg" alt="陈一平" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -z-10 top-[-10px] left-[-10px] w-full h-full border-2 border-primary/20 rounded-2xl"></div>
+            </div>
+            
+            <div class="text-center mt-6">
+              <h2 class="text-3xl font-bold text-slate-800">陈一平</h2>
+              <p class="text-gray-600 mt-1 font-medium">副教授 / 博士生导师</p>
+              <p class="text-sm text-gray-500 mt-2">团队负责人 · 中山大学逸仙学者 · 百人计划</p>
+            </div>
+          </div>
+
+          <!-- 右侧：详细介绍 -->
+          <div class="lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+            <div class="space-y-4 text-lg text-gray-700 leading-relaxed text-justify">
+              <p>
+                <strong>陈一平</strong>，中山大学遥感科学与技术学院副教授、博士生导师,入选 <span class=" px-1 rounded font-bold text-red-500">国家级青年人才计划</span>。曾担任<strong>中山大学科学研究院副处长</strong>（2023.5-2025.5）。她是 <strong>IEEE高级会员</strong>、<strong>CSIG高级会员</strong>。
+              </p>
+              <p>
+                主要研究方向包括 <span class=" px-1 rounded font-bold text-secondary">激光雷达遥感</span>、<span class=" px-1 rounded font-bold text-secondary">三维点云智能处理</span>、<span class="bg-primary-100 px-1 rounded font-bold text-secondary">遥感图像处理</span> 以及 <span class="bg-primary-100 px-1 rounded font-bold text-secondary">可持续发展应用</span>。
+              </p>
+              <p>
+                陈教授主持包括 <strong>国家自然科学基金</strong> 在内的科研项目 <strong>12</strong> 项，参与包括国家自然科学基金重点项目在内的科研项目 <strong>20</strong> 余项。
+                目前已在 <em>ISPRS JPRS、CVPR、IEEE TGRS、IEEE TITS、JAG</em> 等国内外重要期刊和会议上发表论文 <strong>80</strong> 余篇。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         2. 近期动态 (Recent News)
+         ========================== -->
+    <section>
+      <!-- 标题 (卡片外) -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">近期动态</h1>
+          <p class="text-gray-500 text-lg">Recent News</p>
+        </div>
+        <div class="text-sm text-gray-400 font-mono">2025-2026</div>
+      </div>
+
+      <!-- 卡片内容 -->
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-2 overflow-hidden">
+        <div class="news-scroll h-80 overflow-y-auto p-6 space-y-5">
+          
+          <!-- 2026 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2026.01.02</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <strong>City-Facade</strong> 被中科院一区TOP期刊 <span class="badge badge-outline badge-sm">ISPRS Journal</span> 接收。
+            </p>
+          </div>
+
+          <!-- 2025.12 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.12.21</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <em>Exploring the Influence of Urban Land Use...</em> 被期刊 <span class="badge badge-outline badge-sm">Urban Informatics</span> 接收。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.12.15</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              博士生韩汀入选中国科协青年科技人才培育工程博士生专项计划；陈一平副教授指导的大学生创新项目获评优秀。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.12.02</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授参加 ISPRS ISDE 国际会议获得 <strong>最佳口头报告奖</strong>。
+            </p>
+          </div>
+
+          <!-- 2025.11 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.11.29</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授获批 2026 年度江西省重点研发计划项目。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.11.08</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <strong>SGS-3D</strong> 被 CCF A类会议 <span class="badge badge-secondary badge-outline badge-sm">AAAI 2025</span> 接收。
+            </p>
+          </div>
+
+          <!-- 2025.10 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.10.15</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授获 2025 地理信息产业协会 <strong>地理信息科技进步一等奖</strong>。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.10.08</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              两篇论文被 ACM SIGSPATIAL GeoAI/GeoIndustry Workshop 接收。
+            </p>
+          </div>
+
+          <!-- 2025.09 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.09.26</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              课题组参加第九届全国激光雷达大会，获青年优秀论文奖、数据处理竞赛特等奖及优秀指导教师奖。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.09.20</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授担任会议主席的低空遥感研讨活动在北京顺利举行。
+            </p>
+          </div>
+
+          <!-- 2025.08 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.08.20</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <em>Individual tree segmentation...</em> 被中科院一区TOP期刊 <span class="badge badge-outline badge-sm">Urban Forestry & Urban Greening</span> 接收。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.08.11</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <strong>VoxelFlow</strong> 在 CW 2025 国际会议获得最佳报告提名。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.08.03</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              课题组师生在澳大利亚布里斯班参加 IEEE IGARSS 2025。
+            </p>
+          </div>
+
+          <!-- 2025.07 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.07.19</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              课题组师生在广东深圳参加中国空间智能大会。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.07.08</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授当选 IEEE 固定翼垂直起降无人机输电线路训练标准委员会秘书长。
+            </p>
+          </div>
+
+          <!-- 2025.06 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.06.06</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              课题组师生在广东珠海参加视觉与学习青年学者研讨会。
+            </p>
+          </div>
+
+          <!-- 2025.05 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.05.15</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授获 <strong>北京市技术发明一等奖</strong>。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.05.19</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <em>A 3D Perspective...</em> 被中科院一区TOP期刊 <span class="badge badge-outline badge-sm">Building and Environment</span> 接收。
+            </p>
+          </div>
+
+          <!-- 2025.04 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.04.06</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              课题组师生在阿联酋迪拜参加 ISPRS Geospatial Week。
+            </p>
+          </div>
+
+          <!-- 2025.02 -->
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.02.28</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授入选 <strong>国家级青年人才</strong>。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.02.27</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              论文 <strong>Scene4U</strong> 被 CCF A类会议 <span class="badge badge-secondary badge-outline badge-sm">CVPR 2025</span> 接收。
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start group hover:bg-gray-50 p-2 rounded transition-colors">
+            <span class="text-sm font-bold text-primary w-24 shrink-0 pt-1">2025.02.06</span>
+            <p class="text-gray-700 group-hover:text-primary transition-colors">
+              <i class="fas fa-circle text-[6px] text-primary align-middle mr-2"></i>
+              陈一平副教授获《空间地理信息》<strong>优秀审稿人奖</strong>。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         3. 研究兴趣 (词云)
+         ========================== -->
+    <section>
+      <!-- 标题 (卡片外) -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">研究兴趣</h1>
+          <p class="text-gray-500 text-lg">Research Interests</p>
+        </div>
+      </div>
+      <!-- 卡片内容 -->
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6">
+        <div id="word-cloud" style="width: 100%; height: 400px; background-color: #fff;"></div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         4. 代表性论文
+         ========================== -->
+    <section>
+      <!-- 标题 (卡片外) -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">代表作</h1>
+          <p class="text-gray-500 text-lg">Selected Publications</p>
+        </div>
+      </div>
+      <!-- 卡片内容 -->
+      <div class="gallery-container bg-white p-6 rounded-3xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="gallery-track">
+          <!-- 示例图片，请替换为真实链接 -->
+          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/Scene4U.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/HSPFormer-final.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/ASGFormer.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/PVCFormer.png" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/SPTNet.png" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         5. 地图与合作
+         ========================== -->
+      
+    <!-- 访客地图 -->
+    <section>
+        <!-- 标题 (卡片外) -->
+        <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+          <div class="border-l-8 border-primary pl-4">
+            <h1 class="text-4xl font-bold text-primary">网站访客</h1>
+            <p class="text-gray-500 text-lg">Website Visitors</p>
+          </div>
+        </div>
+        <!-- 卡片内容 -->
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 overflow-hidden h-[400px]">
+           <div id="chartdiv" style="width: 100%; height: 100%; background: #fff;"></div>
+        </div>
+    </section>
+      
+    <!-- 合作伙伴 -->
+    <section>
+        <!-- 标题 (卡片外) -->
+        <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+          <div class="border-l-8 border-primary pl-4">
+            <h1 class="text-4xl font-bold text-primary">合作</h1>
+            <p class="text-gray-500 text-lg">Collaborations</p>
+          </div>
+        </div>
+        <!-- 卡片内容 -->
+        <div class="partners-grid bg-white p-8 rounded-3xl shadow-sm border border-gray-200 flex flex-wrap justify-center content-center gap-12 h-[400px]">
+          <a href="https://www.mit.edu/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" class="w-32"></a>
+          <a href="https://www.nasa.gov/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" class="w-32"></a>
+        </div>
+    </section>
+
+
+    <!-- ==========================
+         6. 联系/加入我们
+         ========================== -->
+    <section>
+      
+      <!-- 标题栏 (卡片外) -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">加入我们</h1>
+          <p class="text-gray-500 text-lg">join Us</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- 左侧：联系表单 -->
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-8 h-full">
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+            <i class="fas fa-paper-plane text-primary mr-3"></i> 发送消息
+          </h3>
+          
+          <form id="contact-form" class="space-y-4">
+            <div class="form-control w-full">
+              <label class="label"><span class="label-text font-semibold">姓名 Name</span></label>
+              <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
+            </div>
+
+            <div class="form-control w-full">
+              <label class="label"><span class="label-text font-semibold">邮箱 Email</span></label>
+              <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
+            </div>
+
+            <div class="form-control w-full">
+              <label class="label"><span class="label-text font-semibold">留言 Message</span></label>
+              <textarea name="message" class="textarea textarea-bordered h-32 bg-gray-50 focus:bg-white transition-colors" placeholder="Your Message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full text-white text-lg mt-4 shadow-md hover:shadow-lg">
+              Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+            
+            <div id="thank-you" class="alert alert-success mt-4 hidden">
+              <i class="fas fa-check-circle"></i>
+              <span>🎉 消息发送成功！我们会尽快回复您。</span>
+            </div>
+            <p id="form-error" class="text-red-500 text-sm mt-2 hidden"></p>
+          </form>
+        </div>
+
+        <!-- 右侧：研究生招生信息 -->
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-8 h-full flex flex-col justify-center">
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+            <i class="fas fa-user-graduate text-secondary mr-3"></i> 研究生招生 <span class="text-gray-400 text-lg font-normal ml-2">Recruitment</span>
+          </h3>
+
+          <div class="prose max-w-none text-gray-600 leading-loose">
+            <p class="mb-6">
+              实验室长期招收 <span class="badge badge-primary badge-outline font-bold mx-1">硕士</span> <span class="badge badge-primary badge-outline font-bold mx-1">博士</span> <span class="badge badge-primary badge-outline font-bold mx-1">博士后</span>，
+              同时欢迎学有余力的本科生提前加入科研训练。
+            </p>
+
+            <div class="bg-blue-50/50 rounded-xl p-6 border border-blue-100">
+              <h4 class="font-bold text-primary mb-4 flex items-center">
+                <i class="fas fa-star text-yellow-400 mr-2"></i> 希望你具备：
+              </h4>
+              <ul class="space-y-3 list-none pl-0">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mt-1.5 mr-3"></i>
+                  <span>较强的 <strong class="text-slate-800">自我驱动力</strong> 与自律精神；</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mt-1.5 mr-3"></i>
+                  <span>浓厚的 <strong class="text-slate-800">研究兴趣</strong> 与持续学习意愿；</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-500 mt-1.5 mr-3"></i>
+                  <span>良好的 <strong class="text-slate-800">数学与专业基础</strong>。</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 text-center">
+              <p class="text-sm text-gray-500 mb-2">有意者请发送简历至：</p>
+              <a href="mailto:chenyp79@mail.sysu.edu.cn" class="btn btn-outline btn-secondary rounded-full px-8">
+                chenyp79@mail.sysu.edu.cn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LAYER 2: 页脚 (由 common.js 加载) -->
+  <!-- <footer id="footer-placeholder"></footer> -->
+
+  <!-- 图片预览模态框 -->
+  <div id="modal" class="fixed inset-0 z-[999] bg-black/90 hidden" onclick="document.getElementById('modal').style.display='none'">
+    <span class="absolute top-5 right-10 text-white text-5xl cursor-pointer">&times;</span>
+    <img id="modal-img" class="m-auto block max-w-[90%] max-h-[90%] rounded-lg mt-20">
+  </div>
+
+  <!-- 脚本引用 -->
+  <script>
+    // 模态框逻辑
+    function openModal(src) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modal-img").src = src;
+    }
+
+    // 词云生成
+    const words = [
+      ["LiDAR", 40], ["Remote Sensing", 30], ["3D Point Clouds", 28],
+      ["Deep Learning", 26], ["Sustainable", 20], ["Urban Mapping", 18],
+      ["Segmentation", 22], ["Photogrammetry", 15], ["AI", 35], ["Digital Twin", 25]
+    ];
+    WordCloud(document.getElementById('word-cloud'), {
+      list: words,
+      gridSize: 8,
+      weightFactor: 2.5,
+      fontFamily: 'Arial, sans-serif',
+      color: 'random-dark',
+      backgroundColor: 'transparent',
+      classes: "word-float"
+    });
+
+    // 地图生成
+    am5.ready(function() {
+      var root = am5.Root.new("chartdiv");
+      root.setThemes([am5.Theme.new(root)]);
+      var chart = root.container.children.push(am5map.MapChart.new(root, {
+        panX: "rotateX", panY: "none",
+        projection: am5map.geoOrthographic(),
+        homeGeoPoint: { longitude: 113, latitude: 23 }
+      }));
+      var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+        geoJSON: am5geodata_worldLow, exclude: ["AQ"], valueField: "value"
+      }));
+      polygonSeries.mapPolygons.template.setAll({
+        tooltipText: "{name}", fill: am5.color(0xd1d5db), stroke: am5.color(0xffffff)
+      });
+      polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+        var value = target.dataItem.dataContext.value;
+        if (value) {
+            if (value >= 80) return am5.color(0x003366);
+            if (value >= 50) return am5.color(0x1976d2);
+            return am5.color(0x3793ee);
+        }
+        return fill;
+      });
+      polygonSeries.data.setAll([
+        { id: "CN", value: 90 }, { id: "US", value: 80 },
+        { id: "FR", value: 40 }, { id: "JP", value: 60 }, { id: "DE", value: 40 }
+      ]);
+      var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+      pointSeries.bullets.push(function() {
+        var circle = am5.Circle.new(root, {
+          radius: 5, fill: am5.color(0xff0000), stroke: am5.color(0xffffff), strokeWidth: 2, tooltipText: "{title}"
+        });
+        circle.animate({ key: "radius", from: 5, to: 8, duration: 1000, easing: am5.ease.out(am5.ease.cubic), loops: Infinity, yoyo: true });
+        return am5.Bullet.new(root, { sprite: circle });
+      });
+      pointSeries.data.setAll([
+        { geometry: { type: "Point", coordinates: [116.4074, 39.9042] }, title: "Beijing" },
+        { geometry: { type: "Point", coordinates: [-77.0369, 38.9072] }, title: "Washington D.C." },
+        { geometry: { type: "Point", coordinates: [2.3522, 48.8566] }, title: "Paris" },
+        { geometry: { type: "Point", coordinates: [139.6917, 35.6895] }, title: "Tokyo" },
+        { geometry: { type: "Point", coordinates: [13.4050, 52.5200] }, title: "Berlin" }
+      ]);
+      chart.animate({ key: "rotationX", to: 360, duration: 60000, loops: Infinity, easing: am5.ease.linear });
+    });
+
+    // EmailJS (如果需要)
+    (function(){
+      // emailjs.init('Dj6gTC7Xq1QHguLQl'); 
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('thank-you').classList.remove('hidden');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>研究方向 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 隐藏滚动条但允许滚动 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* 列表项样式 (用于右侧文字介绍) */
+    .research-list li {
+      position: relative;
+      padding-left: 1.5em; 
+      margin-bottom: 0.5em;  
+      line-height: 1.6;
+    }
+    
+    .research-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #00BFFF;
+    }
+
+    /* 论文卡片悬停效果 */
+    .paper-item { transition: all 0.3s ease; }
+    .paper-item:hover { background-color: #f8faff; transform: translateY(-3px); }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-5xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">研究方向</h1>
+          <p class="text-gray-500 text-lg">Research Interests</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 研究介绍 (左图右文) ==================== -->
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-magic"></i>
+            </div>
+            三维场景生成 <span class="text-base font-normal text-gray-400 ml-2">3D Scene Generation</span>
+          </h2>
+          
+          <!-- 布局容器：flex-col (手机) -> lg:flex-row (大屏) -->
+          <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- 左侧：图片区域 (占据 2/3) -->
+            <!-- w-full lg:w-2/3 -->
+            <div class="w-full lg:w-2/3 h-64 lg:h-auto rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-100 relative group">
+                <img src="https://via.placeholder.com/800x400?text=Research+Overview+Image" 
+                     alt="Research Image" 
+                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+
+            <!-- 右侧：文字介绍 (占据 1/3) -->
+            <!-- w-full lg:w-1/3 -->
+            <div class="w-full lg:w-1/3 flex flex-col justify-center space-y-4">
+              <p class="text-gray-700 leading-relaxed text-justify text-sm lg:text-base">
+                Study efficient representation and feature learning methods for 3D point cloud data, including basic tasks such as point cloud segmentation, classification, and registration. Explore the extraction of structural and semantic information.
+              </p>
+              
+              <!-- 关键词标签 -->
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Segmentation</span>
+                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Feature Extraction</span>
+                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Self-supervised</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== 2. 代表性成果 (左图右文) ==================== -->
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-star"></i>
+            </div>
+            代表性成果 <span class="text-base font-normal text-gray-400 ml-2">Representative Publications</span>
+          </h2>
+          
+          <div class="space-y-8"> <!-- 论文之间的间距 -->
+            
+            <!-- 论文 1 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="https://via.placeholder.com/300x200?text=Paper+Thumbnail+1" 
+                       alt="Paper Thumbnail" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  Parallax Attention for Unsupervised Stereo Correspondence Learning
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Longguang Wang, Yulan Guo, Yingqian Wang, Zhengfa Liang, Zaiping Lin, Jungang Yang, Wei An
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">TPAMI 2022</span>
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 论文 2 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="https://via.placeholder.com/300x200?text=Paper+Thumbnail+2" 
+                       alt="Paper Thumbnail" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer" 
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  You Only Train Once: Learning General and Distinctive 3D Local Descriptors
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Sheng Ao, Yulan Guo, Yingying Hu, Bo Yang, Andrew Markham, Zengping Chen
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">TPAMI 2023</span>
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

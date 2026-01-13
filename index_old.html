@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>主页 | 3DAILab</title>
+  
+  <!-- 1. 引入核心框架: DaisyUI + Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 2. 引入图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- 3. 新增插件库 (词云, 地图) -->
+  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.1/src/wordcloud2.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="js/common.js"></script>
+  <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
+
+  <!-- 4. 必要的自定义样式 (覆盖默认或处理特殊动画) -->
+  <style>
+    /* 视差背景动画 */
+    .bg-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1s ease-in-out;
+    }
+    .bg-slide.active { opacity: 1; }
+    
+    /* 缩略图选中高亮 */
+    .thumb-btn.active { border-color: #fff; transform: scale(1.1); box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    
+    /* 隐藏滚动条但允许滚动 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+    /* 词云漂浮动画 */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .word-float { animation: float 6s ease-in-out infinite; }
+    .word-float:nth-child(2n) { animation-delay: 1s; }
+
+    /* 论文横向滚动动画 */
+    .gallery-track { display: flex; animation: scrollGallery 40s linear infinite; }
+    .gallery-container:hover .gallery-track { animation-play-state: paused; }
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* 合作伙伴Logo: 彩色显示 + 交互 */
+    .partners-grid img { 
+      opacity: 0.9; 
+      transition: all 0.3s; 
+    }
+    .partners-grid img:hover { 
+      opacity: 1; 
+      transform: scale(1.1); 
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+
+  </style>
+</head>
+
+<body class="font-sans min-h-screen flex flex-col relative text-slate-800">
+
+ <!-- ========================
+       SCROLL CONTAINER: 滚动容器
+       ======================== -->
+  <div class="h-screen w-full overflow-y-scroll scroll-smooth no-scrollbar">
+
+    <!-- ==========================
+         PAGE 1: 第一屏 (背景占 85% 高度，左右占满)
+         ========================== -->
+    <section id="page1" class="h-[100vh] w-full snap-start relative flex flex-col justify-center pt-20 overflow-hidden">
+      
+      <!-- 背景轮播 (充满当前 80vh 的 section) -->
+      <div id="bg-container" class="absolute inset-0 -z-10 bg-gray-900">
+        <div class="bg-slide active" style="background-image: url('img/team/CHINA_3DV_2024.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('img/team/1.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('img/team/2.jpg');"></div>
+        <!-- 遮罩层 -->
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
+      </div>
+      <!-- ========================
+          LAYER 3: 主体内容
+          ======================== -->
+      <main class="flex-grow w-full px-8 lg:px-16 py-12 pb-4 z-10">
+        
+        <!-- Grid 布局容器 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-16 items-start">
+
+          <!-- ==========================
+              左侧：实验室简介 (占据 1-6 列)
+              ========================== -->
+          <div class="lg:col-start-1 lg:col-span-6 flex flex-col justify-center space-y-10">
+            
+            <!-- 1. 超大标题 (字体调大到 7xl) -->
+            <h1 class="text-6xl lg:text-8xl font-black tracking-tighter text-white leading-[1.1] drop-shadow-2xl">
+              3D Spatiotemporal <br> 
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">AI Laboratory</span>
+            </h1>
+
+            <!-- 2. 副标题 (字体调大到 3xl/4xl) -->
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-200 mt-2 drop-shadow-md border-l-4 border-blue-400 pl-6">
+              Leveraging <span class="text-blue-300">LiDAR & AI</span> for <br>
+              Digital Twin Reality
+            </h2>
+
+            <!-- 3. 正文内容 (字体调大到 xl，行高增加) -->
+            <div class="text-xl text-gray-100 leading-relaxed space-y-8 font-medium text-justify drop-shadow-sm">
+              <p>
+                <strong class="text-white text-2xl border-b-2 border-blue-400 pb-1">陈一平副教授</strong>
+                领衔的 “三维时空人工智能实验室”（3D Spatiotemporal AI Lab）隶属于
+                <span class="text-white font-bold text-2xl">中山大学遥感科学与技术学院</span>。
+                坐落于广东珠海。实验室面向激光雷达遥感与智能三维点云理解的前沿需求。
+              </p>
+              
+              <p>
+              并探索其在实景三维与数字孪生、城市与森林精细化测绘、生态环境可持续发展等领域的应用。课题组致力于多平台、多源传感数据融合，构建稳健可泛化的三维场景理解方法与工程化流程。
+              </p>
+            </div>
+
+            <!-- 4. 关键技术标签 (字体调大，样式更通透) -->
+            <div class="pt-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-400 font-bold mb-6 border-b border-white/20 pb-2 w-fit">Research Focus</p>
+              <div class="flex flex-wrap gap-4">
+                <!-- 标签字体调大到 lg -->
+                <span class="px-6 py-3 rounded-full border-2 border-white/20 bg-white/5 text-white text-lg font-bold hover:bg-white hover:text-blue-900 transition-all cursor-default backdrop-blur-sm shadow-lg">
+                  # 三维点云表征
+                </span>
+                <span class="px-6 py-3 rounded-full border-2 border-white/20 bg-white/5 text-white text-lg font-bold hover:bg-white hover:text-blue-900 transition-all cursor-default backdrop-blur-sm shadow-lg">
+                  # 遥感要素提取
+                </span>
+                <span class="px-6 py-3 rounded-full border-2 border-white/20 bg-white/5 text-white text-lg font-bold hover:bg-white hover:text-blue-900 transition-all cursor-default backdrop-blur-sm shadow-lg">
+                  # 三维场景生成
+                </span>
+                <span class="px-6 py-3 rounded-full border-2 border-white/20 bg-white/5 text-white text-lg font-bold hover:bg-white hover:text-blue-900 transition-all cursor-default backdrop-blur-sm shadow-lg">
+                  # 时空大模型
+                </span>
+              </div>
+            </div>
+
+            <!-- 5. 数据统计 (字体极大) -->
+            <div class="flex gap-16 pt-8">
+              <div>
+                <div class="text-5xl font-black text-white drop-shadow-lg">80+</div>
+                <div class="text-lg text-gray-300 mt-1">顶刊顶会等高水平论文</div>
+              </div>
+              <div>
+                <div class="text-5xl font-black text-white drop-shadow-lg">10+</div>
+                <div class="text-lg text-gray-300 mt-1">博硕研究生</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==========================
+              中间留空：第 7, 8 列自动空出
+              ========================== -->
+
+          <!-- ==========================
+          右侧：近期动态 (从第 9 列开始，占 4 列)
+          ========================== -->
+          <div class="lg:col-start-10 lg:col-span-4 space-y-12 mt-4">
+            
+            <!-- 标题 -->
+            <h3 class="text-right text-3xl font-bold text-gray-300 mb-10 hidden lg:block border-b border-white/20 pb-4">
+              Latest News <i class="fas fa-bolt text-yellow-400 ml-2"></i>
+            </h3>
+
+            <!-- 动态项 1: City-Facade (2026.01.02) -->
+            <div class="group flex items-start gap-5 flex-row-reverse lg:flex-row text-right lg:text-left hover:-translate-x-2 transition-transform duration-300">
+              <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-500 shadow-lg flex items-center justify-center text-white">
+                <i class="fas fa-award text-3xl group-hover:scale-110 transition-transform"></i>
+              </div>
+              <div class="flex-grow pt-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors drop-shadow-md">论文录用</h4>
+                <p class="text-base text-gray-400 font-mono mb-3 mt-1">2026-01-02</p>
+                <p class="text-gray-100 leading-relaxed text-lg font-medium">
+                  论文 <span class="text-cyan-300 italic font-bold">City-Facade</span> 被中科院一区TOP期刊 <span class="font-bold">ISPRS Journal</span> 接收！
+                </p>
+              </div>
+            </div>
+
+            <!-- 动态项 2: Urban Informatics (2025.12.21) -->
+            <div class="group flex items-start gap-5 flex-row-reverse lg:flex-row text-right lg:text-left hover:-translate-x-2 transition-transform duration-300">
+              <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-blue-500 group-hover:border-blue-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                <i class="fas fa-paper-plane text-3xl text-white"></i>
+              </div>
+              <div class="flex-grow pt-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors drop-shadow-md">成果发表</h4>
+                <p class="text-base text-gray-400 font-mono mb-3 mt-1">2025-12-21</p>
+                <p class="text-gray-100 leading-relaxed text-lg font-medium">
+                  关于城市土地利用与热环境演变的最新研究被 <span class="text-blue-300 italic">Urban Informatics</span> 期刊接收。
+                </p>
+              </div>
+            </div>
+
+            <!-- 动态项 3: 韩汀入选计划 (2025.12.15) -->
+            <div class="group flex items-start gap-5 flex-row-reverse lg:flex-row text-right lg:text-left hover:-translate-x-2 transition-transform duration-300">
+              <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-cyan-500 group-hover:border-cyan-500 transition-all shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                <i class="fas fa-user-graduate text-3xl text-white"></i>
+              </div>
+              <div class="flex-grow pt-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">人才入选</h4>
+                <p class="text-base text-gray-400 font-mono mb-3 mt-1">2025-12-15</p>
+                <p class="text-gray-100 leading-relaxed text-lg font-medium">
+                  1、博士生<span class="text-white font-bold">韩汀</span>入选中国科协青年科技人才培育工程博士生专项计划 。
+                </p>
+                <p class="text-gray-100 leading-relaxed text-lg font-medium"> 
+                  2、陈一平副教授指导的大学生创新项目获评优秀。
+                </p>
+              </div>
+            </div>
+
+            <!-- 更多按钮 -->
+            <div class="pt-10 flex justify-end lg:justify-start pl-0 lg:pl-[6.25rem]">
+              <a href="events.html" class="btn btn-outline border-white text-white hover:bg-white hover:text-slate-900 rounded-full px-8 text-lg font-bold">
+                查看更多动态 <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+
+      <!-- 整体调大后的浮动切换器 -->
+      <div class="absolute bottom-10 left-10 z-20 p-4 bg-black/50 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl flex items-center gap-6">
+        
+        <!-- 按钮调大：btn-xs -> btn-md，图标调大：text-xl -->
+        <button onclick="prevSlide()" class="btn btn-circle btn-md btn-ghost text-white hover:bg-white/20 text-xl">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <!-- 间距调大：gap-2 -> gap-4 -->
+        <div class="flex gap-4">
+          <!-- 缩略图显著调大：w-16 h-10 -> w-32 h-20 (约为原来的两倍) -->
+          <!-- 圆角调大：rounded-md -> rounded-xl -->
+          <div onclick="switchBackground(0)" class="thumb-btn active cursor-pointer w-32 h-20 rounded-xl overflow-hidden border-2 border-transparent transition-all">
+            <img src="img/team/CHINA_3DV_2024.jpg" class="w-full h-full object-cover">
+          </div>
+          
+          <div onclick="switchBackground(1)" class="thumb-btn cursor-pointer w-32 h-20 rounded-xl overflow-hidden border-2 border-transparent transition-all">
+            <img src="img/team/1.jpg" class="w-full h-full object-cover">
+          </div>
+          
+          <div onclick="switchBackground(2)" class="thumb-btn cursor-pointer w-32 h-20 rounded-xl overflow-hidden border-2 border-transparent transition-all">
+            <img src="img/team/2.jpg" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- 按钮调大 -->
+        <button onclick="nextSlide()" class="btn btn-circle btn-md btn-ghost text-white hover:bg-white/20 text-xl">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        
+      </div>
+
+      
+    </section>
+    
+  </div>
+
+
+    <!-- ==========================
+    PAGE 2: 新增内容 (白底，遮盖背景)
+    ========================== -->
+    <section  id="page2" class="w-full bg-white relative z-20 pt-20 px-8 lg:px-20 pb-32">
+    <div class="max-w-7xl mx-auto space-y-20">
+      <!-- 1. 研究兴趣 (词云) -->
+      <div>
+        <!-- 页面标题 -->
+        <div class="mb-10 border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">研究兴趣</h1>
+          <p class="text-gray-500 text-lg">Research Interests</p>
+        </div>
+        <div id="word-cloud" style="width: 100%; height: 400px; background-color: #fff; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);"></div>
+      </div>
+
+      <!-- 2. 代表性论文 (真实图片轮播) -->
+      <div>
+        <!-- 页面标题 -->
+        <div class="mb-10 border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">代表性出版物</h1>
+          <p class="text-gray-500 text-lg">Representative Publications</p>
+        </div>
+        <div class="gallery-container bg-white p-4 rounded-2xl shadow-sm overflow-hidden">
+          <div class="gallery-track">
+            <!-- 使用真实的 GIF 链接 -->
+            <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/Scene4U.gif" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+            <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/HSPFormer-final.gif" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+            <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/ASGFormer.gif" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+            <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/PVCFormer.png" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 tran-sition-transform" onclick="openModal(this.src)">
+            <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/SPTNet.png" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 transi-tion-transform" onclick="openModal(this.src)">
+            <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" class="h-48 w-72 object-cover rounded-lg mx-2 cursor-pointer hover:scale-105 transi-tion-transform" onclick="openModal(this.src)">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 地图与合作 (彩色 Logo) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- 访客地图 -->
+        <div>
+          <!-- <h2 class="text-3xl font-bold text-primary mb-6">Website Visitors 👀</h2> -->
+          <div class="mb-10 border-l-8 border-primary pl-4">
+            <h1 class="text-4xl font-bold text-primary">网站访客</h1>
+            <p class="text-gray-500 text-lg">Website Visitors</p>
+          </div>
+          <div id="chartdiv" style="width: 100%; height: 400px; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05);"></div>
+        </div>
+        
+        <!-- 合作伙伴 (彩色) -->
+        <div class="flex flex-col">
+          <!-- <h2 class="text-3xl font-bold text-primary mb-6">Collaborations 🤝</h2> -->
+          <div class="mb-10 border-l-8 border-primary pl-4">
+            <h1 class="text-4xl font-bold text-primary">合作</h1>
+            <p class="text-gray-500 text-lg">Collaborations</p>
+          </div>
+          <div class="partners-grid bg-white p-8 rounded-2xl shadow-sm flex flex-wrap justify-center content-center gap-12 h-[400px] box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <a href="https://www.mit.edu/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" class="w-32"></a>
+            <a href="https://www.nasa.gov/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" class="w-32"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    </div> <!-- 滚动容器结束 -->
+
+
+  <!-- 图片预览模态框 -->
+  <div id="modal" class="fixed inset-0 z-[999] bg-black/90 hidden" on-click="document.getElementById('modal').style.display='none'">
+  <span class="absolute top-5 right-10 text-white text-5xl cursor-pointer">&times;</span>
+  <img id="modal-img" class="m-auto block max-w-[90%] max-h-[90%] rounded-lg mt-20">
+  </div>
+
+  
+  <!-- 背景切换逻辑 -->
+  <script>
+    const slides = document.querySelectorAll('.bg-slide');
+    const thumbs = document.querySelectorAll('.thumb-btn');
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    function switchBackground(index) {
+      currentIndex = index;
+      if (currentIndex >= slides.length) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = slides.length - 1;
+
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) slide.classList.add('active');
+        else slide.classList.remove('active');
+      });
+
+      thumbs.forEach((btn, i) => {
+        if (i === currentIndex) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+      resetAutoPlay();
+    }
+
+    function nextSlide() { switchBackground(currentIndex + 1); }
+    function prevSlide() { switchBackground(currentIndex - 1); }
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+    resetAutoPlay();
+
+
+    // 模态框逻辑
+    function openModal(src) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modal-img").src = src;
+    }
+
+    // 词云生成逻辑
+    const words = [
+      ["LiDAR", 40], ["Remote Sensing", 30], ["3D Point Clouds", 28],
+      ["Deep Learning", 26], ["Sustainable", 20], ["Urban Mapping", 18],
+      ["Segmentation", 22], ["Photogrammetry", 15], ["AI", 35], ["Digital Twin", 25]
+    ];
+    WordCloud(document.getElementById('word-cloud'), {
+      list: words,
+      gridSize: 8,
+      weightFactor: 2.5,
+      fontFamily: 'Arial, sans-serif',
+      color: 'random-dark',
+      backgroundColor: 'transparent',
+      classes: "word-float"
+    });
+
+    // 地图生成逻辑
+    am5.ready(function() {
+      var root = am5.Root.new("chartdiv");
+      
+      // 设置主题
+      root.setThemes([am5.Theme.new(root)]);
+      
+      // 创建地图实例
+      var chart = root.container.children.push(am5map.MapChart.new(root, {
+        panX: "rotateX", 
+        panY: "none",
+        projection: am5map.geoOrthographic(), // 地球仪投影
+        homeGeoPoint: { longitude: 113, latitude: 23 } // 初始中心点
+      }));
+
+      // ============================================
+      // 1. 国家多边形系列 (处理蓝色背景)
+      // ============================================
+      var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+        geoJSON: am5geodata_worldLow,
+        exclude: ["AQ"], // 排除南极洲
+        valueField: "value"
+      }));
+
+      polygonSeries.mapPolygons.template.setAll({
+        tooltipText: "{name}",
+        fill: am5.color(0xd1d5db), // 【默认颜色】灰色
+        stroke: am5.color(0xffffff)
+      });
+
+      // 【核心逻辑】根据 value 值将国家背景设为蓝色
+      polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+        var value = target.dataItem.dataContext.value;
+        if (value) {
+            // 这里可以根据数值大小返回深浅不一的蓝色
+            if (value >= 80) return am5.color(0x003366); // 深蓝 (Primary)
+            if (value >= 50) return am5.color(0x1976d2); // 中蓝
+            return am5.color(0x3793ee); // 浅蓝 (Secondary)
+        }
+        return fill; // 如果没有 value，返回默认灰色
+      });
+
+      // 设置高亮状态 (鼠标悬停变色)
+      polygonSeries.mapPolygons.template.states.create("hover", { 
+        fill: am5.color(0xfacc15) // 黄色高亮 
+      });
+
+      // 【数据】设置哪些国家变蓝 (id 是 ISO 2位国家代码)
+      polygonSeries.data.setAll([
+        { id: "CN", value: 90 }, // 中国 - 深蓝
+        { id: "US", value: 80 }, // 美国 - 深蓝
+        { id: "FR", value: 40 }, // 法国 - 浅蓝
+        { id: "JP", value: 60 }, // 日本 - 中蓝
+        { id: "DE", value: 40 }  // 德国 - 浅蓝
+      ]);
+
+      // ============================================
+      // 2. 点系列 (处理首都红点)
+      // ============================================
+      var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+
+      // 【核心样式】定义红点
+      pointSeries.bullets.push(function() {
+        var circle = am5.Circle.new(root, {
+          radius: 5,                 // 点的大小
+          fill: am5.color(0xff0000), // 【颜色】红色
+          stroke: am5.color(0xffffff), // 白色描边
+          strokeWidth: 2,
+          tooltipText: "{title}"     // 鼠标悬停显示城市名
+        });
+        
+        // 给红点加一个呼吸动画效果
+        circle.animate({
+            key: "radius",
+            from: 5,
+            to: 8,
+            duration: 1000,
+            easing: am5.ease.out(am5.ease.cubic),
+            loops: Infinity,
+            yoyo: true
+        });
+
+        return am5.Bullet.new(root, {
+          sprite: circle
+        });
+      });
+
+      // 【数据】首都坐标
+      pointSeries.data.setAll([
+        { geometry: { type: "Point", coordinates: [116.4074, 39.9042] }, title: "Beijing (China)" },
+        { geometry: { type: "Point", coordinates: [-77.0369, 38.9072] }, title: "Washington D.C. (USA)" }, // 修正为华盛顿
+        { geometry: { type: "Point", coordinates: [2.3522, 48.8566] }, title: "Paris (France)" },
+        { geometry: { type: "Point", coordinates: [139.6917, 35.6895] }, title: "Tokyo (Japan)" },
+        { geometry: { type: "Point", coordinates: [13.4050, 52.5200] }, title: "Berlin (Germany)" }
+      ]);
+
+      // 3. 自动旋转地球
+      chart.animate({ key: "rotationX", to: 360, duration: 60000, loops: Infinity, easing: am5.ease.linear });
+    });
+
+  </script>
+</body>
+</html>

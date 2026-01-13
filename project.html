@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>科研项目 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点 */
+    .project-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">科研项目</h1>
+          <p class="text-gray-500 text-lg">Research Projects</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 主持项目 ==================== -->
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-flask"></i>
+            </div>
+            主持项目 <span class="text-base font-normal text-gray-400 ml-2">Projects as PI</span>
+          </h2>
+          
+          <!-- 统一列表样式 -->
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">基于CIM数字底座的老旧社区低碳更新潜力评估与空间优化策略研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（江西省重点研发计划项目，2026-2028）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基础模型驱动的点云城市空间建筑物自动化重建研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（武汉大学，2026-2027）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">数字化XX环境</span> 
+              <span class="text-sm text-gray-500 ml-2">（中山大学，2025）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">车载三维点云道路要素单体化分割理论与方法研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（国家自然科学基金面上项目，2024-2027）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">湾区城市数字孪生高精度三维点云部件级分割与交互式分析</span> 
+              <span class="text-sm text-gray-500 ml-2">（广东省自然科学基金面上项目，2024-2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">输电线路三维激光点云数据采集服务</span> 
+              <span class="text-sm text-gray-500 ml-2">（国家电网，2022-2023）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">激光点云数据规整技术支持服务</span> 
+              <span class="text-sm text-gray-500 ml-2">（国家电网，2022-2023）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">低空无人机载激光雷达点云数据获取与语义分割技术</span> 
+              <span class="text-sm text-gray-500 ml-2">（科技委项目，2022-2024）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">大规模三维点云地物要素语义分割研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（广东省“海外名师”项目，2022）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">彩色点云数据校正测试服务</span> 
+              <span class="text-sm text-gray-500 ml-2">（福州大学，2021）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">点云数据采集服务</span> 
+              <span class="text-sm text-gray-500 ml-2">（福州大学，2020-2021）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">变化检测融合决策技术研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（中山大学，2020-2021）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于三维点云的高清地图快速语义标注理论与方法研究</span> 
+              <span class="text-sm text-gray-500 ml-2">（国家自然科学基金面上项目，2018-2022）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">激光雷达目标特性建模</span> 
+              <span class="text-sm text-gray-500 ml-2">（科技委项目，2016-2018）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">多回波地面激光扫描点云的叶簇遮挡目标特性建模</span> 
+              <span class="text-sm text-gray-500 ml-2">（国家自然科学基金青年基金项目，2016-2019）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 2. 联合主持项目 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-handshake"></i>
+            </div>
+            联合主持项目 <span class="text-base font-normal text-gray-400 ml-2">Co-PI Projects</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">城市地下空间三维语义映射</span> 
+              <span class="text-sm text-gray-500 ml-2">（ISPRS国际摄影测量和遥感学会科学计划，2021-2022）</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>资源 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- 3. Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- 4. 配置主题色 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#003366',    // 深蓝
+            secondary: '#3793ee',  // 亮蓝
+            accent: '#f8f9fa',     // 浅灰背景
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Swiper 自定义样式适配 */
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+    
+    /* 调整 Swiper 导航按钮颜色 */
+    .swiper-button-prev, .swiper-button-next {
+      color: #fff;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+  </style>
+
+    <style>
+    /* 强制 Swiper 适应容器大小，防止溢出 */
+    .swiper {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    .swiper-slide {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 强制图片裁剪填充，不许变形，不许溢出 */
+    .swiper-slide img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 0.5rem;
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28">
+    
+    <div class="max-w-5xl mx-auto">
+      <!-- 标题部分 -->
+      <!-- <div class="mb-10 text-center">
+        <h1 class="text-4xl font-bold text-primary mb-3">数据资源 <span class="text-secondary">Data Resources</span></h1>
+        <p class="text-lg text-gray-600">实验室自建及合作采集的大规模多模态数据集，助力学术研究与技术落地。</p>
+      </div> -->
+      <!-- 页面标题 -->
+      <div class="mb-10 border-l-8 border-primary pl-4">
+        <h1 class="text-4xl font-bold text-primary">数据资源</h1>
+        <p class="text-gray-500 text-lg">Data Resources</p>
+      </div>
+      <!-- <!== DaisyUI Accordion (手风琴) ==>
+      <div class="join join-vertical w-full space-y-4">
+        
+        <!== ==========================
+             1. City-Facade 数据集 
+             ========================== ==>
+        <div class="collapse collapse-arrow join-item bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <input type="radio" name="resources-accordion" checked="checked" /> 
+          
+          <div class="collapse-title text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 hover:bg-blue-50 transition-colors">
+            City-Facade
+          </div>
+          
+          <div class="collapse-content bg-white pt-4 pb-6">
+            <!== 修改 A: 父容器添加 items-center (垂直居中) ==>
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              
+              <!== 左侧：Swiper (保持不变) ==>
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper city-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/JMC.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/CAR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/XHR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/YWR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                  </div>
+                  <div class="swiper-button-prev scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div class="swiper-button-next scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+
+              <!== 右侧：文字描述 (重点修改区域) ==>
+              <!== 
+                   修改 B: 添加以下类名实现完美居中:
+                   1. flex flex-col    : 开启弹性列布局
+                   2. justify-center   : 垂直方向居中
+                   3. items-center     : 水平方向居中 (针对按钮)
+                   4. text-center      : 文本内容居中 (针对段落)
+              ==>
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个大规模城市建筑立面数据集，专门用于 MLS LiDAR 点云的语义层和实例级分割。
+                  该数据集涵盖了中国厦门的多样化街道场景，对于语义分割、城市精细化建模和点云补全的研究具有重要价值。
+                </p>
+                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 City-Facade 项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!== ==========================
+             2. DBNet 数据集 
+             ========================== ==>
+        <div class="collapse collapse-arrow join-item bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <input type="radio" name="resources-accordion" /> 
+          
+          <div class="collapse-title text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-secondary py-4 hover:bg-blue-50 transition-colors">
+            DBNet
+          </div>
+          
+          <div class="collapse-content bg-white pt-4 pb-6">
+            <!== 修改 A: items-center 确保左右两栏垂直对齐 ==>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+              
+              <!== 左侧：Swiper ==>
+              <div class="w-full md:w-8/12 h-48 rounded-lg overflow-hidden shadow-inner bg-gray-100">
+                <div class="swiper dbnet-swiper w-full h-full">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" alt="DBNet" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!== 右侧：文字描述 (重点修改区域) ==>
+              <!== 
+                   修改 B: 同样添加居中类
+              ==>
+              <div class="w-full md:w-4/12 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                  一个涵盖厦门 1000+ 公里道路的综合数据集，包含高精度三维点云、GNSS 和视频图像数据。
+                  它支持自动驾驶决策、驾驶行为分析等研究，并已被全球 600+ 个研究机构和组织采用。
+                </p>
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 DBNet 项目
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!== 底部行动号召 ==>
+      <div class="mt-10 text-center">
+        <div class="alert bg-blue-50 border-primary/20 shadow-sm inline-flex w-auto px-8 py-4 flex-col md:flex-row items-center">
+          <i class="fas fa-database text-primary text-xl mb-2 md:mb-0"></i>
+          <span class="text-gray-700 mx-4">需要使用以上数据集进行学术研究？</span>
+          <a href="contact.html" class="btn btn-sm btn-outline btn-primary">申请数据权限</a>
+        </div>
+      </div> -->
+
+
+      <!-- 数据集展示容器 (不再是 join/accordion，而是垂直排列的卡片) -->
+      <div class="flex flex-col w-full space-y-8">
+        
+        <!-- ==========================
+             1. City-Facade 数据集 (卡片模式)
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 (保留原有样式，但移除折叠交互) -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            City-Facade
+          </div>
+          
+          <!-- 内容区域 (默认展开) -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              
+              <!-- 左侧：Swiper (保持不变) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper city-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/JMC.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/CAR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/XHR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/YWR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                  </div>
+                  <div class="swiper-button-prev scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div class="swiper-button-next scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 (保持居中样式) -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个大规模城市建筑立面数据集，专门用于 MLS LiDAR 点云的语义层和实例级分割。
+                </p>
+                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 City-Facade 项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================
+             2. DBNet 数据集 (卡片模式)
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 (保留 border-secondary 区分颜色) -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            DBNet
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+              
+              <!-- 左侧：Swiper -->
+              <div class="w-full md:w-8/12 h-48 rounded-lg overflow-hidden shadow-inner bg-gray-100">
+                <div class="swiper dbnet-swiper w-full h-full">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" alt="DBNet" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                  一个涵盖厦门 1000+ 公里道路的综合数据集，包含高精度三维点云、GNSS 和视频图像数据，发表在CVPR,
+                  它支持自动驾驶决策、驾驶行为分析等研究，。
+                </p>
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 DBNet 项目
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </main>
+
+
+  <!-- 4. 脚本  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      new Swiper('.city-swiper', {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      });
+      new Swiper('.dbnet-swiper', {
+        loop: true,
+        autoplay: { delay: 3500, disableOnInteraction: false },
+      });
+    });
+    function openPreview(src) { window.open(src, '_blank'); }
+    var _clustrmaps = {key:'sail-demo',path:'/',id:'clustrmaps'};
+  </script>
+
+</body>
+</html>

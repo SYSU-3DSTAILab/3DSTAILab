@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>教学与指导 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点 */
+    .teach-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .teach-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">教学与指导</h1>
+          <p class="text-gray-500 text-lg">Teaching & Supervision</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 课程 ==================== -->
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-book"></i>
+            </div>
+            课程 <span class="text-base font-normal text-gray-400 ml-2">Courses</span>
+          </h2>
+          
+          <!-- 统一列表样式 -->
+          <ul class="teach-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">计算机视觉与模式识别</span> 
+              <span class="text-sm text-gray-500 ml-2">（中文，中山大学大三本科生）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">人工智能技术</span>
+              <span class="text-sm text-gray-500 ml-2">（中文，澳门科技大学一年级研究生）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">科学写作</span>
+              <span class="text-sm text-gray-500 ml-2">（中文，中山大学博士生）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">激光雷达遥感</span>
+              <span class="text-sm text-gray-500 ml-2">（中文，2022年）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 2. 讲座 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-microphone-alt"></i>
+            </div>
+            讲座 <span class="text-base font-normal text-gray-400 ml-2">Lectures</span>
+          </h2>
+          
+          <ul class="teach-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">2022年空天地海智能感知技术暑期学校</span>
+              <span class="block text-sm text-gray-500 mt-1">主题：基于深度学习的三维点云植被提取研究</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 3. 学生指导 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            学生指导 <span class="text-base font-normal text-gray-400 ml-2">Supervision</span>
+          </h2>
+
+          <ul class="teach-list text-gray-700 text-lg pl-2">
+             <li>
+              <span class="font-bold text-slate-800">2024级 本科生大学生创新训练项目</span>
+              <span class="text-sm text-gray-500 ml-2 block sm:inline">课题：面向低空遥感的城市三维空间多功能要素理解数据集与场景关系图生成方法研究</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">2023级 本科生校级大学生创新训练项目</span>
+              <span class="text-sm text-gray-500 ml-2 block sm:inline">课题：面向粤港澳大湾区的多模态城市功能识别——以珠海市为例</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">2023级 本科生校级大学生创新训练项目</span>
+              <span class="text-sm text-gray-500 ml-2 block sm:inline">课题：多源建筑物数据的多尺度表达</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">2022级 本科生校级大学生创新训练项目</span>
+              <span class="text-sm text-gray-500 ml-2 block sm:inline">课题：基于LiDAR三维点云数据的树种分类和碳储量估算</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">2021级 本科生校级大学生创新训练项目</span>
+              <span class="text-sm text-gray-500 ml-2 block sm:inline">课题：基于点云的树木碳储量计算</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

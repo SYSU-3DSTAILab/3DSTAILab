@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>动态 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ 
+  <style>
+    /* 隐藏滚动条 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- ========================
+     主体内容
+     ======================== -->
+<main class="flex-grow container mx-auto px-4 py-8 pt-28">
+  <div class="max-w-4xl mx-auto">
+    
+    <!-- 页面标题 -->
+    <div class="mb-10 border-l-8 border-primary pl-4">
+      <h1 class="text-4xl font-bold text-primary">团队动态</h1>
+      <p class="text-gray-500 text-lg">Recent Events & News</p>
+    </div>
+
+    <!-- 动态时间轴容器 -->
+    <div class="card bg-white shadow-xl border border-gray-100">
+      <div class="card-body p-4 md:p-10">
+          
+        <!-- 关键修改1：包裹整个时间轴的容器，并添加垂直线 -->
+        <div class="timeline-container relative pl-10 md:pl-12">
+          <!-- 这是时间轴的连续垂直线 -->
+          <div class="absolute left-[18px] top-0 bottom-0 w-1 bg-primary z-0"></div>
+
+          <!-- 关键修改2：移除所有 <hr> 和 timeline 相关类，改为 flex 列表 -->
+          <ul class="space-y-8 list-none pl-0">
+
+            <!-- 1. 2026.01.02 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-alt text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-blue-50 border-none shadow-sm p-4">
+                <div class="flex flex-col">
+                  <span class="font-bold text-primary text-lg mb-1">2026-01-02</span>
+                  <p class="text-base text-gray-700 italic">City-Facade: A City-Level Large-Scale Point Cloud Building Facade Dataset for Semantic & Instance Segmentation</p>
+                  <p class="text-base text-gray-700">被中科院一区TOP期刊 <span class="badge badge-primary text-white font-bold">ISPRS Journal</span> 接收。</p>
+                </div>
+              </div>
+            </li>
+
+            <!-- 2. 2025.12.21 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-alt text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-12-21</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic">Exploring the Influence of Urban Land Use and Morphology on Diurnal Heat Variation: Insights from Travis, Texas</span> 被 <span class="font-semibold">Urban Informatics</span> 接收。</p>
+              </div>
+            </li>
+
+            <!-- 3. 2025.12.15 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-secondary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-user-graduate text-secondary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-12-15</span>
+                <p class="text-gray-700 text-sm mb-1">1、博士生<span class="font-bold">韩汀</span>入选中国科协青年科技人才培育工程博士生专项计划；</p>
+                <p class="text-gray-700 text-sm">2、陈一平副教授指导的大学生创新项目获评优秀。</p>
+              </div>
+            </li>
+
+            <!-- 4. 2025.12.2 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-microphone text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-12-02</span>
+                <p class="text-gray-700 text-sm">陈一平副教授参加 <span class="font-semibold">ISPRS ISDE</span> 国际会议获得<span class="text-secondary font-bold font-semibold">最佳口头报告奖</span>。</p>
+              </div>
+            </li>
+
+            <!-- 5. 2025.11.29 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-project-diagram text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-11-29</span>
+                <p class="text-gray-700 text-sm">陈一平副教授获批 <span class="font-semibold">2026年度江西省重点研发计划项目</span>。</p>
+              </div>
+            </li>
+
+            <!-- 6. 2025.11.08 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-signature text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-11-08</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic font-semibold">SGS-3D: High-Fidelity 3D Instance Segmentation via Reliable Semantic Mask Splitting and Growing</span> 被 CCF A类会议 <span class="badge badge-warning text-white font-bold">AAAI 2026</span> 接收。</p>
+              </div>
+            </li>
+
+            <!-- 7. 2025.10.15 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-yellow-600 w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-award text-yellow-600 text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-10-15</span>
+                <p class="text-gray-700 text-sm">陈一平副教授获 <span class="font-semibold">2025地理信息产业协会地理信息科技进步一等奖</span>。</p>
+              </div>
+            </li>
+
+            <!-- 8. 2025.10.08 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-alt text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-10-08</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic">Semantic4Safety: Causal Insights from Zero-shot Street View Imagery Segmentation for Urban Road Safety</span> 和 <span class="italic">GBA-UBF</span> 分别被 <span class="font-semibold">ACM SIGSPATIAL GeoAI/GeoIndustry Workshop</span> 接收。</p>
+              </div>
+            </li>
+
+            <!-- 9. 2025.09.26 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-yellow-500 w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-trophy text-yellow-500 text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-yellow-50 border-none p-4">
+                <span class="font-bold text-primary">2025-09-26</span>
+                <p class="text-gray-700 text-sm">课题组师生参加第九届全国激光雷达大会，获<span class="font-bold">青年优秀论文奖</span>和<span class="font-bold">数据处理竞赛特等奖</span>，陈一平副教授获优秀指导教师奖。</p>
+              </div>
+            </li>
+
+            <!-- 10. 2025.09.20 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-users text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-09-20</span>
+                <p class="text-gray-700 text-sm">陈一平副教授担任会议主席，韩汀担任学术秘书的<span class="font-semibold">低空遥感研讨活动</span>在北京顺利举行。</p>
+              </div>
+            </li>
+
+            <!-- 11. 2025.08.20 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-green-600 w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-leaf text-green-600 text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-08-20</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic">Individual tree segmentation via contrastive learning and semantic priors in point clouds</span> 被中科院一区TOP期刊 <span class="font-semibold text-green-700">Urban Forestry & Urban Greening</span> 接收。</p>
+              </div>
+            </li>
+
+            <!-- 12. 2025.08.11 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-secondary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-award text-secondary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-08-11</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic">VoxelFlow: 2D Semantic Mask-Guided Voxel Flow for Open-Vocabulary 3D Instance Segmentation</span> 在 CW 2025 国际会议获得<span class="text-secondary font-bold">最佳报告提名</span>。</p>
+              </div>
+            </li>
+
+            <!-- 13. 2025.08.03 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-globe-americas text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-08-03</span>
+                <p class="text-gray-700 text-sm">课题组师生在澳大利亚布里斯班参加 <span class="font-semibold">IEEE IGARSS 2025</span>。</p>
+              </div>
+            </li>
+
+            <!-- 14. 2025.07.19 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-map-marked-alt text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-07-19</span>
+                <p class="text-gray-700 text-sm">课题组师生在广东深圳参加<span class="font-semibold">中国空间智能大会</span>。</p>
+              </div>
+            </li>
+
+            <!-- 15. 2025.07.08 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-check-circle text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-07-08</span>
+                <p class="text-gray-700 text-sm">陈一平副教授当选 <span class="font-semibold">IEEE 固定翼垂直起降无人机输电线路训练标准委员会秘书长</span>。</p>
+              </div>
+            </li>
+
+            <!-- 16. 2025.06.06 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-graduation-cap text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-06-06</span>
+                <p class="text-gray-700 text-sm">课题组师生在广东珠海参加<span class="font-semibold">视觉与学习青年学者研讨会</span>。</p>
+              </div>
+            </li>
+
+            <!-- 17. 2025.05.19 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-alt text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-05-19</span>
+                <p class="text-gray-700 text-sm">论文 <span class="italic">A 3D Perspective for Understanding the Mechanisms of UHI and Urban Morphology using Multi-modal Geospatial Data and Interpretable Machine Learning</span> 被中科院一区TOP期刊 <span class="font-semibold">Building and Environment</span> 接收。</p>
+              </div>
+            </li>
+
+            <!-- 18. 2025.05.15 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-secondary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-medal text-secondary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-200 shadow-sm p-4">
+                <span class="font-bold text-primary">2025-05-15</span>
+                <p class="text-gray-700 text-sm">陈一平副教授获<span class="font-bold text-secondary text-base">北京市技术发明一等奖</span>。</p>
+              </div>
+            </li>
+
+            <!-- 19. 2025.04.06 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-plane-departure text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-04-06</span>
+                <p class="text-gray-700 text-sm">课题组师生在阿联酋迪拜参加 <span class="font-semibold">ISPRS Geospatial Week</span>。</p>
+              </div>
+            </li>
+
+            <!-- 20. 2025.02.28 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-secondary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-star text-secondary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-blue-50 border-none p-4">
+                <span class="font-bold text-primary">2025-02-28</span>
+                <p class="text-gray-700 text-sm">陈一平副教授入选<span class="font-bold text-secondary text-base">国家级青年人才</span>。</p>
+              </div>
+            </li>
+
+            <!-- 21. 2025.02.27 -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-green-600 w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-file-alt text-green-600 text-xs"></i>
+              </div>
+              <div class="timeline-box w-full bg-white border border-gray-200 p-4 shadow-sm">
+                <span class="font-bold text-primary">2025-02-27</span>
+                <p class="text-gray-700 text-sm">
+                  论文 <span class="italic font-semibold">Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration</span> 被 CCF A类会议 <span class="badge badge-success text-white font-bold">CVPR 2025</span> 接收。
+                </p>
+              </div>
+            </li>
+
+            <!-- 22. 2025.02.06 (末项) -->
+            <li class="timeline-item relative">
+              <div class="timeline-point absolute -left-11 bg-white border-2 border-primary w-6 h-6 rounded-full flex items-center justify-center z-10">
+                <i class="fas fa-award text-primary text-xs"></i>
+              </div>
+              <div class="timeline-box w-full mb-4 bg-white border border-gray-100 p-4">
+                <span class="font-bold text-primary">2025-02-06</span>
+                <p class="text-gray-700 text-sm">陈一平副教授获 <span class="font-semibold">《空间地理信息》优秀审稿人奖</span>。</p>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+  <!-- 4. 脚本 -->
+  <script src="js/common.js"></script>
+  <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
+  
+  <script>
+    // 访客地图
+    var _clustrmaps = {key:'sail-demo',path:'/',id:'clustrmaps'};
+  </script>
+
+</body>
+</html>

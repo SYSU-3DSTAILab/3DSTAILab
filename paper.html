@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>代表性成果 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 隐藏滚动条但允许滚动 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 论文列表项样式 */
+    .paper-item { 
+      transition: background-color 0.3s ease, border-color 0.3s ease; /* 移除 transform 过渡 */
+      border-left: 4px solid transparent; 
+      background-color: #ffffff;
+    }
+    
+    .paper-item:hover { 
+      background-color: #f8faff; 
+      border-left-color: #003366; /* primary color */
+      /* 删除了 transform: translateX(5px); 确保不移动 */
+    }
+    
+    /* 底部研究卡片悬停 */
+    .research-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    
+    /* 手风琴标题样式微调 */
+    .collapse-title {
+        min-height: 4.5rem;
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">代表性成果</h1>
+          <p class="text-gray-500 text-lg">Selected Publications</p>
+        </div>
+      </div>
+
+      <!-- 内容容器：独立手风琴列表 -->
+      <div class="space-y-6">
+
+        <!-- ==================== 2025 年 ==================== -->
+        <!-- 使用 checkbox 实现独立开关，互不影响 -->
+        <div class="collapse collapse-arrow bg-white rounded-3xl shadow-sm border border-gray-200">
+          <input type="checkbox" checked /> <!-- 默认展开 -->
+          <div class="collapse-title text-2xl font-bold text-primary flex items-center">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="far fa-calendar-check"></i>
+            </div>
+            2025 <span class="text-base font-normal text-gray-400 ml-2">Year</span>
+          </div>
+          <div class="collapse-content">
+            <ul class="space-y-6 pt-4 pb-2 px-2">
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ting Han, Chenxi Du, Yijia Xie, Xinyan Xian, Xinchang Zhang, Bisheng Yang, Yiping Chen*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A 3D perspective for understanding the mechanisms of urban heat island and urban morphology using multi-modal geospatial data and interpretable machine learning</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Building and Environment</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ting Han, Jim Ma, Chaolei Wang, Yang Luo, Hongchao Fan, José Marcato, Xinchang Zhang, Yiping Chen*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">CityInsight: Incorporating Dual-Condition based Diffusion Model into Building Footprint Segmentation from Remote Sensing Imagery</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zilong Huang, Jun He, Junyan Ye, Lihan Jiang, Weijia Li, Yiping Chen*, Ting Han*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration</div>
+                <div class="text-gray-600 text-sm flex items-center flex-wrap gap-2"><span class="italic font-medium text-primary">Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)</span>, 2025 <span class="badge badge-secondary badge-outline badge-sm font-bold">CCF-A</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Hanwen Zhang, Shan Wei, Xindan Liang, Yiping Chen, Hongsheng Zhang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Scale Effects in Mangrove Mapping from Ultra-high-resolution Remote Sensing Imagery</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Jinpeng Li, Yuan Li, Shuhang Zhang, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Image-point Cloud Embedding Network for Simultaneous Image-based Farmland Instance Extraction and Point Cloud-based Semantic Segmentation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yang Luo, Ting Han, Yujun Liu, Jinhe Su, Yiping Chen, Jinyuan Li, Yundong Wu*, Guorong Cai*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">CSFNet: Cross-modal Semantic Focus Network for Semantic Segmentation of Large-Scale Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Siyu Chen, Ting Han, Changshe Zhang, Jinhe Su, Ruisheng Wang, Yiping Chen, Zongyue Wang, Guorong Cai*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">HSPFormer: Hierarchical Spatial Perception Transformer for Semantic Segmentation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems</span>, 2025, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.9, CCF-B</span></div>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==================== 2024 年 ==================== -->
+        <div class="collapse collapse-arrow bg-white rounded-3xl shadow-sm border border-gray-200">
+          <input type="checkbox" />
+          <div class="collapse-title text-2xl font-bold text-primary flex items-center">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="far fa-calendar-check"></i>
+            </div>
+            2024 <span class="text-base font-normal text-gray-400 ml-2">Year</span>
+          </div>
+          <div class="collapse-content">
+            <ul class="space-y-6 pt-4 pb-2 px-2">
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Wangjun Liu, Yiping Chen*, Chaolei Wang, Wuming Zhang, Cheng Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Individual Tree Segmentation of Terrestrial Tropical Mangrove Forest Point Clouds based on Multiple Constrains at Tree Tops</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">National Remote Sensing Bulletin</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yuan Wang, Pei Sun, Wenbo Chu, Yuhao Li, Yiping Chen*, Hui Lin, Zhen Dong, Bisheng Yang, Chao He</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Efficient Multi-modal High-precision Semantic Segmentation from MLS Point Cloud without 3D Annotation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Xue Zhang, Guoguo Yang, Hongjun Su, Yiping Chen, Zhaohui Xue, Qian Du</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Spectral-Spatial Ensemble Low-Rank Domain Adaptation for Hyperspectral Image Classification</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=5.5</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yutong She, Peng Li, Mingqiang Wei, Dong Liang, Yiping Chen, Haoran Xie, Fu Lee Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">eViTBins: Edge-Enhanced Vision-Transformer Bins for Monocular Depth Estimation on Edge Devices</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.5, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Sha Zhu, Lu Li, Jianwei Zhao, Chunguang Zhang, Shaofeng Ni, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Tower and power line segmentation method based on RandLA-Net</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Journal of Physics: Conference Series</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ting Han, Yiping Chen*, Jin Ma, Xiaoxue Liu, Wuming Zhang, Xinchang Zhang, Huajuan Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Point Cloud Semantic Segmentation with Adaptive Spatial Structure Graph Transformer</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Huifang Feng, Wen Li, Lingfei Ma*, Yiping Chen*, Haiyan Guan, Yongtao Yu, José Marcato, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Crack-UNet: Multiscale Feature Learning Network for Pavement Crack Detection From Large-Scale MLS Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.9, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Siyu Qian, Zhaohui Xue*, Mingming Jia, Yiping Chen, Hongjun Su</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Temporal-Spectral-Semantic-Aware Convolutional Transformer Network for Multi-class Tidal Wetland Change Detection in Greater Bay Area</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=12.7</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Shuai Zhang, Biao Wang, Yiping Chen*, Shuhang Zhang, Wuming Zhang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Point and Voxel Cross Perception with Lightweight Cosformer for Large-Scale Point Cloud Semantic Segmentation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Shuai Zhang*, Ting Han, Yumeng Du, Wuming Zhang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Chat3D: Interactive Understanding 3D Scene-Level Point Clouds by Chatting with Foundation Model for Urban Ecological Construction</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=12.7</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yipeng Zhao, Aiguang Li*, Zhigang Du, Yiping Chen, Haili Sun, Zhiyang Zhi</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Joint Structure Detection and Multi-Scale Clustering Filtering for Tunnel Lining Extraction From Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.5, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Shuai Zhang, Yiping Chen*, Biao Wang, Dong Pan, Wuming Zhang, Aiguang Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">SPTNet: Sparse Convolution and Transformer Network for Woody and Foliage Components Separation from Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zhiyun Zhuang, Zhiyang Zhi, Ting Han, Yiping Chen*, Jun Chen, Cheng Wang, Ming Cheng, Xinchang Zhang, Nannan Qin, Lingfei Ma</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Survey of Point Cloud Completion</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=5.5</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yihua Fan, Yongzhen Wang, Dong Liang, Yiping Chen, Haoran Xie, Fu Lee Wang, Jonathan Li, Mingqiang Wei*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Low-FaceNet: Face recognition-driven low-light image enhancement</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Instrumentation and Measurement</span>, 2024, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=5.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">杜雨萌, 陈一平*, 张帅, 张吴明</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">面向地外天体熔岩管的三维探测与形态研究</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">深空探测学报</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">赵昕, 梁福逊, 李健平, 陈一平, 杨必胜</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">基于轻量型移动测量系统的地外熔岩隧道3D探测与地表验证</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">深空探测学报</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">徐懿, 陈锐, 黄汉钧, 孟新栋, 陈一平, 张领, 张骏, 肖龙</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">探地雷达对天体熔岩管道探测技术验证</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">深空探测学报</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Sha Zhu, Qiang Li, Jianwei Zhao, Chunguang Zhang, Guang Zhao, Lu Li, Zhenghua Chen*, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Deep-Learning-Based Method for Extracting an Arbitrary Number of Individual Power Lines from UAV-Mounted Laser Scanning Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Remote Sensing</span>, 2024</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ting Han, Siyu Chen, Jin Ma, Guorong Cai, Wuming Zhang, Yiping Chen*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Road Image Free Space Detection via Learnable Deep Position Encoding</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Geomatics and Information Science of Wuhan University</span>, 2024</div>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==================== 2023 年 ==================== -->
+        <div class="collapse collapse-arrow bg-white rounded-3xl shadow-sm border border-gray-200">
+          <input type="checkbox" />
+          <div class="collapse-title text-2xl font-bold text-primary flex items-center">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="far fa-calendar-check"></i>
+            </div>
+            2023 <span class="text-base font-normal text-gray-400 ml-2">Year</span>
+          </div>
+          <div class="collapse-content">
+             <ul class="space-y-6 pt-4 pb-2 px-2">
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">杨必胜, 陈一平*, 邹勤</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">从大模型看测绘时空信息智能处理的机遇和挑战</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">武汉大学学报(信息科学版)</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ziyi Chen, Yuhua Luo, Jing Wang, Dilong Li, Kyle Gao, Cheng Wang, Jonathan Li*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">BrGAN: Blur Resist Generative Adversarial Network With Multiple Joint Dilated Residual Convolutions for Chlorophyll Color Image Restoration</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing</span>, 2023, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Wentao Sun, Zhipeng Luo, Yiping Chen*, Huxiong Li, Jose Marcato, Wesley Nunes Gonçalves, Jonathan Li*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Click-based Interactive Segmentation Network for Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing</span>, 2023, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Xiaoxue Liu, Yiping Chen*, Cheng Wang, Kun Tan, Jonathan Li*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A lightweight building instance extraction method based on adaptive optimization of mask contour</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2023, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Hui Liu*, Lin Zhang, Qin Ma, Wei Zhao, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">From tree to forest: Multiple carbon sink constraints</div>
+                <div class="text-gray-600 text-sm flex items-center flex-wrap gap-2"><span class="italic font-medium text-primary">The Innovation</span>, 2023 <span class="badge badge-secondary badge-outline badge-sm font-bold">IF=32.1</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Huifang Feng, Lingfei Ma*, Yongtao Yu, Yiping Chen*, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">SCL-GCN: Stratified Contrastive Learning Graph Convolution Network for pavement crack detection from mobile LiDAR point clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2023, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yuan Li, Long Zhao, Yiping Chen*, Na Zhang, Hongchao Fan, Zhenxin Zhang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">3D LiDAR and multi-technology collaboration for preservation of built heritage in China: A review</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation</span>, 2023, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Ting Han, Jun Chen, Hongchao Fan*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Semantic segmentation of city road elements from point cloud based on semi-supervised graph convolution</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Northern Lights Deep Learning Conference Abstracts</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Hongchao Fan*, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Towards detecting speed bumps from MLS point clouds data</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Archives</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Shuai Zhang*, Weisheng Lin, Shuhang Zhang, Wuming Zhang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Learning point cloud context information based on 3D transformer for more accurate and efficient classification</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">The Photogrammetric Record</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Jun Chen, Yiping Chen*, Cheng Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Feature Graph Convolution Network with Attentive Fusion for Large-Scale Point Clouds Semantic Segmentation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Geoscience and Remote Sensing Letters</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Lanying Wang, Dening Lu, Weikai Tan, Yiping Chen, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Tree Species Classification Using Deep Learning Based 3d Point Cloud Transformer on Airborne Lidar Data</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS 2023</span>, 2023</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Shuai Zhang, Weihong Huang, Yiping Chen*, Wuming Zhang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">SPDC: A Super-Point and Point Combining based Dual-Scale Contrastive Learning Network for Point Cloud Semantic Segmentation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Archives</span>, 2023</div>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==================== 2022 年 ==================== -->
+        <div class="collapse collapse-arrow bg-white rounded-3xl shadow-sm border border-gray-200">
+          <input type="checkbox" />
+          <div class="collapse-title text-2xl font-bold text-primary flex items-center">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="far fa-calendar-check"></i>
+            </div>
+            2022 <span class="text-base font-normal text-gray-400 ml-2">Year</span>
+          </div>
+          <div class="collapse-content">
+            <ul class="space-y-6 pt-4 pb-2 px-2">
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yuan Wang, Yuhao Li, Yiping Chen*, Mingjun Peng, Haiting Li, Bisheng Yang, Chi Chen, Zhen Dong</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Automatic Registration of Point Cloud and Panoramic Images in Urban Scenes based on Pole Matching</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Huifang Feng, Yiping Chen*, Zhipeng Luo, Wentao Sun, Wen Li, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Automated Extraction of Building Instances from Dual-Channel Airborne LiDAR Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Youli Ding, Xianwei Zheng*, Yiping Chen, Shuhan Shen, Hanjiang Xiong</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Dense Context Distillation Network for Semantic Parsing of Oblique UAV Images</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=7.6</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Lina Fang, Zhilong You, Guixi Shen, Yiping Chen*, Jianrong Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Joint Deep Learning Network of Point Clouds and Multiple Views for Roadside Object Classification from LiDAR Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2022, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">IF=12.7</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yongzhen Wang, Xuefeng Yan*, Hexiang Bao, Yiping Chen, Lina Gong, Mingqiang Wei, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Detecting Occluded and Dense Trees in Urban Terrestrial Views with a High-Quality Tree Detection Dataset</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2022, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">JCR Q1, IF=8.2, CCF-B</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zhengsen Xu, Haiyan Guan*, Jian Kang, Xiangda Lei, Lingfei Ma, Yongtao Yu, Yiping Chen, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Pavement Crack Detection from CCD Images with a Locally Enhanced Transformer Network</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Zhipeng Luo*, Wen Li, Haojia Lin, Abdul Nurunnabi, Yaojin Lin, Cheng Wang, Xiao-Ping Zhang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">WGNet: Wider Graph convolution Networks for 3D Point Cloud Classification with Local Dilated Connecting and Context-Aware</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Liangwei Shi, Zhimin Yuan, Ming Cheng*, Yiping Chen, Cheng Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">DFAN: Dual-branch Feature Alignment Network for Domain Adaptation on Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yongzhen Wang, Xuefeng Yan*, Donghai Guan, Mingqiang Wei, Yiping Chen, Xiao-Ping Zhang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Cycle-SNSPGAN: Towards Real-World Image Dehazing via Cycle Spectral Normalized Soft Likelihood Estimation Patch GAN</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems (IEEE T-ITS)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Linwei Chen, Bowen Fang, Lei Zhao, Yu Zang*, Weiquan Liu, Yiping Chen, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">DeepUrbanDownscale: A Physics Informed Deep Learning Framework for High-Resolution Urban Surface Temperature Estimation via 3D Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">李渊*, 郭晶, 陈一平</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">基于多源数据的旅游者视觉行为模式与感知评估方法</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">地球信息科学学报</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Jinchao Pan, Limei Xia, Qiufeng Wu*, Yixin Guo, Yiping Chen, Xiaole Tian</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Automatic Strawberry Leaf Scorch Severity Estimation via Faster R-CNN and Few-Shot Learning</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Ecological Informatics</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Lanying Wang, Jianshen Wang, Sarah Narges Fatholahi, Michael A Chapman, Yiping Chen, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Assessing the Impact of COVID-19 on Human Activities in the Greater Toronto Area by Nighttime Light Images and Active COVID-19 Cases</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS 2022</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Chengzhe Yang, Yiping Chen, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Foreground-Background Segmentation of Sequential Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS 2022</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Hongjie He, Hongzhang Xu, Ying Zhang, Michael A Chapman, Yiping Chen, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Automated Detection of Oil/Gas Well Sites Detection from Multi-Source High Spatial Resolution Images</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS 2022</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Lingfei Ma*, Jonathan Li, Haiyan Guan, Yongtao Yu, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">STN: Saliency-Guided Transformer Network for Point-wise Semantic Segmentation of Urban Scenes</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Geoscience and Remote Sensing Letters (IEEE GRSL)</span>, 2022</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Jianping Li, Bisheng Yang, Yiping Chen, Weitong Wu, Yandi Yang, Xin Zhao, Ruibo Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Evaluation of a Compact Helmet-based Laser Scanning System for Aboveground and Underground 3D Mapping</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Archives</span>, 2022</div>
+                </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ==================== 2015-2021 年 ==================== -->
+        <div class="collapse collapse-arrow bg-white rounded-3xl shadow-sm border border-gray-200">
+          <input type="checkbox" />
+          <div class="collapse-title text-2xl font-bold text-primary flex items-center">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+            2015-2021 <span class="text-base font-normal text-gray-400 ml-2">Years</span>
+          </div>
+          <div class="collapse-content">
+             <ul class="space-y-6 pt-4 pb-2 px-2">
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Rongren Wu, Chengzhe Yang, Yaojin Lin*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Urban Vegetation Segmentation using Terrestrial LiDAR Point Clouds based on Point Non-Local Means Network</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yuan Li, Jing Guo, Long Zhao, Yiping Chen*, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Spatial Evolution Path of Gulangyu Island Historical International Community: from the Perspective of Actor-Network Theory</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Heritage Science</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Huaigang Huang, Yiping Chen, Ruisheng Wang*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Lightweight Network for Building Extraction from Remote Sensing Images</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zhipeng Luo, Ziyue Zhang, Wen Li, Yiping Chen*, Cheng Wang, Abdul Nurunnabi, Jonathan Li*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Detection of Individual Trees in UAV LiDAR Point Clouds using a Deep Learning Framework</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Naftaly Wambugu, Yiping Chen*, Zhenlong Xiao, Kun Tan, Mingqiang Wei, Xiaoxue Liu, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Hyperspectral Image Classification on Insufficient-Sample and Feature Learning using Deep Neural Networks: A Review</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Xin Yao, Yiping Chen, Donglie Liu, Zhenkai Zhou, Veraldo Liesenberg, José Marcato Junior, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Average-DInSAR Method for Unstable Escarpments Detection Induced by Underground Coal Mining</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ming Cheng, Guoyan Li, Yiping Chen*, Jun Chen, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Dense Point Cloud Completion based on Generative Adversarial Network</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Naftaly Wambugu, Yiping Chen*, Zhenlong Xiao, Mingqiang Wei, Saifullahi Bello, José Marcato Junior, Jonathan Li*</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A hybrid Deep Convolutional Neural Network for Accurate Land Cover Classification</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Weikai Tan, Dedong Zhang, Lingfei Ma, Lanying Wang, Nannan Qin, Yiping Chen, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Semantic Segmentation of UAV LiDAR Point Clouds of a Stack Interchange with Deep Neural Networks</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zhipeng Luo, Ziyue Zhang, Wen Li, Haojia Lin, Yiping Chen, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A local Topological Information Aware based Deep Learning Method for Ground Filtering from Airborne LiDAR Data</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IGARSS</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Sen Deng, Yidan Feng, Mingqiang Wei, Haoran Xie, Yiping Chen, Jonathan Li, Xiao-Ping Zhang, Jing Qin</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Direction-aware Feature-level Frequency Decomposition for Single Image Deraining</div>
+                <div class="text-gray-600 text-sm flex items-center flex-wrap gap-2"><span class="italic font-medium text-primary">IJCAI</span>, 2021 <span class="badge badge-secondary badge-outline badge-sm font-bold">CCF-A</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Hongtao Nie, Jingjing Chen, Lihong Peng</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Regional Industrial Synergy: Potential and Path Crossing the "Environmental Mountain"</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">Science of the Total Environment</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yuan Wang, Bisheng Yang, Yiping Chen, Fuxun Liang, Zhen Dong</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">JoKDNet: A joint keypoint detection and description network for large-scale outdoor TLS point clouds registration</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Xiaoxue Liu, Yiping Chen*, Mingqiang Wei, Cheng Wang, Wesley Gonalves, Jos Marcato Junior, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Building Instance Extraction Method Based on Improved Hybrid Task Cascade</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Geoscience and Remote Sensing Letters (IEEE GRSL)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Naftaly Wambugu, Yiping Chen, Zhenlong Xiao, Mingqiang Wei, Saifullahi Aminu Bello, José Marcato Junior, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Observations and Geoinformation</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">International Journal of Applied Earth Observation and Geoinformation (IJAEOG)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Huifang Feng, Wen Li, Zhipeng Luo, Yiping Chen*, Sarah Narges Fatholahi, Ming Cheng, Cheng Wang, José Junior, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">GCN-Based Pavement Crack Detection Using Mobile LiDAR Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Haojia Lin, Shangbin Wu, Yiping Chen*, Wen Li, Zhipeng Luo, Yulan Guo, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Semantic segmentation of 3D indoor LiDAR point clouds through feature pyramid architecture search</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2021, <span class="text-orange-600 font-semibold bg-orange-50 px-2 py-0.5 rounded text-xs ml-1">IF=12.7</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Wen Li, Zhipeng Luo, Zhenlong Xiao, Yiping Chen*, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A GCN-based Method for Extracting Power Lines and Pylons from Airborne LiDAR Data</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2021</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Jianlan Gao, Yiping Chen*, José Marcato Junior, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Rapid Extraction of Urban Road Guardrails From Mobile LiDAR Point Clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems (IEEE T-ITS)</span>, 2020</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zhipeng Luo, Di Liu, Jonathan Li, Yiping Chen</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Learning sequential slice representation with an attention-embedding network for 3D shape recognition and retrieval</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2020</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zheng Gong, Haojia Lin, Dedong Zhang, Zhipeng Luo</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">A Frustum-based probabilistic framework for 3D object detection by fusion of LiDAR and camera data</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">ISPRS Journal of Photogrammetry and Remote Sensing</span>, 2020</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Zongliang Zhang, Hongbin Zeng, Jonathan Li, Yiping Chen, Chenhui Yang, Cheng Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Geometric Multi-Model Fitting by Deep Reinforcement Learning</div>
+                <div class="text-gray-600 text-sm flex items-center flex-wrap gap-2"><span class="italic font-medium text-primary">AAAI</span>, 2019 <span class="badge badge-secondary badge-outline badge-sm font-bold">CCF-A</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Yiping Chen, Jingkang Wang, Jonathan Li, Cewu Lu, Zhipeng Luo, Han Xue, Cheng Wang</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">LiDAR-Video Driving Dataset: Learning Driving Policies Effectively</div>
+                <div class="text-gray-600 text-sm flex items-center flex-wrap gap-2"><span class="italic font-medium text-primary">IEEE CVPR</span>, 2018 <span class="badge badge-secondary badge-outline badge-sm font-bold">CCF-A</span></div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Pengdi Huang, Ming Cheng, Yiping Chen, Huan Luo, Cheng Wang, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Traffic sign occlusion detection using mobile laser scanning point clouds</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems (IEEE T-ITS)</span>, 2017</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ziyi Chen, Cheng Wang, Huan Luo, Hanyun Wang, Yiping Chen, Chenglu Wen, Yongtao Yu, Liujuan Cao, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Vehicle detection in high-resolution aerial images based on fast sparse representation classification and multiorder feature</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Intelligent Transportation Systems (IEEE T-ITS)</span>, 2016</div>
+                </li>
+                <li class="paper-item p-4 rounded-lg">
+                <div class="text-gray-500 text-sm mb-1">Ziyi Chen, Cheng Wang, Chenglu Wen, Xiuhua Teng, Yiping Chen, Haiyan Guan, Huan Luo, Liujuan Cao, Jonathan Li</div>
+                <div class="text-slate-900 font-bold text-lg leading-tight mb-2">Vehicle detection in high-resolution aerial images via sparse representation and superpixels</div>
+                <div class="text-gray-600 text-sm"><span class="italic font-medium text-primary">IEEE Transactions on Geoscience and Remote Sensing (IEEE TGRS)</span>, 2015</div>
+                </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 研究方向卡片组 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+      <a href="research1.html" class="research-card card bg-white border border-gray-200 shadow-sm h-32 flex items-center justify-center text-center p-4 group">
+        <div class="space-y-2">
+          <i class="fas fa-cubes text-3xl text-gray-400 group-hover:text-secondary transition-colors"></i>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-primary">三维点云<br>表征学习</h3>
+        </div>
+      </a>
+      <a href="research2.html" class="research-card card bg-white border border-gray-200 shadow-sm h-32 flex items-center justify-center text-center p-4 group">
+        <div class="space-y-2">
+          <i class="fas fa-map-marked-alt text-3xl text-gray-400 group-hover:text-secondary transition-colors"></i>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-primary">遥感<br>要素提取</h3>
+        </div>
+      </a>
+      <a href="research3.html" class="research-card card bg-white border border-gray-200 shadow-sm h-32 flex items-center justify-center text-center p-4 group">
+        <div class="space-y-2">
+          <i class="fas fa-city text-3xl text-gray-400 group-hover:text-secondary transition-colors"></i>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-primary">三维<br>场景生成</h3>
+        </div>
+      </a>
+      <a href="research4.html" class="research-card card bg-white border border-gray-200 shadow-sm h-32 flex items-center justify-center text-center p-4 group">
+        <div class="space-y-2">
+          <i class="fas fa-brain text-3xl text-gray-400 group-hover:text-secondary transition-colors"></i>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-primary">时空<br>大模型</h3>
+        </div>
+      </a>
+    </div>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

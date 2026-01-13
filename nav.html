@@ -1,0 +1,92 @@
+<!-- DaisyUI 导航栏 -->
+<!-- 修改1: h-20 -> h-24 (增加高度，约96px) -->
+<div class="navbar bg-navbg text-navtext shadow-lg fixed top-0 z-50 h-20 transition-all duration-300 w-full font-sans">
+  
+  <!-- 容器: px-4 -> px-8 (增加左右留白，显得更从容) -->
+  <div class="w-full h-full flex items-center justify-between px-4 lg:px-8">
+
+    <!-- 左侧: LOGO -->
+    <div class="flex-shrink-0 flex items-center h-full">
+      <a href="index.html" class="flex items-center h-full py-3 hover:opacity-80 transition-opacity">
+        <img src="img/3DSTAILAB.png" alt="3DAILAB Logo" class="h-full w-auto object-contain mr-2" />
+      </a>
+    </div>
+
+    <!-- 右侧: 桌面端菜单 (8个分类) -->
+    <!-- 
+       修改2: hidden md:flex -> hidden xl:flex 
+       (因为按钮变大了，为了防止拥挤换行，建议在超大屏 xl 才显示完整菜单，小于1280px显示汉堡菜单)
+       修改3: gap-0.5 -> gap-1 (稍微增加按钮之间的间距)
+    -->
+    <div class="hidden xl:flex flex-none items-center gap-1">
+      
+      <!-- 
+         通用按钮样式修改重点:
+         1. h-14: 增加按钮高度
+         2. text-lg: 增大字体
+         3. font-medium: 稍微加粗
+         4. px-5: 增加左右内边距
+      -->
+      
+      <!-- 主页 -->
+      <a href="index.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-home"></i> 主页
+      </a>
+
+      <!-- 论文 -->
+      <a href="paper.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-file-alt"></i> 论文
+      </a>
+
+      <!-- 项目 -->
+      <a href="project.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-tasks"></i> 项目
+      </a>
+
+      <!-- 教学 -->
+      <a href="teaching.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-chalkboard-teacher"></i> 教学
+      </a>
+
+      <!-- 获奖 -->
+      <a href="award.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-medal"></i> 获奖
+      </a>
+
+      <!-- 数据集与软件 -->
+      <a href="statistic.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-database"></i> 数据集与软件
+      </a>
+
+      <!-- 团队 -->
+      <a href="team.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-users"></i> 团队
+      </a>
+
+      <!-- 联系 -->
+      <a href="contact.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
+        <i class="fas fa-envelope"></i> 联系
+      </a>
+    </div>
+
+    <!-- 移动端/平板端: 汉堡菜单 -->
+    <!-- 修改4: md:hidden -> xl:hidden (配合上面的修改，在小于 xl 屏幕时显示汉堡菜单) -->
+    <div class="dropdown dropdown-end xl:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle text-navtext"> <!-- text-white 改为 text-navtext 以适应浅色背景 -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- h-8 w-8 调大图标 -->
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+      </div>
+      <ul tabindex="0" class="menu menu-lg dropdown-content mt-4 z-[1] p-2 shadow-2xl bg-white rounded-box w-72 text-slate-800 right-0 border border-gray-100">
+        <li><a href="index.html" class="py-3 text-lg"><i class="fas fa-home w-6"></i>主页</a></li>
+        <li><a href="paper.html" class="py-3 text-lg"><i class="fas fa-file-alt w-6"></i>论文</a></li>
+        <li><a href="project.html" class="py-3 text-lg"><i class="fas fa-tasks w-6"></i>项目</a></li>
+        <li><a href="teaching.html" class="py-3 text-lg"><i class="fas fa-chalkboard-teacher w-6"></i>教学</a></li>
+        <li><a href="award.html" class="py-3 text-lg"><i class="fas fa-medal w-6"></i>获奖</a></li>
+        <li><a href="statistic.html" class="py-3 text-lg"><i class="fas fa-database w-6"></i>数据集与软件</a></li>
+        <li><a href="team.html" class="py-3 text-lg"><i class="fas fa-users w-6"></i>团队</a></li>
+        <li><a href="contact.html" class="py-3 text-lg"><i class="fas fa-envelope w-6"></i>联系</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

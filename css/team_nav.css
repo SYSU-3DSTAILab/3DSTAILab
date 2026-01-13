@@ -1,0 +1,60 @@
+
+/* ========== 团队右侧导航 ========== */
+.side-team-nav{
+  position:fixed;
+  left:18px;
+  top:300px;
+  transform:translateY(-50%);
+  z-index:1050;
+  width:200px;
+}
+/* 导航按钮 */
+.side-team-nav .nav-pills .nav-link{
+  margin-bottom:.5rem;
+  font-size:20px;                    /* 字号 */
+  font-weight:1000;                /* 中等字重 */
+  color:#495057;                     /* 字色 */
+  background:#f8f9fa;                /* 默认背景 */
+ border:2px solid #c8ced3;       /* 边框加粗 + 颜色变浅 */
+  border-radius:.5rem;               /* 圆角 */
+  padding:.45rem .35rem;
+  text-align:center;
+  cursor:pointer;
+  transition:all .2s ease-in-out;
+}
+/* 当前高亮 */
+.side-team-nav .nav-pills .nav-link.active{
+  background:#003366;
+  color:#fff;
+  border-color:#003366;
+}
+/* 悬停 */
+.side-team-nav .nav-pills .nav-link:hover{
+  background:#3793ee;
+  border-color:#adb5bd;
+  transform:translateY(-2px)  scale(1.1);  /* 上浮+微放大 */
+}
+
+/* ========= 团队成员卡片（右侧内容区） ========= */
+/* 统一圆角 + 边框 */
+#faculty,#phd,#master,#bachelor,#graduate,#visitor .card{
+  border:1px solid #e0e0e0;
+  border-radius:.75rem;
+  overflow:hidden;
+  transition:all .2s ease-in-out;
+}
+/* 悬停形状：轻微放大 + 阴影 */
+#faculty,#phd,#master,#bachelor,#graduate,#visitor .card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+/* 卡片内图片圆角 */
+#faculty,#phd,#master,#bachelor,#graduate,#visitor .card-img-top{
+  border-top-left-radius:.75rem;
+  border-top-right-radius:.75rem;
+}
+html{scroll-behavior:smooth;}
+
+/* 给固定导航让位 */
+body{padding-top:76px;}
+

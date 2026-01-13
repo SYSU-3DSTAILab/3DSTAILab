@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>数据集与软件 | 3DAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- 3. Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <style>
+    /* 强制 Swiper 适应容器大小，防止溢出 */
+    .swiper {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    .swiper-slide {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 强制图片裁剪填充，不许变形，不许溢出 */
+    .swiper-slide img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    
+    /* 调整 Swiper 导航按钮颜色 */
+    .swiper-button-prev, .swiper-button-next {
+      color: #fff;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28">
+    
+    <div class="max-w-4xl mx-auto">
+      <!-- 页面标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">数据资源</h1>
+          <p class="text-gray-500 text-lg">Data Resources</p>
+        </div>
+      </div>
+      <!-- 数据集展示容器 -->
+      <div class="flex flex-col w-full space-y-8">
+        <!-- ==========================
+             1. GooglrEarth-OPI 数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            GooglrEarth-OPI
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://" alt="img" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个建筑物功能区的大湾区级数据集，包含中国粤港澳大湾区6个城市。
+                </p>
+                <a href="https://" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 GooglrEarth-OPI 项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- ==========================
+             2. City-Facade 数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            City-Facade
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              
+              <!-- 左侧：Swiper -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper city-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/statistic/JMC.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="img/statistic/CAR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="img/statistic/XHR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                    <div class="swiper-slide"><img src="img/statistic/YWR.gif" alt="img" onclick="openPreview(this.src)"></div>
+                  </div>
+                  <div class="swiper-button-prev scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                   <div class="swiper-button-next scale-75 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个大规模城市级建筑立面数据集，包含中国整个厦门市，专门用于 MLS LiDAR 点云的语义层和实例级分割。
+                </p>
+                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 City-Facade 项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================
+             3. DBNet 数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            DBNet
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+              
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" alt="DBNet" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个涵盖厦门 1000+ 公里道路的城市级数据集，具有车载点云-视频-司机行为（多模态）数据,包含中国整个厦门市。
+                </p>
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问 DBNet 项目
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+         <!-- ==========================
+             4. 机载点云-建筑物语义与实例数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            机载点云-建筑物语义与实例数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https:" alt="img" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含机载点云-建筑物语义与实例的城市级数据集，数据位于德国海德堡市。
+                </p>
+                <a href="https://" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问该项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+          <!-- ==========================
+             5. 3D-City-LLM数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            3DCity-LLM
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/statistic/City-LLM-Data.png" alt="3DCity-LLM" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含机载点云的城市级数据集，该数据集包含单体-关系-场景功能，数据位于德国海德堡市。
+                </p>
+                <a href="https://github.com/Lijp411/3D-City-LLM" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问3DCity-LLM项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+         <!-- ==========================
+             6. 车载-机载点云数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            车载-机载点云数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/",alt="img" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含载-机载点云（多源点云）语义-实例-本文描述功能（多模态）的城市级数据集，为低空飞行路径规划与安全风险评估提供高质量数据基础与通用模型，数据位于漳州港，香港。
+                </p>
+                <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问该项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+         <!-- ==========================
+             7.地面全要素语义、实例数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            地面全要素语义、实例数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/" " onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含遥感图像-摄影测量-车载点云（多模态）的城市级数据集，进行地面全要素语义、实例分割，数据位于漳州港。
+                </p>
+                <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问该项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================
+             8.地面全要素语义、实例数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            地面全要素语义、实例数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/" alt="img" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含遥感图像-摄影测量-车载点云（多模态）的城市级数据集，进行地面全要素语义、实例分割，数据位于漳州港。
+                </p>
+                <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问该项目
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. 脚本  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      new Swiper('.city-swiper', {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      });
+      new Swiper('.dbnet-swiper', {
+        loop: true,
+        autoplay: { delay: 3500, disableOnInteraction: false },
+      });
+    });
+    function openPreview(src) { window.open(src, '_blank'); }
+    var _clustrmaps = {key:'sail-demo',path:'/',id:'clustrmaps'};
+  </script>
+
+</body>
+</html>
