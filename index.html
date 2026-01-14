@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>主页 | 3DAILab</title>
+  <title>主页 | 3DSTAILab</title>
   
   <!-- 1. 核心框架 -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -76,7 +76,7 @@
             
             <div class="text-center mt-6">
               <h2 class="text-3xl font-bold text-slate-800">陈一平</h2>
-              <p class="text-gray-600 mt-1 font-medium">副教授 / 博士生导师</p>
+              <p class="text-gray-600 mt-1 font-medium">教授 / 博士生导师</p>
               <p class="text-sm text-gray-500 mt-2">团队负责人 · 中山大学逸仙学者 · 百人计划</p>
             </div>
           </div>
@@ -85,12 +85,8 @@
           <div class="lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
             <div class="space-y-4 text-lg text-gray-700 leading-relaxed text-justify">
               <p>
-                <strong>陈一平</strong>，中山大学遥感科学与技术学院副教授、博士生导师,入选 <span class=" px-1 rounded font-bold text-red-500">国家级青年人才计划</span>。曾担任<strong>中山大学科学研究院副处长</strong>（2023.5-2025.5）。她是 <strong>IEEE高级会员</strong>、<strong>CSIG高级会员</strong>。
-              </p>
-              <p>
+                <strong>陈一平</strong>，中山大学遥感科学与技术学院教授、博士生导师,入选 <span class=" px-1 rounded font-bold text-red-500">国家级青年人才计划</span>,担任3DSTAILab负责人，曾担任<strong>中山大学科学研究院副处长</strong>（2023.5-2025.5）。她是 <strong>IEEE高级会员</strong>、<strong>CSIG高级会员</strong>。
                 主要研究方向包括 <span class=" px-1 rounded font-bold text-secondary">激光雷达遥感</span>、<span class=" px-1 rounded font-bold text-secondary">三维点云智能处理</span>、<span class="bg-primary-100 px-1 rounded font-bold text-secondary">遥感图像处理</span> 以及 <span class="bg-primary-100 px-1 rounded font-bold text-secondary">可持续发展应用</span>。
-              </p>
-              <p>
                 陈教授主持包括 <strong>国家自然科学基金</strong> 在内的科研项目 <strong>12</strong> 项，参与包括国家自然科学基金重点项目在内的科研项目 <strong>20</strong> 余项。
                 目前已在 <em>ISPRS JPRS、CVPR、IEEE TGRS、IEEE TITS、JAG</em> 等国内外重要期刊和会议上发表论文 <strong>80</strong> 余篇。
               </p>
@@ -338,15 +334,151 @@
         </div>
       </div>
       <!-- 卡片内容 -->
-      <div class="gallery-container bg-white p-6 rounded-3xl shadow-sm border border-gray-200 overflow-hidden">
-        <div class="gallery-track">
-          <!-- 示例图片，请替换为真实链接 -->
-          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/Scene4U.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
-          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/HSPFormer-final.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
-          <img src="https://github.com/Ting-Devin-Han/Ting-Devin-Han.github.io/raw/master/figures/ASGFormer.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
-          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/PVCFormer.png" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
-          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/SPTNet.png" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
-          <img src="https://github.com/Ting-Devin-Han/Epingpages.github.io/raw/master/images/DBNet.gif" class="h-48 w-72 object-cover rounded-xl mx-3 cursor-pointer hover:scale-105 transition-transform" onclick="openModal(this.src)">
+      <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-2 overflow-hidden">
+        <div class="news-scroll h-80 overflow-y-auto p-6 space-y-5">
+            <!-- 论文 1 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/IJAEO.jpg" 
+                       alt="Paper " 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                 City-scale building instance segmentation from LiDAR point clouds via structure-aware method
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Jinpeng Li, Yuan Li, <strong>Yiping Chen</strong>, Hongchao Fan, Ruisheng Wang
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">IJAEO</span> 2026
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://www.sciencedirect.com/science/article/pii/S1569843226000026" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href=" https://github.com/Lijp411/City-BIS" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 论文 2 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/CiityInsight.gif" 
+                       alt="Paper " 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  CityInsight: Incorporating Dual-Condition based Diffusion Model into Building Footprint Segmentation from Remote Sensing Imagery
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Ting Han, Jim Ma, Chaolei Wang, Yang Luo, Hongchao Fan, José Marcato, Xinchang Zhang, <strong>Yiping Chen*</strong>
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">TGRS</span> 2025
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://ieeexplore.ieee.org/document/11073567" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="https://github.com/Ting-Devin-Han/CityInsight" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 论文 3 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/Scene4U.jpg" 
+                       alt="Paper" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Zilong Huang, Jun He, Junyan Ye, Lihan Jiang, Weijia Li, <strong>Yiping Chen*</strong>, Ting Han*
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">CVPR</span> 2025
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Scene4U_Hierarchical_Layered_3D_Scene_Reconstruction_from_Single_Panoramic_Image_CVPR_2025_paper.html" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+              <!-- 论文 4 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/scale.jpg" 
+                       alt="Paper" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  Scale Effects in Mangrove Mapping from Ultra-high-resolution Remote Sensing Imagery
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Hanwen Zhang, Shan Wei, Xindan Liang, <strong>Yiping Chen</strong>, Hongsheng Zhang
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">IJAEO</span> 2025
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://www.sciencedirect.com/science/article/pii/S156984322400668X" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+              <!-- 论文 5 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/CSFNet.gif" 
+                       alt="Paper" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  CSFNet: Cross-modal Semantic Focus Network for Semantic Segmentation of Large-Scale Point Clouds
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Yang Luo, Ting Han, Yujun Liu, Jinhe Su, <strong>Yiping Chen</strong>, Jinyuan Li, Yundong Wu*, Guorong Cai*
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">TGRS</span> 2025
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://ieeexplore.ieee.org/abstract/document/10856216" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </section>
@@ -380,9 +512,33 @@
           </div>
         </div>
         <!-- 卡片内容 -->
-        <div class="partners-grid bg-white p-8 rounded-3xl shadow-sm border border-gray-200 flex flex-wrap justify-center content-center gap-12 h-[400px]">
-          <a href="https://www.mit.edu/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" class="w-32"></a>
-          <a href="https://www.nasa.gov/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" class="w-32"></a>
+        <div class="partners-grid bg-white p-8 rounded-3xl shadow-sm border border-gray-200 flex flex-wrap justify-center items-center gap-8 md:gap-16 h-[400px]">
+          
+          <!-- 1. 滑铁卢大学 (方形/盾形：限制高度) -->
+          <a href="https://uwaterloo.ca/" target="_blank" class="flex items-center justify-center hover:scale-110 transition-transform duration-300">
+            <img src="img/collaborations/University_of_Waterloo_seal.svg.png" class="h-20 w-auto object-contain">
+          </a>
+
+          <!-- 2. NTNU (长条形：稍微调高一点高度，或者限制最大宽度) -->
+          <a href="https://www.ntnu.edu/" target="_blank" class="flex items-center justify-center hover:scale-110 transition-transform duration-300">
+            <!-- 长条Logo高度设低一点(h-10或h-12)视觉上才平衡，或者保持h-16但由它自己拉长 -->
+            <img src="img/collaborations/ntnu-logo-web-v1.svg" class="h-14 w-auto object-contain">
+          </a>
+
+          <!-- 3. 格拉斯哥大学 (矩形) -->
+          <a href="https://www.gla.ac.uk/" target="_blank" class="flex items-center justify-center hover:scale-110 transition-transform duration-300">
+            <img src="img/collaborations/Glasgow.png" class="h-16 w-auto object-contain">
+          </a>
+
+          <!-- 4. 厦门大学 (圆形：限制高度) -->
+          <a href="https://www.xmu.edu.cn/" target="_blank" class="flex items-center justify-center hover:scale-110 transition-transform duration-300">
+            <img src="img/collaborations/xiamen.png" class="h-20 w-auto object-contain">
+          </a>
+
+          <!-- 5. 香港大学 (盾形+文字：需要大一点) -->
+          <a href="https://www.hku.hk/" target="_blank" class="flex items-center justify-center hover:scale-110 transition-transform duration-300">
+            <img src="img/collaborations/hku-115.svg" class="h-20 w-auto object-contain">
+          </a>
         </div>
     </section>
 
