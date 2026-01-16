@@ -80,7 +80,7 @@
             <!-- 左侧：图片区域 (占据 2/3) -->
             <!-- w-full lg:w-2/3 -->
             <div class="w-full lg:w-2/3 h-64 lg:h-auto rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-100 relative group">
-                <img src="https://via.placeholder.com/800x400?text=Research+Overview+Image" 
+                <img src="img/Selected_pub/Scene4U.jpg" 
                      alt="Research Image" 
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
@@ -88,15 +88,13 @@
             <!-- 右侧：文字介绍 (占据 1/3) -->
             <!-- w-full lg:w-1/3 -->
             <div class="w-full lg:w-1/3 flex flex-col justify-center space-y-4">
-              <p class="text-gray-700 leading-relaxed text-justify text-sm lg:text-base">
-                Study efficient representation and feature learning methods for 3D point cloud data, including basic tasks such as point cloud segmentation, classification, and registration. Explore the extraction of structural and semantic information.
+              <p class="text-gray-700 leading-relaxed text-justify text-base lg:text-lg">
+                结合生成式AI与神经渲染技术（如NeRF/Gaussian Splatting），探索从文本或图像自动生成高质量三维场景。
               </p>
-              
               <!-- 关键词标签 -->
-              <div class="flex flex-wrap gap-2">
-                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Segmentation</span>
-                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Feature Extraction</span>
-                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Self-supervised</span>
+              <div class="flex flex-wrap gap-2 justify-center">
+                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">3D Generation</span>
+                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Gaussian Splatting</span>
               </div>
             </div>
 
@@ -113,66 +111,39 @@
             代表性成果 <span class="text-base font-normal text-gray-400 ml-2">Representative Publications</span>
           </h2>
           
-          <div class="space-y-8"> <!-- 论文之间的间距 -->
-            
-            <!-- 论文 1 -->
-            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-              
-              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
-              <!-- shrink-0 防止被压缩 -->
-              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="https://via.placeholder.com/300x200?text=Paper+Thumbnail+1" 
-                       alt="Paper Thumbnail" 
-                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                       onclick="window.open('#pdf_link')" />
-              </div>
+           <!-- 卡片内容 -->
+          <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-2 overflow-hidden">
+            <div class="news-scroll h-80 overflow-y-auto p-6 space-y-5"> 
+                <!-- 论文 1 -->
+                <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+                  
+                  <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+                  <!-- shrink-0 防止被压缩 -->
+                  <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                      <img src="img/Selected_pub/Scene4U.jpg" 
+                          alt="Paper" 
+                          class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                          onclick="window.open('#pdf_link')" />
+                  </div>
 
-              <!-- 右侧：论文信息 -->
-              <div class="flex-grow flex flex-col justify-center">
-                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                  Parallax Attention for Unsupervised Stereo Correspondence Learning
-                </h4>
-                <div class="text-sm text-gray-500 mb-2 italic">
-                  Longguang Wang, Yulan Guo, Yingqian Wang, Zhengfa Liang, Zaiping Lin, Jungang Yang, Wei An
+                  <!-- 右侧：论文信息 -->
+                  <div class="flex-grow flex flex-col justify-center">
+                    <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                      Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration
+                    </h4>
+                    <div class="text-sm text-gray-500 mb-2 italic">
+                      Zilong Huang, Jun He, Junyan Ye, Lihan Jiang, Weijia Li, <strong>Yiping Chen*</strong>, Ting Han*
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-primary font-bold text-sm">CVPR</span> 2025
+                      <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                      <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Scene4U_Hierarchical_Layered_3D_Scene_Reconstruction_from_Single_Panoramic_Image_CVPR_2025_paper.html" class="text-secondary text-sm hover:underline">[Paper]</a>
+                      <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">TPAMI 2022</span>
-                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
-                </div>
-              </div>
-            </div>
 
-            <!-- 论文 2 -->
-            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-              
-              <!-- 左侧：论文缩略图 -->
-              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="https://via.placeholder.com/300x200?text=Paper+Thumbnail+2" 
-                       alt="Paper Thumbnail" 
-                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer" 
-                       onclick="window.open('#pdf_link')" />
               </div>
-
-              <!-- 右侧：论文信息 -->
-              <div class="flex-grow flex flex-col justify-center">
-                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                  You Only Train Once: Learning General and Distinctive 3D Local Descriptors
-                </h4>
-                <div class="text-sm text-gray-500 mb-2 italic">
-                  Sheng Ao, Yulan Guo, Yingying Hu, Bo Yang, Andrew Markham, Zengping Chen
-                </div>
-                <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">TPAMI 2023</span>
-                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
 
       </div>
