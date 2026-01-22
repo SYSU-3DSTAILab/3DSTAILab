@@ -4,12 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>主页 | 3DSTAILab</title>
-  <!-- 告诉浏览器不要缓存这个页面，或者缓存过期时间为0 -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <!-- 规范化链接：告诉搜索引擎和浏览器，/ 和 /index.html 是同一个东西 -->
-  <link rel="canonical" href="https://sysu-3dstailab.github.io/3DSTAILab/" />
+  
 
   <!-- 1. 核心框架 -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -24,26 +19,7 @@
   <script src="js/common.js"></script>
   <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
 
-  <!-- 【关键修改】把解毒脚本放在这里，并增加自动刷新逻辑 -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        // 如果发现有 Service Worker在运行
-        if (registrations.length > 0) {
-          for(let registration of registrations) {
-            registration.unregister();
-            console.log("检测到旧版 Service Worker，已强制注销");
-          }
-          // 注销后，强制刷新页面一次，让用户直接看到正常的网站
-          // 为了防止无限刷新，我们设置一个 sessionStorage 标记
-          if (!sessionStorage.getItem('sw_cleared')) {
-            sessionStorage.setItem('sw_cleared', 'true');
-            window.location.reload();
-          }
-        }
-      });
-    }
-  </script>
+  
 
   <style>
     /* 隐藏滚动条 */
