@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>专利和软著 | 3DSTAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点 */
+    .project-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">专利和软著</h1>
+          <p class="text-gray-500 text-lg">Patents and Software Copyrights</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 主持项目 ==================== -->
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-flask"></i>
+            </div>
+            国家发明专利（授权） <span class="text-base font-normal text-gray-400 ml-2">Patents</span>
+          </h2>
+          
+          <!-- 统一列表样式 -->
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">一种激光点云融合联合测绘构建建筑物栋层户级的实体方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（授权时间: 2025.02.13）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于堆叠深度残差网络的遥感图像语义分割方法及系统</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL202311609856.4, 受理时间: 2024.10.17）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">道路点云中护栏的提取方法及装置</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL202010615878.1, 授权日期: 2024.09.20）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种树木点云木质成分与叶片成分的分离方法及系统</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: 2023103965180, 受理时间: 2023.04.14）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于激光点云的城市道路场景语义分割方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN 116071661 B, 授权时间: 2023.06.23）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于深度学习的激光扫描 SLAM 室内三维点云质量评价方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN201910051741.5, 授权时间: 2021.04.30）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种用于 TLS 多回波点云植被遮挡目标的探测和分析方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201811494004.4, 授权时间: 2020.11.10）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于体素生长和地面激光点云的树木胸径自动计算方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201810638020.X, 授权时间: 2020.08.11）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种植被提取方法及系统</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL2016 10028156.X, 授权时间: 2018.10.19）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">二等水准测量装置</span> 
+              <span class="text-sm text-gray-500 ml-2">（ 专利号授权号: ZL 202430737610.4, 授权时间: 2025.07.04）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于车载激光点云和卫星影像的道路边界线复原方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN112561808B, 授权时间: 2023.07.18）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于车载激光点云的路面裂缝检测方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN 112785548 B, 授权时间: 2023.07.18）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于高空间分辨率光学遥感图像的建筑物实例自动提取方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN 112883887 B, 授权时间: 2023.07.18）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于图卷积和半监督学习网络的城市场景语义分割方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: CN 116310350 B, 授权时间: 2023.08.18）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于深度学习的激光扫描三维点云树木自动分类方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201610813682.7, 授权时间: 2020.04.17）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于探地雷达回波数据的自动汇聚成像方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201810005327.6, 授权时间: 2020.07.07）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于多回波机载激光扫描数据的城市树木碳含量估计方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201711248101.0, 授权时间: 2020.06.23）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于三维点云数据的电缆自动提取重构方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201710884106.6, 授权时间: 2020.07.24）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于车载激光扫描点云的路灯杆自动提取技术</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利授权号: ZL201610354980.4, 授权时间: 2020.05.22）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">基于车载移动激光扫描点云的三维公路曲线重建方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利号: ZL201910674347.7, 受理时间: 2022.01.18）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种利用生成对抗网络进行稠密点云补全的算法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利号: ZL202110768864.8, 授权时间: 2022.06.21）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">一种基于哨兵一号合成孔径雷达图像的海冰测绘方法</span> 
+              <span class="text-sm text-gray-500 ml-2">（专利号: ZL201911274515.X, 授权时间: 2023.04.07）</span>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>
