@@ -337,12 +337,113 @@
           </div>
         </div>
 
+          <!-- ==========================
+             8.*******数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            **********数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/" " onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含遥感图像-摄影测量-车载点云（多模态）的城市级数据集，进行地面全要素语义、实例分割，数据位于漳州港。
+                </p>
+                <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问该项目
+                </a>
+                <!-- 新增申请按钮 -->
+                  <button onclick="openRequestModal(' **********数据集')" class="btn btn-primary btn-sm text-white gap-2">
+                    <i class="fas fa-file-signature"></i> 申请数据
+                  </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
 
       </div>
 
     </div>
   </main>
+
+
+<!-- ========================
+        申请数据模态框 (Modal)
+       ======================== -->
+  <dialog id="request_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <!-- 关闭按钮 -->
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      </form>
+      
+      <h3 class="font-bold text-lg mb-4 text-primary">
+        申请数据：<span id="modal_dataset_display" class="text-secondary"></span>
+      </h3>
+      
+      <!-- Web3Forms 表单 -->
+      <form id="request_form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+        
+        <!-- 核心配置 -->
+        <input type="hidden" name="access_key" value="8f6212f5-e6b9-4719-9d56-63c11014c11e">
+        <!-- 动态填写的数据集名称 -->
+        <input type="hidden" name="dataset" id="modal_dataset_input">
+        <!-- 防止垃圾邮件的蜜罐 -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- 姓名 -->
+        <div class="form-control w-full">
+          <label class="label"><span class="label-text">姓名 (Name) *</span></label>
+          <input type="text" name="name" placeholder="请输入您的姓名" class="input input-bordered w-full" required />
+        </div>
+
+        <!-- 所属单位 -->
+        <div class="form-control w-full">
+          <label class="label"><span class="label-text">所属单位 (Affiliation) *</span></label>
+          <input type="text" name="affiliation" placeholder="学校/研究所/公司名称" class="input input-bordered w-full" required />
+        </div>
+
+        <!-- 邮箱 -->
+        <div class="form-control w-full">
+          <label class="label"><span class="label-text">联系邮箱 (Email) *</span></label>
+          <input type="email" name="email" placeholder="example@email.com" class="input input-bordered w-full" required />
+        </div>
+
+        <!-- 预期用途 -->
+        <div class="form-control w-full">
+          <label class="label"><span class="label-text">预期用途 (Intended Use) *</span></label>
+          <textarea name="usage" class="textarea textarea-bordered h-24" placeholder="请简要描述您将如何使用该数据（如：学术研究、项目名称等）" required></textarea>
+        </div>
+
+        <div class="modal-action">
+          <button type="submit" class="btn btn-primary w-full">提交申请</button>
+        </div>
+      </form>
+    </div>
+    <!-- 点击背景关闭 -->
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+
 
   <!-- 4. 脚本  -->
   <script>
@@ -358,6 +459,24 @@
       });
     });
     function openPreview(src) { window.open(src, '_blank'); }
+
+    // ====== 新增：打开申请模态框的函数 ======
+    function openRequestModal(datasetName) {
+    // 1. 获取模态框和表单
+    const modal = document.getElementById('request_modal');
+    const form = document.getElementById('request_form'); // 获取表单元素
+    // 2. [核心修改] 重置表单：清空上一次填写的姓名、邮箱等
+    if (form) {
+      form.reset();
+    }
+    // 3. 将点击的数据集名称填入显示的标题中
+    document.getElementById('modal_dataset_display').innerText = datasetName;
+    // 4. 将点击的数据集名称填入隐藏的 input 中
+    document.getElementById('modal_dataset_input').value = datasetName;
+    // 5. 显示模态框
+    modal.showModal();
+    }
+    
     var _clustrmaps = {key:'sail-demo',path:'/',id:'clustrmaps'};
   </script>
 

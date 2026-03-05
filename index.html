@@ -569,31 +569,41 @@
           </h3>
           
           <form id="contact-form" class="space-y-4">
-            <div class="form-control w-full">
-              <label class="label"><span class="label-text font-semibold">姓名 Name</span></label>
-              <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
-            </div>
+          <!-- ！！！把您刚刚在邮件里收到的 Access Key 填在下面 value 里面 ！！！ -->
+          <input type="hidden" name="access_key" value="8dfb19a3-595e-4d2d-931e-4fc9548a6492">
+                                                       
+          <!-- 设置您收到邮件时的默认标题 -->
+          <input type="hidden" name="subject" value="[3DSTAILab] 网站新留言">
+          <!-- 防垃圾邮件机器人（普通用户看不见） -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-            <div class="form-control w-full">
-              <label class="label"><span class="label-text font-semibold">邮箱 Email</span></label>
-              <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
-            </div>
+          <div class="form-control w-full">
+            <label class="label"><span class="label-text font-semibold">姓名 Name</span></label>
+            <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
+          </div>
 
-            <div class="form-control w-full">
-              <label class="label"><span class="label-text font-semibold">留言 Message</span></label>
-              <textarea name="message" class="textarea textarea-bordered h-32 bg-gray-50 focus:bg-white transition-colors" placeholder="Your Message" required></textarea>
-            </div>
+          <div class="form-control w-full">
+            <label class="label"><span class="label-text font-semibold">邮箱 Email</span></label>
+            <input type="email" name="email" placeholder="Your Email" class="input input-bordered w-full bg-gray-50 focus:bg-white transition-colors" required />
+          </div>
 
-            <button type="submit" class="btn btn-primary w-full text-white text-lg mt-4 shadow-md hover:shadow-lg">
-              Send Message <i class="fas fa-paper-plane ml-2"></i>
-            </button>
-            
-            <div id="thank-you" class="alert alert-success mt-4 hidden">
-              <i class="fas fa-check-circle"></i>
-              <span>🎉 消息发送成功！我们会尽快回复您。</span>
-            </div>
-            <p id="form-error" class="text-red-500 text-sm mt-2 hidden"></p>
-          </form>
+          <div class="form-control w-full">
+            <label class="label"><span class="label-text font-semibold">留言 Message</span></label>
+            <textarea name="message" class="textarea textarea-bordered h-32 bg-gray-50 focus:bg-white transition-colors" placeholder="Your Message" required></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn btn-primary w-full text-white text-lg mt-4 shadow-md hover:shadow-lg">
+            Send Message <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+          
+          <!-- 成功与失败提示框 -->
+          <div id="thank-you" class="alert alert-success mt-4 hidden">
+            <i class="fas fa-check-circle"></i>
+            <span>🎉 消息发送成功！我们会尽快回复您。</span>
+          </div>
+          <p id="form-error" class="text-red-500 text-sm mt-2 hidden"></p>
+        </form>
+
         </div>
 
         <!-- 右侧：研究生招生信息 -->
@@ -720,17 +730,59 @@
       ]);
       chart.animate({ key: "rotationX", to: 360, duration: 60000, loops: Infinity, easing: am5.ease.linear });
     });
+     
 
-    // EmailJS (如果需要)
-    (function(){
-      // emailjs.init('Dj6gTC7Xq1QHguLQl'); 
-    })();
-
+    //邮箱发送邮件
     document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('thank-you').classList.remove('hidden');
-      this.reset();
+    e.preventDefault(); // 阻止页面跳转
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitButton = document.getElementById('submit-btn');
+    const thankYouMsg = document.getElementById('thank-you');
+    const errorMsg = document.getElementById('form-error');
+
+    // 1. 点击提交后，按钮变为“发送中...”状态，并禁用按钮防止重复点击
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ml-2"></i>';
+    thankYouMsg.classList.add('hidden');
+    errorMsg.classList.add('hidden');
+
+    // 2. 发送数据到 Web3Forms 接口
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        // 发送成功：显示成功提示，清空表单内容
+        thankYouMsg.classList.remove('hidden');
+        form.reset();
+        
+        // （可选）5秒后自动隐藏成功提示框
+        setTimeout(() => {
+          thankYouMsg.classList.add('hidden');
+        }, 5000);
+      } else {
+        // 接口返回错误
+        console.log(response);
+        errorMsg.innerHTML = json.message || "发送失败，请检查设置。";
+        errorMsg.classList.remove('hidden');
+      }
+    })
+    .catch(error => {
+      // 网络错误（如断网）
+      console.log(error);
+      errorMsg.innerHTML = "网络错误，请检查您的连接后重试。";
+      errorMsg.classList.remove('hidden');
+    })
+    .finally(function() {
+      // 3. 无论成功还是失败，最后都把按钮状态恢复原样
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Send Message <i class="fas fa-paper-plane ml-2"></i>';
     });
+  });
   </script>
   
 </body>
