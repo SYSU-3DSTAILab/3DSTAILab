@@ -66,8 +66,54 @@
       </div>
       <!-- 数据集展示容器 -->
       <div class="flex flex-col w-full space-y-8">
+
+
+           <!-- ==========================
+             1. 3D-City-LLM数据集
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            3DCity-LLM
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/statistic/City-LLM-Data.png" alt="3DCity-LLM" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个包含机载点云的城市级数据集，该数据集包含单体-关系-场景功能，数据位于德国海德堡市。
+                </p>
+                <a href="https://github.com/Lijp411/3D-City-LLM" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问项目
+                </a>
+                <!-- 新增申请按钮 -->
+                <button onclick="openRequestModal(' 3D-City-LLM数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
+                  <i class="fas fa-file-signature"></i> 申请数据
+                </button>
+              </div>
+
+            </div>
+          </div>
+          </div>
+
+
+
         <!-- ==========================
-             1. GooglrEarth-OPI 数据集
+             2. GooglrEarth-OPI 数据集
              ========================== -->
         <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           
@@ -108,7 +154,7 @@
           </div>
         </div>
         <!-- ==========================
-             2. City-Facade 数据集
+             3. City-Facade 数据集
              ========================== -->
         <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           
@@ -153,48 +199,6 @@
           </div>
         </div>
 
-        <!-- ==========================
-             3. DBNet 数据集
-             ========================== -->
-        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
-          
-          <!-- 标题栏 -->
-          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
-            DBNet
-          </div>
-          
-          <!-- 内容区域 -->
-          <div class="p-6">
-            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden">
-              
-              <!-- 左侧：Swiper (保持统一尺寸) -->
-              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
-                <div class="swiper dbnet-swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="img/statistic/DBNet.jpg" alt="DBNet" onclick="openPreview(this.src)">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 右侧：文字描述 -->
-              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
-                <p class="text-gray-600 leading-relaxed text-base break-words">
-                  一个涵盖厦门 1000+ 公里道路的城市级数据集，具有车载点云-视频-司机行为（多模态）数据,包含中国整个厦门市。
-                </p>
-                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
-                  <i class="fab fa-github text-lg"></i> 访问项目
-                </a>
-                <!-- 新增申请按钮 -->
-                <button onclick="openRequestModal(' DBNet数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
-                  <i class="fas fa-file-signature"></i> 申请数据
-                </button>
-              </div>
-              
-            </div>
-          </div>
-        </div>
 
          <!-- ==========================
              4. 机载点云-建筑物语义与实例数据集
@@ -236,27 +240,28 @@
 
             </div>
           </div>
-        </div>
+          </div>
 
-          <!-- ==========================
-             5. 3D-City-LLM数据集
+        <!-- ==========================
+             5. DBNet 数据集
              ========================== -->
         <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           
           <!-- 标题栏 -->
           <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
-            3DCity-LLM
+            DBNet
           </div>
           
           <!-- 内容区域 -->
           <div class="p-6">
-            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+              
               <!-- 左侧：Swiper (保持统一尺寸) -->
               <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="img/statistic/City-LLM-Data.png" alt="3DCity-LLM" onclick="openPreview(this.src)">
+                      <img src="img/statistic/DBNet.jpg" alt="DBNet" onclick="openPreview(this.src)">
                     </div>
                   </div>
                 </div>
@@ -265,20 +270,22 @@
               <!-- 右侧：文字描述 -->
               <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
                 <p class="text-gray-600 leading-relaxed text-base break-words">
-                  一个包含机载点云的城市级数据集，该数据集包含单体-关系-场景功能，数据位于德国海德堡市。
+                  一个涵盖厦门 1000+ 公里道路的城市级数据集，具有车载点云-视频-司机行为（多模态）数据,包含中国整个厦门市。
                 </p>
-                <a href="https://github.com/Lijp411/3D-City-LLM" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问项目
                 </a>
                 <!-- 新增申请按钮 -->
-                <button onclick="openRequestModal(' 3D-City-LLM数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
+                <button onclick="openRequestModal(' DBNet数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
                   <i class="fas fa-file-signature"></i> 申请数据
                 </button>
               </div>
-
+              
             </div>
           </div>
         </div>
+
+  
 
 
          <!-- ==========================
