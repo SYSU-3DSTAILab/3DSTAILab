@@ -318,13 +318,14 @@
       <!-- 卡片内容 -->
       <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-2 overflow-hidden">
         <div class="news-scroll h-80 overflow-y-auto p-6 space-y-5">
+
             <!-- 论文 1 -->
             <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
               
               <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
               <!-- shrink-0 防止被压缩 -->
               <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="img/Selected_pub/IJAEO.jpg" 
+                  <img src="img/paper/MajutsuCity.png" 
                        alt="Paper " 
                        class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
                        onclick="window.open('#pdf_link')" />
@@ -333,16 +334,45 @@
               <!-- 右侧：论文信息 -->
               <div class="flex-grow flex flex-col justify-center">
                 <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                 City-scale building instance segmentation from LiDAR point clouds via structure-aware method
+                  MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts
                 </h4>
                 <div class="text-sm text-gray-500 mb-2 italic">
-                  Jinpeng Li, Yuan Li, <strong>Yiping Chen</strong>, Hongchao Fan, Ruisheng Wang
+                  Zilong Huang, Jun He, Xiaobin Huang, Ziyi Xiong, Yang Luo, Junyan Ye, Weijia Li, <strong>Yiping Chen*</strong>, Ting Han
                 </div>
                 <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">JAG</span> 2026
+                   <span class="text-primary font-bold text-sm">CVPR</span> 2026
                    <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="https://www.sciencedirect.com/science/article/pii/S1569843226000026" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href=" https://github.com/Lijp411/City-BIS" class="text-secondary text-sm hover:underline">[Code]</a>
+                   <a href="https://arxiv.org/abs/2511.20415" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="https://github.com/LongHZ140516/MajutsuCity" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 论文 1 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub/SGS-3D.png" 
+                       alt="Paper " 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  SGS-3D: High-Fidelity 3D Instance Segmentation via Reliable Semantic Mask Splitting and Growing
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Chaolei Wang, Yang Luo , Jing Du, Siyu Chen, <strong>Yiping Chen</strong>, Ting Han
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">AAAI</span> 2026
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://ojs.aaai.org/index.php/AAAI/article/view/37931" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="https://github.com/wangchaolei7/SGS-3D" class="text-secondary text-sm hover:underline">[Code]</a>
                 </div>
               </div>
             </div>
