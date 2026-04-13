@@ -531,10 +531,34 @@
         </div>
         <!-- 卡片内容 -->
         <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 overflow-hidden h-[400px]">
-           <div id="chartdiv" style="width: 100%; height: 100%; background: #fff;"></div>
+           <!-- <div id="chartdiv" style="width: 100%; height: 100%; background: #fff;"></div> -->
+            <div class="globe-wrapper flex justify-center items-center w-full h-full">
+              <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=HmGyn27jGVJ4xNM06h3edpDj_HSSOrnaa6gOP1H_gYc"></script>
+           </div>
         </div>
+       
     </section>
-      
+    <!-- 强制压缩第三方地球插件尺寸的 CSS -->
+    <style>
+      /* 针对 MapMyVisitors 生成的内部元素进行强行压缩 */
+      .globe-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      /* 强制将地球最大尺寸限制在 300px 以内，保证在 400px 的卡片中刚好完美居中并留白 */
+      .globe-wrapper canvas,
+      .globe-wrapper div,
+      .globe-wrapper a {
+          max-width: 300px !important;
+          max-height: 300px !important;
+          width: 100% !important;
+          height: auto !important;
+          object-fit: contain;
+          margin: 0 auto;
+      }
+    </style>
+    
     <!-- 合作伙伴 -->
     <section>
         <!-- 标题 (卡片外) -->
@@ -714,51 +738,51 @@
       classes: "word-float"
     });
 
-    // 地图生成
-    am5.ready(function() {
-      var root = am5.Root.new("chartdiv");
-      root.setThemes([am5.Theme.new(root)]);
-      var chart = root.container.children.push(am5map.MapChart.new(root, {
-        panX: "rotateX", panY: "none",
-        projection: am5map.geoOrthographic(),
-        homeGeoPoint: { longitude: 113, latitude: 23 }
-      }));
-      var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-        geoJSON: am5geodata_worldLow, exclude: ["AQ"], valueField: "value"
-      }));
-      polygonSeries.mapPolygons.template.setAll({
-        tooltipText: "{name}", fill: am5.color(0xd1d5db), stroke: am5.color(0xffffff)
-      });
-      polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
-        var value = target.dataItem.dataContext.value;
-        if (value) {
-            if (value >= 80) return am5.color(0x003366);
-            if (value >= 50) return am5.color(0x1976d2);
-            return am5.color(0x3793ee);
-        }
-        return fill;
-      });
-      polygonSeries.data.setAll([
-        { id: "CN", value: 90 }, { id: "US", value: 80 },
-        { id: "FR", value: 40 }, { id: "JP", value: 60 }, { id: "DE", value: 40 }
-      ]);
-      var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
-      pointSeries.bullets.push(function() {
-        var circle = am5.Circle.new(root, {
-          radius: 5, fill: am5.color(0xff0000), stroke: am5.color(0xffffff), strokeWidth: 2, tooltipText: "{title}"
-        });
-        circle.animate({ key: "radius", from: 5, to: 8, duration: 1000, easing: am5.ease.out(am5.ease.cubic), loops: Infinity, yoyo: true });
-        return am5.Bullet.new(root, { sprite: circle });
-      });
-      pointSeries.data.setAll([
-        { geometry: { type: "Point", coordinates: [116.4074, 39.9042] }, title: "Beijing" },
-        { geometry: { type: "Point", coordinates: [-77.0369, 38.9072] }, title: "Washington D.C." },
-        { geometry: { type: "Point", coordinates: [2.3522, 48.8566] }, title: "Paris" },
-        { geometry: { type: "Point", coordinates: [139.6917, 35.6895] }, title: "Tokyo" },
-        { geometry: { type: "Point", coordinates: [13.4050, 52.5200] }, title: "Berlin" }
-      ]);
-      chart.animate({ key: "rotationX", to: 360, duration: 60000, loops: Infinity, easing: am5.ease.linear });
-    });
+    // // 地图生成
+    // am5.ready(function() {
+    //   var root = am5.Root.new("chartdiv");
+    //   root.setThemes([am5.Theme.new(root)]);
+    //   var chart = root.container.children.push(am5map.MapChart.new(root, {
+    //     panX: "rotateX", panY: "none",
+    //     projection: am5map.geoOrthographic(),
+    //     homeGeoPoint: { longitude: 113, latitude: 23 }
+    //   }));
+    //   var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+    //     geoJSON: am5geodata_worldLow, exclude: ["AQ"], valueField: "value"
+    //   }));
+    //   polygonSeries.mapPolygons.template.setAll({
+    //     tooltipText: "{name}", fill: am5.color(0xd1d5db), stroke: am5.color(0xffffff)
+    //   });
+    //   polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+    //     var value = target.dataItem.dataContext.value;
+    //     if (value) {
+    //         if (value >= 80) return am5.color(0x003366);
+    //         if (value >= 50) return am5.color(0x1976d2);
+    //         return am5.color(0x3793ee);
+    //     }
+    //     return fill;
+    //   });
+    //   polygonSeries.data.setAll([
+    //     { id: "CN", value: 90 }, { id: "US", value: 80 },
+    //     { id: "FR", value: 40 }, { id: "JP", value: 60 }, { id: "DE", value: 40 }
+    //   ]);
+    //   var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+    //   pointSeries.bullets.push(function() {
+    //     var circle = am5.Circle.new(root, {
+    //       radius: 5, fill: am5.color(0xff0000), stroke: am5.color(0xffffff), strokeWidth: 2, tooltipText: "{title}"
+    //     });
+    //     circle.animate({ key: "radius", from: 5, to: 8, duration: 1000, easing: am5.ease.out(am5.ease.cubic), loops: Infinity, yoyo: true });
+    //     return am5.Bullet.new(root, { sprite: circle });
+    //   });
+    //   pointSeries.data.setAll([
+    //     { geometry: { type: "Point", coordinates: [116.4074, 39.9042] }, title: "Beijing" },
+    //     { geometry: { type: "Point", coordinates: [-77.0369, 38.9072] }, title: "Washington D.C." },
+    //     { geometry: { type: "Point", coordinates: [2.3522, 48.8566] }, title: "Paris" },
+    //     { geometry: { type: "Point", coordinates: [139.6917, 35.6895] }, title: "Tokyo" },
+    //     { geometry: { type: "Point", coordinates: [13.4050, 52.5200] }, title: "Berlin" }
+    //   ]);
+    //   chart.animate({ key: "rotationX", to: 360, duration: 60000, loops: Infinity, easing: am5.ease.linear });
+    // });
      
 
     //邮箱发送邮件
