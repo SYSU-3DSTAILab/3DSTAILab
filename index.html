@@ -530,34 +530,52 @@
           </div>
         </div>
         <!-- 卡片内容 -->
-        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 overflow-hidden h-[400px]">
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 overflow-hidden h-[400px] flex items-center justify-center">
            <!-- <div id="chartdiv" style="width: 100%; height: 100%; background: #fff;"></div> -->
-            <div class="globe-wrapper flex justify-center items-center w-full h-full">
-              <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=HmGyn27jGVJ4xNM06h3edpDj_HSSOrnaa6gOP1H_gYc"></script>
+            <div class="globe-render-box">
+              <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=c_iKZvL0XhQ968xIPS8eKQzoiXV9iWUlJoFYfedt1Yk"></script>
            </div>
         </div>
        
     </section>
-    <!-- 强制压缩第三方地球插件尺寸的 CSS -->
-    <style>
-      /* 针对 MapMyVisitors 生成的内部元素进行强行压缩 */
-      .globe-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+ 
+<style>
+  .globe-render-box {
+      /* 给脚本一个足够大的固定空间进行渲染，防止其内部逻辑因为空间过小而裁剪或不显示 */
+      width: 500px;
+      height: 500px;
+      
+      /* 确保脚本生成的 canvas 在这个 500px 的盒子内部居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* 核心：缩放比例 */
+      /* 注意：0.65 * 500px = 325px，这个尺寸在 400px 高度的容器里能完美放下并留白 */
+      transform: scale(0.65); 
+      transform-origin: center center;
+      
+      /* 灵活收缩关闭 */
+      flex-shrink: 0;
+      
+      /* 禁用点击跳转 */
+      pointer-events: none; 
+  }
+
+  /* 适配脚本生成的元素 */
+  .globe-render-box canvas {
+      max-width: none !important;
+      max-height: none !important;
+      outline: none;
+  }
+
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+      .globe-render-box {
+          transform: scale(0.45);
       }
-      /* 强制将地球最大尺寸限制在 300px 以内，保证在 400px 的卡片中刚好完美居中并留白 */
-      .globe-wrapper canvas,
-      .globe-wrapper div,
-      .globe-wrapper a {
-          max-width: 300px !important;
-          max-height: 300px !important;
-          width: 100% !important;
-          height: auto !important;
-          object-fit: contain;
-          margin: 0 auto;
-      }
-    </style>
+  }
+</style>
     
     <!-- 合作伙伴 -->
     <section>
