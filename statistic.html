@@ -68,6 +68,50 @@
       <div class="flex flex-col w-full space-y-8">
 
 
+          <!-- ==========================
+             1. 道路分级
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            道路分级数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/statistic/道路分级(1).png" alt="道路分级" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                  一个涵盖中国河南省境内多个市区、郊区、乡村、山地的道路分级数据集，数据标注包括道路掩码、道路矢量和分级标签。
+                </p>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问项目
+                </a>
+                <!-- 新增申请按钮 -->
+                <button onclick="openRequestModal(' 道路分级数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
+                  <i class="fas fa-file-signature"></i> 申请数据
+                </button>
+              </div>
+
+            </div>
+          </div>
+          </div>
+
+
+
            <!-- ==========================
              1. 3D-City-LLM数据集
              ========================== -->
@@ -86,7 +130,7 @@
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="img/statistic/City-LLM-Data.png" alt="3DCity-LLM" onclick="openPreview(this.src)">
+                      <img src="img/statistic/City-LLM-Data(1).png" alt="3DCity-LLM" onclick="openPreview(this.src)">
                     </div>
                   </div>
                 </div>
@@ -130,7 +174,7 @@
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="img/statistic/GBA-UBF.png" alt="img" onclick="openPreview(this.src)">
+                      <img src="img/statistic/GBA-UBF(1).png" alt="img" onclick="openPreview(this.src)">
                     </div>
                   </div>
                 </div>
@@ -218,7 +262,7 @@
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="img/statistic/City-BIS.png" alt="City-BIS" onclick="openPreview(this.src)">
+                      <img src="img/statistic/City-BIS(1).png" alt="City-BIS" onclick="openPreview(this.src)">
                     </div>
                   </div>
                 </div>
@@ -242,6 +286,50 @@
           </div>
           </div>
 
+
+           <!-- ==========================
+             1. 珠海校区
+             ========================== -->
+        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          
+          <!-- 标题栏 -->
+          <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
+            中山大学珠海校区数据集
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
+              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
+                <div class="swiper dbnet-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/statistic/珠海校区(1).jpg" alt="珠海校区" onclick="openPreview(this.src)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：文字描述 -->
+              <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-600 leading-relaxed text-base break-words">
+                 一个包含中山大学珠海校区全部区域的三维点云语义分割数据集
+                </p>
+                <a href="#" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                  <i class="fab fa-github text-lg"></i> 访问项目
+                </a>
+                <!-- 新增申请按钮 -->
+                <button onclick="openRequestModal(' 珠海校区数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
+                  <i class="fas fa-file-signature"></i> 申请数据
+                </button>
+              </div>
+
+            </div>
+          </div>
+          </div>
+
+
         <!-- ==========================
              5. DBNet 数据集
              ========================== -->
@@ -261,7 +349,7 @@
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="img/statistic/DBNet.jpg" alt="DBNet" onclick="openPreview(this.src)">
+                      <img src="img/statistic/DBNet(1).jpg" alt="DBNet" onclick="openPreview(this.src)">
                     </div>
                   </div>
                 </div>
@@ -288,20 +376,20 @@
   
 
 
-         <!-- ==========================
+         <!-- <!== ==========================
              6. 车载-机载点云数据集
-             ========================== -->
+             ========================== ==>
         <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           
-          <!-- 标题栏 -->
+          <!== 标题栏 ==>
           <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
             车载-机载点云数据集
           </div>
           
-          <!-- 内容区域 -->
+          <!== 内容区域 ==>
           <div class="p-6">
             <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
-              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <!== 左侧：Swiper (保持统一尺寸) ==>
               <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
@@ -312,7 +400,7 @@
                 </div>
               </div>
 
-              <!-- 右侧：文字描述 -->
+              <!== 右侧：文字描述 ==>
               <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
                 <p class="text-gray-600 leading-relaxed text-base break-words">
                   一个包含载-机载点云（多源点云）语义-实例-本文描述功能（多模态）的城市级数据集，为低空飞行路径规划与安全风险评估提供高质量数据基础与通用模型，数据位于漳州港，香港。
@@ -320,7 +408,7 @@
                 <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问项目
                 </a>
-                <!-- 新增申请按钮 -->
+                <!== 新增申请按钮 ==>
                 <button onclick="openRequestModal(' 车载-机载点云数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
                   <i class="fas fa-file-signature"></i> 申请数据
                 </button>
@@ -328,22 +416,22 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
 
          <!-- ==========================
              7.地面全要素语义、实例数据集
              ========================== -->
-        <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+        <!-- <div class="card bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           
-          <!-- 标题栏 -->
+          <!== 标题栏 ==>
           <div class="text-xl font-medium bg-blue-50/50 text-primary border-l-4 border-primary py-4 px-6">
             地面全要素语义、实例数据集
           </div>
           
-          <!-- 内容区域 -->
+          <!== 内容区域 ==>
           <div class="p-6">
             <div class="flex flex-col md:flex-row gap-8 items-center overflow-hidden"> 
-              <!-- 左侧：Swiper (保持统一尺寸) -->
+              <!== 左侧：Swiper (保持统一尺寸) ==>
               <div class="w-full md:w-8/12 h-64 min-w-0 shrink-0 rounded-lg bg-gray-100 relative group z-0">
                 <div class="swiper dbnet-swiper">
                   <div class="swiper-wrapper">
@@ -354,7 +442,7 @@
                 </div>
               </div>
 
-              <!-- 右侧：文字描述 -->
+              <!== 右侧：文字描述 ==>
               <div class="w-full md:w-4/12 min-w-0 space-y-4 flex flex-col justify-center items-center text-center">
                 <p class="text-gray-600 leading-relaxed text-base break-words">
                   一个包含遥感图像-摄影测量-车载点云（多模态）的城市级数据集，进行地面全要素语义、实例分割，数据位于漳州港。
@@ -362,7 +450,7 @@
                 <a href="https" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问项目
                 </a>
-                 <!-- 新增申请按钮 -->
+                 <!== 新增申请按钮 ==>
                 <button onclick="openRequestModal('地面全要素语义、实例数据集')" class="btn btn-primary btn-sm text-white gap-2 flex-1">
                   <i class="fas fa-file-signature"></i> 申请数据
                 </button>
@@ -370,7 +458,7 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
 
           
 

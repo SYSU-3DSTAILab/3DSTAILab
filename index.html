@@ -88,11 +88,10 @@
           <div class="lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
             <div class="space-y-4 text-lg text-gray-700 leading-relaxed text-justify">
               <p>
-                <strong>陈一平</strong>，中山大学遥感科学与技术学院教授、博士生导师,入选 <strong>国家级青年人才计划</strong>，担任3DSTAILab负责人，曾担任<strong>中山大学科学研究院副处长</strong>（2023.5-2025.5）。她是 <strong>IEEE高级会员</strong>、<strong>CSIG高级会员</strong>。
-                主要研究方向包括 <span class=" px-1 rounded font-bold text-secondary">激光雷达遥感</span>、<span class=" px-1 rounded font-bold text-secondary">三维点云智能处理</span>、<span class="bg-primary-100 px-1 rounded font-bold text-secondary">遥感图像处理</span> 以及 <span class="bg-primary-100 px-1 rounded font-bold text-secondary">可持续发展应用</span>。
-                陈一平教授主持包括 <strong>国家自然科学基金</strong> 在内的科研项目 <strong>15</strong> 项，参与包括国家自然科学基金重点项目在内的科研项目 <strong>16</strong> 余项。
-                目前已在 <em>ISPRS JPRS、CVPR、IEEE TGRS、IEEE TITS、JAG</em> 等国内外重要期刊和会议上发表论文 <strong>100</strong> 余篇。
-                并担任 <em> TGRS、JAG</em> 等期刊 <strong>副主编</strong>， <em> The Innovation</em> 期刊 <strong>青年编委</strong>等，曾担任国际摄影测量与遥感学会 “激光雷达、激光测高与多传感器融合” 工作组主席 (2023-2026)等。
+                <strong>陈一平</strong>，中山大学遥感科学与技术学院教授、博士生导师,入选<strong>国家级青年人才计划</strong>，担任3DSTAILab负责人，曾担任<strong>中山大学科学研究院副处长</strong>（2023.5-2025.5）。她是<strong>IEEE高级会员</strong>、<strong>CSIG高级会员</strong>。主要研究方向包括<span class=" px-1 rounded font-bold text-secondary">激光雷达遥感</span>、<span class=" px-1 rounded font-bold text-secondary">三维点云智能处理</span>、<span class="bg-primary-100 px-1 rounded font-bold text-secondary">遥感图像处理</span>以及<span class="bg-primary-100 px-1 rounded font-bold text-secondary">可持续发展应用</span>。
+                陈一平教授主持包括<strong>国家自然科学基金</strong>在内的科研项目<strong>15</strong>项，参与包括国家自然科学基金重点项目在内的科研项目<strong>16</strong>余项。
+                目前已在<em>ISPRS JPRS、CVPR、IEEE TGRS、IEEE TITS、JAG</em>等国内外重要期刊和会议上发表论文<strong>100</strong>余篇。
+                并担任<em>TGRS、JAG</em>等期刊<strong>副主编</strong>， <em>The Innovation</em>期刊<strong>青年编委</strong>等，曾担任国际摄影测量与遥感学会 “激光雷达、激光测高与多传感器融合” 工作组主席 (2023-2026)等。
               </p>
             </div>
           </div>
@@ -369,6 +368,35 @@
               </div>
             </div>
 
+            <!-- 论文 4 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              
+              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
+              <!-- shrink-0 防止被压缩 -->
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                  <img src="img/Selected_pub//City_Facade.jpg" 
+                       alt="Paper" 
+                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+                       onclick="window.open('#pdf_link')" />
+              </div>
+
+              <!-- 右侧：论文信息 -->
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  City-Facade: A city-level large-scale point cloud building facade dataset for semantic & instance segmentation
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                   <strong>Yiping Chen</strong>, Jonathan Li, Ting Han, Huifang Feng, Jun Chen, Cheng Wang
+                </div>
+                <div class="flex items-center gap-3">
+                   <span class="text-primary font-bold text-sm">ISPRS</span> 2026
+                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                   <a href="https://www.sciencedirect.com/science/article/pii/S0924271626000031" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="https://github.com/gorgeouseping/City-Facade" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+
             <!-- 论文 1 -->
             <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
               
@@ -398,34 +426,6 @@
               </div>
             </div>
 
-            <!-- 论文 2 -->
-            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-              
-              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
-              <!-- shrink-0 防止被压缩 -->
-              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="img/Selected_pub/CiityInsight.gif" 
-                       alt="Paper " 
-                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                       onclick="window.open('#pdf_link')" />
-              </div>
-
-              <!-- 右侧：论文信息 -->
-              <div class="flex-grow flex flex-col justify-center">
-                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                  CityInsight: Incorporating Dual-Condition based Diffusion Model into Building Footprint Segmentation from Remote Sensing Imagery
-                </h4>
-                <div class="text-sm text-gray-500 mb-2 italic">
-                  Ting Han, Jim Ma, Chaolei Wang, Yang Luo, Hongchao Fan, José Marcato, Xinchang Zhang, <strong>Yiping Chen*</strong>
-                </div>
-                <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">TGRS</span> 2025
-                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="https://ieeexplore.ieee.org/document/11073567" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href="https://github.com/Ting-Devin-Han/CityInsight" class="text-secondary text-sm hover:underline">[Code]</a>
-                </div>
-              </div>
-            </div>
 
             <!-- 论文 3 -->
             <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
@@ -456,14 +456,14 @@
               </div>
             </div>
 
-              <!-- 论文 4 -->
+                  <!-- 论文 2 -->
             <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
               
               <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
               <!-- shrink-0 防止被压缩 -->
               <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="img/Selected_pub/scale.jpg" 
-                       alt="Paper" 
+                  <img src="img/paper/chat3D.jpg" 
+                       alt="Paper " 
                        class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
                        onclick="window.open('#pdf_link')" />
               </div>
@@ -471,49 +471,21 @@
               <!-- 右侧：论文信息 -->
               <div class="flex-grow flex flex-col justify-center">
                 <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                  Scale Effects in Mangrove Mapping from Ultra-high-resolution Remote Sensing Imagery
+                  Chat3D: Interactive Understanding 3D Scene-Level Point Clouds by Chatting with Foundation Model for Urban Ecological Construction
                 </h4>
                 <div class="text-sm text-gray-500 mb-2 italic">
-                  Hanwen Zhang, Shan Wei, Xindan Liang, <strong>Yiping Chen</strong>, Hongsheng Zhang
+                 <strong>Yiping Chen</strong>, Shuai Zhang*, Ting Han, Yumeng Du, Wuming Zhang, Jonathan Li
                 </div>
                 <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">JAG</span> 2025
+                   <span class="text-primary font-bold text-sm">ISPRS</span> 2024
                    <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="https://www.sciencedirect.com/science/article/pii/S156984322400668X" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                   <a href="https://www.sciencedirect.com/science/article/pii/S0924271624001849" class="text-secondary text-sm hover:underline">[Paper]</a>
+                   <a href="" class="text-secondary text-sm hover:underline">[Code]</a>
                 </div>
               </div>
             </div>
-              <!-- 论文 5 -->
-            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-              
-              <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
-              <!-- shrink-0 防止被压缩 -->
-              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                  <img src="img/Selected_pub/CSFNet.gif" 
-                       alt="Paper" 
-                       class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                       onclick="window.open('#pdf_link')" />
-              </div>
 
-              <!-- 右侧：论文信息 -->
-              <div class="flex-grow flex flex-col justify-center">
-                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                  CSFNet: Cross-modal Semantic Focus Network for Semantic Segmentation of Large-Scale Point Clouds
-                </h4>
-                <div class="text-sm text-gray-500 mb-2 italic">
-                  Yang Luo, Ting Han, Yujun Liu, Jinhe Su, <strong>Yiping Chen</strong>, Jinyuan Li, Yundong Wu*, Guorong Cai*
-                </div>
-                <div class="flex items-center gap-3">
-                   <span class="text-primary font-bold text-sm">TGRS</span> 2025
-                   <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                   <a href="https://ieeexplore.ieee.org/abstract/document/10856216" class="text-secondary text-sm hover:underline">[Paper]</a>
-                   <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
+          
     </section>
 
     <!-- ==========================
