@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>学术服务 | 3DSTAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点，与专利页面完全一致 */
+    .project-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+
+    /* 确保内嵌列表（如学会服务中的子列表）也保持协调，但不破坏主圆点样式 */
+    .nested-list {
+      list-style-type: disc;
+      margin-left: 1.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .nested-list li {
+      margin-bottom: 0.4rem;
+      padding-left: 0;
+    }
+    .nested-list li::before {
+      display: none;
+    }
+    /* 四级标题样式辅助 */
+    .sub-section-title {
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      border-left: 3px solid #00BFFF;
+      padding-left: 0.75rem;
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">学术服务</h1>
+          <p class="text-gray-500 text-lg">Academic Services</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 科学学会服务 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-building"></i>
+            </div>
+            科学学会服务 <span class="text-base font-normal text-gray-400 ml-2">Professional Society Services</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">国际摄影测量与遥感学会 “激光雷达、激光测高与多传感器融合” 工作组主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2023-2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">国际数字地球学会中国国家委员会激光雷达专业委员会委员副秘书长</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2022-2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">IEEE 高级会员</span> 
+              <span class="text-sm text-gray-500 ml-2">（Institute of Electrical and Electronics Engineers Senior Member）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">中国遥感应用协会空间人工智能委员会副主任委员</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">中国测绘学会低空开发与利用工作委员会副主任委员</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">CGIS 高级会员</span> 
+              <span class="text-sm text-gray-500 ml-2">（国际华人地理信息科学协会 Senior Member）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">中国遥感应用协会女科技工作者工作委员会副主任委员</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2023-2027）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">XXXXX 视觉导航与无人车专家组成员</span> 
+              <span class="text-sm text-gray-500 ml-2">（任期: 2022-2026）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">广东省测绘学会监事</span> 
+              <span class="text-sm text-gray-500 ml-2">（学会监督与管理职务）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">广东省科学技术协会第十届代表会议服务：激光雷达大会主席（2027）、中国遥感协会共同主席（2026）、吴立新会议共同主席（2026）</span> 
+              <span class="text-sm text-gray-500 ml-2">（重要学术会议组织与领导职务）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 2. 学术期刊服务 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-book-open"></i>
+            </div>
+            学术期刊服务 <span class="text-base font-normal text-gray-400 ml-2">Editorial Board Memberships</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">IEEE Geoscience and Remote Sensing Magazine (一区，IF: 14.6) 副主编</span> 
+              <span class="text-sm text-gray-500 ml-2">（任职时间: 2023年11月至今）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">IEEE Transactions on Geoscience and Remote Sensing (一区，Top期刊) 副主编</span> 
+              <span class="text-sm text-gray-500 ml-2">（任职时间: 2023年03月至今）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">International Journal of Applied Earth Observation and Geoinformation (一区，Top期刊) 副主编</span> 
+              <span class="text-sm text-gray-500 ml-2">（任职时间: 2024年09月至今）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">The Photogrammetric Record 编委</span> 
+              <span class="text-sm text-gray-500 ml-2">（期刊编辑委员会成员）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">The Innovation (一区，IF: 33.1) 青年编委</span> 
+              <span class="text-sm text-gray-500 ml-2">（任职时间: 2022年10月至今）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">《测绘学报》青年编委</span> 
+              <span class="text-sm text-gray-500 ml-2">（任职时间: 2024年至今）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 3. 学术会议主席 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-chalkboard"></i>
+            </div>
+            学术会议主席 <span class="text-base font-normal text-gray-400 ml-2">Conference Leadership Roles</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">地理信息灾害管理国际会议 (Gi4DM) 共同主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2024）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">ISPRS TCI Mid-term Symposium 领域主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2024）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">ISPRS GSW 领域主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2023）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">The 8th International Conference on: Earth Observation for Environmental Changes 程序委员会共同主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2023）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">IEEE IGARSS 领域主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2023, 2021-2025连续担任）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">首届粤港澳大湾区测绘遥感大会 组织委员会委员</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2023）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">Geographic Information Sciences (CPGIS) 领域主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2021）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">全国激光雷达大会 领域主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（会议年份: 2021）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 4. 参与标准 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            参与标准 <span class="text-base font-normal text-gray-400 ml-2">Standards Development</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">IEEE P1936.20, 无人驾驶飞行器光探测与测距(LiDAR)遥感操作规范</span> 
+              <span class="text-sm text-gray-500 ml-2">（国际标准，时间: 2025年11月）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">IEEE P1937.6, 基于机载激光雷达(LiDAR)的架空线路电力故障识别标准</span> 
+              <span class="text-sm text-gray-500 ml-2">（国际标准，时间: 2025年11月）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">数字孪生模型评估规范</span> 
+              <span class="text-sm text-gray-500 ml-2">（团体标准，发布单位: 广电计量检测集团股份有限公司，时间: 2023年11月）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">自动驾驶高精地图数据交互接口</span> 
+              <span class="text-sm text-gray-500 ml-2">（团体标准，起草单位: 同济大学，时间: 2024年06月）</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ==================== 5. 学术活动 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-microphone-alt"></i>
+            </div>
+            学术活动 <span class="text-base font-normal text-gray-400 ml-2">Academic Events & Symposia</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">中国科协立项支持、中国遥感应用协会主办的“低空遥感研讨活动”主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（活动年份: 2025）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">第十三届高校GIS论坛，“空间智能—AI 与 GIS 融合驱动的产业新纪元” 学术沙龙嘉宾</span> 
+              <span class="text-sm text-gray-500 ml-2">（论坛年份: 2025）</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>
