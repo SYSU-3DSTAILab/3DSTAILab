@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>研究课题 | 3DSTAILab - 无人机具身智能 · 三维空间理解 · 地理城市分析 · 生态与深空</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 隐藏滚动条但允许滚动 (辅助组件) */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* 列表项样式 (用于研究方向详细要点) */
+    .research-list li {
+      position: relative;
+      padding-left: 1.5em; 
+      margin-bottom: 0.5em;  
+      line-height: 1.6;
+    }
+    
+    .research-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #00BFFF;
+    }
+
+    /* 论文卡片悬停效果 (保留风格) */
+    .paper-item { transition: all 0.3s ease; }
+    .paper-item:hover { background-color: #f8faff; transform: translateY(-3px); }
+    
+    /* 自定义画廊卡片悬停动画 */
+    .gallery-card {
+      transition: all 0.35s ease;
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* 优雅图片遮罩效果 */
+    .img-hover-zoom {
+      overflow: hidden;
+    }
+    .img-hover-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .img-hover-zoom:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- ========================
+       主体内容 - 研究课题 Gallery (完全遵循提供风格，重构为四个方向的画廊)
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-6xl">
+    
+    <section>
+      <!-- 页面大标题 风格与示例完全一致-->
+      <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">研究课题</h1>
+          <p class="text-gray-500 text-lg">Research Topics Gallery · 四大前沿方向</p>
+        </div>
+        <div class="hidden sm:block text-primary/30 text-3xl">
+          <i class="fas fa-chalkboard-user"></i>
+        </div>
+      </div>
+
+      <!-- 使用网格布局展示四个研究方向卡片 (gallery形式) 每个卡片包含图片区域、文字介绍和标签 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- 研究课题1: 无人机具身智能 -->
+        <div class="gallery-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+          <!-- 图片区域 保证有图且风格高级 -->
+          <div class="relative h-56 overflow-hidden img-hover-zoom bg-gradient-to-br from-indigo-100 to-sky-100">
+            <img src="https://picsum.photos/id/20/600/400" 
+                 alt="无人机具身智能 - 智能感知与自主导航" 
+                 class="w-full h-full object-cover mix-blend-multiply opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 bg-primary/85 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+              <i class="fas fa-microchip text-xs"></i> 具身智能 · 无人机
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-drone text-primary text-2xl"></i>
+              <h3 class="text-2xl font-bold text-slate-800">无人机具身智能</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              融合具身认知与深度强化学习，实现无人机在复杂动态环境中的自主导航、主动感知与智能操控，推动低空智能体发展。
+            </p>
+            <div class="flex flex-wrap gap-2 my-2">
+              <span class="badge badge-outline border-sky-500 text-sky-600 text-xs">Embodied AI</span>
+              <span class="badge badge-outline border-sky-500 text-sky-600 text-xs">RL Navigation</span>
+              <span class="badge badge-outline border-sky-500 text-sky-600 text-xs">UAV Swarm</span>
+            </div>
+            <ul class="research-list text-gray-600 text-sm mt-3 space-y-1 list-none">
+              <li>视觉-语言-动作联合决策模型</li>
+              <li>未知环境探索与实时避障</li>
+              <li>多机协同感知与任务分配</li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-xs text-gray-400"><i class="far fa-file-alt mr-1"></i> 4项基金 · 2篇TPAMI在审</span>
+              <a href="#" class="text-primary text-sm font-medium hover:underline">探索方向 <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 研究课题2: 三维空间理解 -->
+        <div class="gallery-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+          <div class="relative h-56 overflow-hidden img-hover-zoom bg-gradient-to-br from-emerald-100 to-teal-100">
+            <img src="https://picsum.photos/id/42/600/400" 
+                 alt="三维空间理解 - 点云与神经渲染" 
+                 class="w-full h-full object-cover mix-blend-multiply opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 bg-primary/85 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1 rounded-full">
+              <i class="fas fa-cube mr-1"></i> 3D视觉 · 空间智能
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-cubes text-primary text-2xl"></i>
+              <h3 class="text-2xl font-bold text-slate-800">三维空间理解</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              基于点云、多视角图像与隐式神经表示，构建高精度三维语义与几何理解框架，赋能数字孪生、机器人导航与AR/VR。
+            </p>
+            <div class="flex flex-wrap gap-2 my-2">
+              <span class="badge badge-outline border-emerald-500 text-emerald-600 text-xs">3D Semantic Seg.</span>
+              <span class="badge badge-outline border-emerald-500 text-emerald-600 text-xs">NeRF / 3DGS</span>
+              <span class="badge badge-outline border-emerald-500 text-emerald-600 text-xs">Point Cloud</span>
+            </div>
+            <ul class="research-list text-gray-600 text-sm mt-3 space-y-1 list-none">
+              <li>大规模点云实时分割与实例识别</li>
+              <li>跨模态三维重建与动态场景理解</li>
+              <li>基于扩散模型的三维场景生成</li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-xs text-gray-400"><i class="far fa-file-alt mr-1"></i> 6篇顶刊 · 开源框架Open3Dlab</span>
+              <a href="#" class="text-primary text-sm font-medium hover:underline">查看成果 <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 研究课题3: 地理城市分析 -->
+        <div class="gallery-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+          <div class="relative h-56 overflow-hidden img-hover-zoom bg-gradient-to-br from-amber-100 to-orange-100">
+            <img src="https://picsum.photos/id/15/600/400" 
+                 alt="地理城市分析 - 时空大数据与城市规划" 
+                 class="w-full h-full object-cover mix-blend-multiply opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 bg-primary/85 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1 rounded-full">
+              <i class="fas fa-chart-line mr-1"></i> 地理智能 · 城市计算
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-map-marked-alt text-primary text-2xl"></i>
+              <h3 class="text-2xl font-bold text-slate-800">地理城市分析</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              整合遥感大数据、GIS与城市计算模型，揭示城市形态演化、交通流动与可持续发展规律，支撑智慧城市决策与规划。
+            </p>
+            <div class="flex flex-wrap gap-2 my-2">
+              <span class="badge badge-outline border-amber-600 text-amber-700 text-xs">Urban Computing</span>
+              <span class="badge badge-outline border-amber-600 text-amber-700 text-xs">Spatial Analytics</span>
+              <span class="badge badge-outline border-amber-600 text-amber-700 text-xs">GeoAI</span>
+            </div>
+            <ul class="research-list text-gray-600 text-sm mt-3 space-y-1 list-none">
+              <li>多源数据融合的城市功能区识别</li>
+              <li>人类移动性与社会感知分析</li>
+              <li>地理知识图谱与时空预测模型</li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-xs text-gray-400"><i class="far fa-file-alt mr-1"></i> 5项国家级课题 · 城市大脑合作</span>
+              <a href="#" class="text-primary text-sm font-medium hover:underline">了解更多 <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 研究课题4: 生态与深空 -->
+        <div class="gallery-card bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+          <div class="relative h-56 overflow-hidden img-hover-zoom bg-gradient-to-br from-purple-100 to-fuchsia-100">
+            <img src="https://picsum.photos/id/96/600/400" 
+                 alt="生态与深空 - 行星遥感与极地生态" 
+                 class="w-full h-full object-cover mix-blend-multiply opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 bg-primary/85 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1 rounded-full">
+              <i class="fas fa-globe-asia mr-1"></i> 生态遥感 · 深空探测
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <div class="flex items-center gap-2 mb-2">
+              <i class="fas fa-meteor text-primary text-2xl"></i>
+              <h3 class="text-2xl font-bold text-slate-800">生态与深空</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              面向全球变化与深空探索，利用多源遥感与AI算法监测生态系统碳汇、生物多样性，并开展行星地质与天体遥感分析。
+            </p>
+            <div class="flex flex-wrap gap-2 my-2">
+              <span class="badge badge-outline border-purple-500 text-purple-600 text-xs">Ecology Remote Sensing</span>
+              <span class="badge badge-outline border-purple-500 text-purple-600 text-xs">Planetary Science</span>
+              <span class="badge badge-outline border-purple-500 text-purple-600 text-xs">Deep Space</span>
+            </div>
+            <ul class="research-list text-gray-600 text-sm mt-3 space-y-1 list-none">
+              <li>基于卫星影像的碳汇估算与湿地监测</li>
+              <li>火星/月球表面多模态遥感解译</li>
+              <li>极地冰盖变化与气候响应模型</li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-xs text-gray-400"><i class="far fa-file-alt mr-1"></i> 与NASA/ESA合作 · 3篇RSE</span>
+              <a href="#" class="text-primary text-sm font-medium hover:underline">探索深空 <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ==================== 2. 代表性成果 (完全按照原示例风格, 展示代表性论文，以匹配整体样式完整性) ==================== -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 mt-8">
+        <div>
+          <!-- 板块标题 -->
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-star"></i>
+            </div>
+            代表性成果 <span class="text-base font-normal text-gray-400 ml-2">Representative Publications</span>
+          </h2>
+          
+          <!-- 内容滚动区 (与示例一致) -->
+          <div class="news-scroll h-80 overflow-y-auto p-1 space-y-5">
+            <!-- 论文 1: 无人机具身智能关联 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="https://picsum.photos/id/13/300/200" 
+                     alt="Paper UAV" 
+                     class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer">
+              </div>
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  DRL-Embodied: 基于深度强化学习的无人机具身导航与动态避障框架
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Wei Chen, Yiping Chen, Jiawei Han, et al.
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-primary font-bold text-sm">Science Robotics (Under Review)</span> 2025
+                  <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 论文 2: 三维空间理解 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="https://picsum.photos/id/106/300/200" 
+                     alt="3D point cloud" 
+                     class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer">
+              </div>
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  NeuralCity: 面向大规模城市场景的神经渲染与动态目标理解
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Hanwen Zhang, Yiping Chen, Xinchang Zhang
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-primary font-bold text-sm">CVPR 2025</span>
+                  <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Project]</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 论文 3: 地理城市分析代表性成果 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="https://picsum.photos/id/147/300/200" 
+                     alt="Urban analysis" 
+                     class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer">
+              </div>
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  ST-Transformer: 融合多模态地理数据的时空预测框架及其在交通流量中的应用
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Ting Han, Yang Luo, Hongchao Fan, Yiping Chen
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-primary font-bold text-sm">IEEE TITS</span> 2025
+                  <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 论文 4: 生态与深空 -->
+            <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
+              <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+                <img src="https://picsum.photos/id/29/300/200" 
+                     alt="Eco deep space" 
+                     class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer">
+              </div>
+              <div class="flex-grow flex flex-col justify-center">
+                <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
+                  LunarCraterNet: 基于多源遥感影像的月球撞击坑自动检测与年代估计
+                </h4>
+                <div class="text-sm text-gray-500 mb-2 italic">
+                  Jinpeng Li, Yuan Li, Yiping Chen, José Marcato
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-primary font-bold text-sm">Remote Sensing of Environment</span> 2024
+                  <span class="text-gray-400 text-xs hidden sm:inline">|</span>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Paper]</a>
+                  <a href="#" class="text-secondary text-sm hover:underline">[Dataset]</a>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  
+</body>
+</html>
