@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>学术活动 | 3DSTAILab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 1. 引入 DaisyUI 和 Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/common.js"></script>
+  
+  <!-- 2. 引入 FontAwesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 列表项样式优化：改为圆点，与专利页面完全一致 */
+    .project-list li {
+      position: relative;
+      padding-left: 1.5em; /* 为圆点留出空间 */
+      margin-bottom: 1em;  /* 增加项目间距，更清晰 */
+      line-height: 1.6;
+    }
+    
+    /* 自定义圆点样式 */
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      top: 0.6em; /* 根据字体大小微调垂直位置 */
+      width: 6px;
+      height: 6px;
+      border-radius: 50%; /* 圆形 */
+      background-color: #00BFFF; /* 使用配置中的 secondary 颜色 */
+    }
+
+    /* 确保内嵌列表（如学会服务中的子列表）也保持协调，但不破坏主圆点样式 */
+    .nested-list {
+      list-style-type: disc;
+      margin-left: 1.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .nested-list li {
+      margin-bottom: 0.4rem;
+      padding-left: 0;
+    }
+    .nested-list li::before {
+      display: none;
+    }
+    /* 四级标题样式辅助 */
+    .sub-section-title {
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      border-left: 3px solid #00BFFF;
+      padding-left: 0.75rem;
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen bg-gray-50 text-slate-800 flex flex-col">
+
+  <!-- 导航栏由 common.js 自动注入 -->
+
+  <!-- ========================
+       2. 主体内容
+       ======================== -->
+  <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-4xl">
+    
+    <section>
+      <!-- 页面大标题 -->
+      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+        <div class="border-l-8 border-primary pl-4">
+          <h1 class="text-4xl font-bold text-primary">学术活动</h1>
+          <p class="text-gray-500 text-lg">Academic Activities</p>
+        </div>
+      </div>
+
+      <!-- 内容容器 -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+
+        <!-- ==================== 1. 2026中国图像图形大会 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-image"></i>
+            </div>
+            2026中国图像图形大会 <span class="text-base font-normal text-gray-400 ml-2">CCIG 2026</span>
+          </h2>
+          
+         <!-- A. 轮播图区域 -->
+          <div class="carousel w-full h-[300px] md:h-[400px] bg-gray-100 mb-10 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Slide 1 -->
+            <div id="slide1" class="carousel-item relative w-full">
+              <img src="img/team/4.jpg" class="w-full h-full object-cover" />
+              <!-- 控制按钮 -->
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide3" onclick="event.preventDefault(); document.getElementById('slide3').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide2" onclick="event.preventDefault(); document.getElementById('slide2').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div id="slide2" class="carousel-item relative w-full">
+              <img src="img/team/5.jpg" class="w-full h-full object-cover" />
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide1" onclick="event.preventDefault(); document.getElementById('slide1').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide3" onclick="event.preventDefault(); document.getElementById('slide3').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src="img/team/6.jpg" class="w-full h-full object-cover" />
+              <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide2" onclick="event.preventDefault(); document.getElementById('slide2').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide1" onclick="event.preventDefault(); document.getElementById('slide1').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+              </div>
+            </div>
+          </div>
+          <!-- 轮播图结束 -->
+           
+        </div>
+
+        <!-- ==================== 2. 中国三维视觉大会==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-vr-cardboard"></i>
+            </div>
+            中国三维视觉大会 <span class="text-base font-normal text-gray-400 ml-2">CHINA 3DV 2024</span>
+          </h2>
+          
+          <div class="carousel w-full h-[300px] md:h-[400px] bg-gray-100 mb-10 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Slide 1 -->
+            <div id="slide1" class="carousel-item relative w-full">
+              <img src="img/team/CHINA_3DV_2024.jpg" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== 5. 学术活动 ==================== -->
+        <div>
+          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
+              <i class="fas fa-microphone-alt"></i>
+            </div>
+            其它学术活动 <span class="text-base font-normal text-gray-400 ml-2"> Other Academic Events</span>
+          </h2>
+          
+          <ul class="project-list text-gray-700 text-lg pl-2">
+            <li>
+              <span class="font-bold text-slate-800">中国科协立项支持、中国遥感应用协会主办的“低空遥感研讨活动”主席</span> 
+              <span class="text-sm text-gray-500 ml-2">（活动年份: 2025）</span>
+            </li>
+            <li>
+              <span class="font-bold text-slate-800">第十三届高校GIS论坛，“空间智能—AI 与 GIS 融合驱动的产业新纪元” 学术沙龙嘉宾</span> 
+              <span class="text-sm text-gray-500 ml-2">（论坛年份: 2025）</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- 页脚由 common.js 自动注入 -->
+
+</body>
+</html>

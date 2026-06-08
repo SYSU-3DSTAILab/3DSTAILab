@@ -44,8 +44,9 @@
       background-color: #e2e6ea;
       transform: translateY(-1px);
     }
-  </style>
 
+
+  </style>
 
   <!-- 3. 添加必要的 JS 和 CSS -->
   <script>
@@ -145,35 +146,60 @@
         <div class="bg-white p-6 lg:p-8 rounded-3xl shadow-sm border border-gray-200">
           
           <!-- A. 轮播图区域 -->
-          <!-- h-[400px] md:h-[500px]: 设定固定高度 -->
-          <!-- rounded-box: 圆角 -->
-          <!-- <div class="carousel w-full h-[400px] md:h-[500px] bg-gray-100 mb-10 rounded-2xl overflow-hidden">
-            
+          <!-- <div class="carousel w-full h-[400px] md:h-[500px] bg-gray-100 mb-10 rounded-2xl overflow-hidden shadow-lg">
+    
             <!== Slide 1 ==>
             <div id="slide1" class="carousel-item relative w-full">
               <img src="img/team/CHINA_3DV_2024.jpg" class="w-full h-full object-cover" />
+              <!== 文字叠加层 ==>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">中国三维视觉大会</h2>
+                <p class="text-lg opacity-90">团队参与CHINA 3DV 2024年度学术研讨与技术交流。</p>
+              </div>
+              <!== 控制按钮 ==>
               <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <!== 上一张去 slide3，下一张去 slide2 ==>
-                <a href="#slide3" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
-                <a href="#slide2" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+                <a href="#slide3" onclick="event.preventDefault(); document.getElementById('slide3').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide2" onclick="event.preventDefault(); document.getElementById('slide2').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
               </div>
             </div>
             
             <!== Slide 2 ==>
             <div id="slide2" class="carousel-item relative w-full">
               <img src="img/team/1.jpg" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">实验室团建</h2>
+                <p class="text-lg opacity-90">团结协作，探索无限可能。</p>
+              </div>
               <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <a href="#slide1" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
-                <a href="#slide3" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+                <a href="#slide1" onclick="event.preventDefault(); document.getElementById('slide1').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide3" onclick="event.preventDefault(); document.getElementById('slide3').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
               </div>
             </div>
             
             <!== Slide 3 ==>
             <div id="slide3" class="carousel-item relative w-full">
-              <img src="img/team/2.jpg" class="w-full h-full object-cover" />
+              
+              <div class="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full p-2">
+                <!== 第一张图占据左侧全部 ==>
+                <div class="row-span-2 overflow-hidden rounded-lg bg-gray-900">
+                  <img src="img/team/4.jpg" class="w-full h-full object-contain" />
+                </div>
+                <!== 右侧两张图各占一半 ==>
+                <div class="overflow-hidden rounded-lg bg-gray-900">
+                  <img src="img/team/5.jpg" class="w-full h-full object-contain" />
+                </div>
+                <div class="overflow-hidden rounded-lg bg-gray-900">
+                  <img src="img/team/6.jpg" class="w-full h-full object-contain" />
+                </div>
+              </div>
+    
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-10 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">2026中国图像图形大会</h2>
+                <p class="text-lg opacity-90">陈一平教授参与2026中国图像图形大会学术研讨与技术交流。</p>
+              </div>
               <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <a href="#slide2" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
-                <a href="#slide1" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+                <a href="#slide2" onclick="event.preventDefault(); document.getElementById('slide2').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a>
+                <a href="#slide1" onclick="event.preventDefault(); document.getElementById('slide1').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
               </div>
             </div>
 

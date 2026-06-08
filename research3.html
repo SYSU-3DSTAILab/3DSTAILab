@@ -2,44 +2,55 @@
 <html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8">
-  <title>三维场景生成 | 3DSTAILab</title>
+  <title>城市地理分析 | 3DSTAILab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- 1. 引入 DaisyUI 和 Tailwind -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/common.js"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+
   <!-- 2. 引入 FontAwesome 图标 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+  <!-- 添加这一段 CSS 来让滚动条更好看 -->
   <style>
-    /* 隐藏滚动条但允许滚动 */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    
-    /* 列表项样式 (用于右侧文字介绍) */
-    .research-list li {
-      position: relative;
-      padding-left: 1.5em; 
-      margin-bottom: 0.5em;  
-      line-height: 1.6;
-    }
-    
-    .research-list li::before {
-      content: "";
-      position: absolute;
-      left: 0.5em;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: #00BFFF;
+    /* 强制开启滚动条 */
+    .carousel {
+      display: flex !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
     }
 
-    /* 论文卡片悬停效果 */
-    .paper-item { transition: all 0.3s ease; }
-    .paper-item:hover { background-color: #f8faff; transform: translateY(-3px); }
+    /* 强制显示滚动条 */
+    .carousel::-webkit-scrollbar {
+      display: block !important;
+      height: 8px !important;
+      width: 8px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-track {
+      background: #e2e8f0 !important;
+      border-radius: 10px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-thumb {
+      background: #94a3b8 !important;
+      border-radius: 10px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-thumb:hover {
+      background: #64748b !important;
+    }
+
+    /* 确保滚动条在 Firefox 中可见 */
+    .carousel {
+      scrollbar-width: auto !important;
+      scrollbar-color: #94a3b8 #e2e8f0 !important;
+    }
   </style>
 </head>
 
@@ -52,132 +63,58 @@
        ======================== -->
   <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-5xl">
     
-    <section>
-      <!-- 页面大标题 -->
-      <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
-        <div class="border-l-8 border-primary pl-4">
-          <h1 class="text-4xl font-bold text-primary">研究方向</h1>
-          <p class="text-gray-500 text-lg">Research Interests</p>
-        </div>
+  <!-- ==================== 研究方向 Gallery ==================== -->
+  <section class="mt-12">
+    <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
+      <div class="border-l-8 border-primary pl-4">
+        <h1 class="text-4xl font-bold text-primary">城市地理分析</h1>
+        <p class="text-gray-500 text-lg">Urban Geographic Analysis</p>
       </div>
+    </div>
+    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
 
-      <!-- 内容容器 -->
-      <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+      <!-- 地点时间标题 -->
+      <!-- <div class="flex items-center gap-2 mb-6 text-primary font-bold text-lg">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Zhengzhou, CHN — April 2026</span>
+      </div> -->
 
-        <!-- ==================== 1. 研究介绍 (左图右文) ==================== -->
-        <div>
-          <!-- 板块标题 -->
-          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
-            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
-              <i class="fas fa-magic"></i>
-            </div>
-            三维场景生成 <span class="text-base font-normal text-gray-400 ml-2">3D Scene Generation</span>
-          </h2>
+        <div class="carousel w-full p-4 space-x-4 bg-white rounded-box border border-gray-100 shadow-sm overflow-x-auto">
           
-          <!-- 布局容器：flex-col (手机) -> lg:flex-row (大屏) -->
-          <div class="flex flex-col lg:flex-row gap-8">
-            
-            <!-- 左侧：图片区域 (占据 2/3) -->
-            <!-- w-full lg:w-2/3 -->
-            <div class="w-full lg:w-2/3 h-64 lg:h-auto rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-100 relative group">
-                <img src="img/Selected_pub/Scene4U.jpg" 
-                     alt="Research Image" 
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            </div>
-
-            <!-- 右侧：文字介绍 (占据 1/3) -->
-            <!-- w-full lg:w-1/3 -->
-            <div class="w-full lg:w-1/3 flex flex-col justify-center space-y-4">
-              <p class="text-gray-700 leading-relaxed text-justify text-base lg:text-lg">
-                结合生成式AI与神经渲染技术（如NeRF/Gaussian Splatting），探索从文本或图像自动生成高质量三维场景。
-              </p>
-              <!-- 关键词标签 -->
-              <div class="flex flex-wrap gap-2 justify-center">
-                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">3D Generation</span>
-                <span class="badge badge-outline border-primary text-primary px-2 py-3 text-xs">Gaussian Splatting</span>
-              </div>
-            </div>
-
+          <!-- 图片单元 -->
+          <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/City_Facade.jpg"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
           </div>
-        </div>
-
-        <!-- ==================== 2. 代表性成果 (左图右文) ==================== -->
-        <div>
-          <!-- 板块标题 -->
-          <h2 class="text-2xl font-bold text-primary flex items-center border-b border-dashed border-gray-200 pb-4 mb-6">
-            <div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 text-primary">
-              <i class="fas fa-star"></i>
+          <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/IJAEO.jpg"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
-            代表性成果 <span class="text-base font-normal text-gray-400 ml-2">Representative Publications</span>
-          </h2>
-          
-           <!-- 卡内容 -->
-          <div class="flex flex-col lg:flex-row gap-8">
-            <div class="news-scroll h-80 overflow-y-auto p-6 space-y-5"> 
-                <!-- 论文 1 -->
-                <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-                  
-                  <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
-                  <!-- shrink-0 防止被压缩 -->
-                  <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                      <img src="img/Selected_pub/Scene4U.jpg" 
-                          alt="Paper" 
-                          class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                          onclick="window.open('#pdf_link')" />
-                  </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/CSFNet.gif"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/City-LLM-Data.png"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/City-BIS(1).png"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/CiityInsight.gif"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/GBA-UBF(1).png"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/道路分级(1).png"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+              <img src="img/research_topic/珠海校区(1).jpg"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+            </div>
 
-                  <!-- 右侧：论文信息 -->
-                  <div class="flex-grow flex flex-col justify-center">
-                    <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                      Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration
-                    </h4>
-                    <div class="text-sm text-gray-500 mb-2 italic">
-                      Zilong Huang, Jun He, Junyan Ye, Lihan Jiang, Weijia Li, <strong>Yiping Chen*</strong>, Ting Han*
-                    </div>
-                    <div class="flex items-center gap-3">
-                      <span class="text-primary font-bold text-sm">CVPR</span> 2025
-                      <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                      <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Scene4U_Hierarchical_Layered_3D_Scene_Reconstruction_from_Single_Panoramic_Image_CVPR_2025_paper.html" class="text-secondary text-sm hover:underline">[Paper]</a>
-                      <a href="#" class="text-secondary text-sm hover:underline">[Code]</a>
-                    </div>
-                  </div>
-                </div>
-
-                 <!-- 论文 2 -->
-                <div class="paper-item flex flex-col md:flex-row gap-6 p-4 rounded-xl border border-transparent hover:border-gray-100">
-                  
-                  <!-- 左侧：论文缩略图 (固定宽度 1/4 -> w-48 或 flex-basis) -->
-                  <!-- shrink-0 防止被压缩 -->
-                  <div class="w-full md:w-48 h-32 shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-                      <img src="img/paper/MajutsuCity.png" 
-                          alt="Paper" 
-                          class="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                          onclick="window.open('#pdf_link')" />
-                  </div>
-
-                  <!-- 右侧：论文信息 -->
-                  <div class="flex-grow flex flex-col justify-center">
-                    <h4 class="font-bold text-slate-900 text-lg leading-snug mb-2 hover:text-primary transition-colors cursor-pointer">
-                     MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts
-                    </h4>
-                    <div class="text-sm text-gray-500 mb-2 italic">
-                     Zilong Huang, Jun He, Xiaobin Huang, Ziyi Xiong, Yang Luo, Junyan Ye, Weijia Li, <strong>Yiping Chen</strong>, Ting Han
-                    </div>
-                    <div class="flex items-center gap-3">
-                      <span class="text-primary font-bold text-sm">CVPR</span> 2026
-                      <span class="text-gray-400 text-xs hidden sm:inline">|</span>
-                      <a href="https://arxiv.org/abs/2511.20415" class="text-secondary text-sm hover:underline">[Paper]</a>
-                      <a href="https://github.com/LongHZ140516/MajutsuCity" class="text-secondary text-sm hover:underline">[Code]</a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
         </div>
 
-      </div>
-    </section>
-    
+
+    </div>
+  </section>
   </main>
   
   <!-- 页脚由 common.js 自动注入 -->

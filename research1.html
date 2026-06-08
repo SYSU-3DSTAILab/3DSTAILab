@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8">
-  <title>三维点云表征学习 | 3DSTAILab</title>
+  <title>无人机具身智能 | 3DSTAILab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- 1. 引入 DaisyUI 和 Tailwind -->
@@ -13,33 +13,43 @@
   <!-- 2. 引入 FontAwesome 图标 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- 添加这一段 CSS 来让滚动条更好看 -->
   <style>
-    /* 隐藏滚动条但允许滚动 */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    
-    /* 列表项样式 (用于右侧文字介绍) */
-    .research-list li {
-      position: relative;
-      padding-left: 1.5em; 
-      margin-bottom: 0.5em;  
-      line-height: 1.6;
-    }
-    
-    .research-list li::before {
-      content: "";
-      position: absolute;
-      left: 0.5em;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: #00BFFF;
+    /* 强制开启滚动条 */
+    .carousel {
+      display: flex !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
     }
 
-    /* 论文卡片悬停效果 */
-    .paper-item { transition: all 0.3s ease; }
-    .paper-item:hover { background-color: #f8faff; transform: translateY(-3px); }
+    /* 强制显示滚动条 */
+    .carousel::-webkit-scrollbar {
+      display: block !important;
+      height: 8px !important;
+      width: 8px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-track {
+      background: #e2e8f0 !important;
+      border-radius: 10px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-thumb {
+      background: #94a3b8 !important;
+      border-radius: 10px !important;
+    }
+    
+    .carousel::-webkit-scrollbar-thumb:hover {
+      background: #64748b !important;
+    }
+
+    /* 确保滚动条在 Firefox 中可见 */
+    .carousel {
+      scrollbar-width: auto !important;
+      scrollbar-color: #94a3b8 #e2e8f0 !important;
+    }
   </style>
 </head>
 
@@ -52,77 +62,51 @@
        ======================== -->
   <main class="flex-grow container mx-auto px-4 py-8 pt-28 max-w-5xl">
     
-    <!-- ==================== 研究方向 Gallery ==================== -->
-    <section class="mt-12">
-  <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
-    <div class="border-l-8 border-primary pl-4">
-      <h1 class="text-4xl font-bold text-primary">研究课题</h1>
-      <p class="text-gray-500 text-lg">Research Topics</p>
-    </div>
-  </div>
-
-  <!-- 网格布局：桌面端4列，平板2列，手机1列 -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    
-    <!-- 课题 1: 无人机具身智能 -->
-    <div class="card bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-      <figure class="px-4 pt-4 h-48">
-        <img src="img/research/uav_embodied.jpg" alt="无人机具身智能" class="rounded-xl object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </figure>
-      <div class="card-body items-center text-center p-4">
-        <h2 class="card-title text-lg">无人机具身智能</h2>
-        <p class="text-sm text-gray-500">感知、决策与自主控制的一体化架构。</p>
-        <div class="card-actions mt-2">
-          <button class="btn btn-sm btn-outline btn-primary">了解更多</button>
-        </div>
+  <!-- ==================== 研究方向 Gallery ==================== -->
+  <section class="mt-12">
+    <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
+      <div class="border-l-8 border-primary pl-4">
+        <h1 class="text-4xl font-bold text-primary">无人机具身智能</h1>
+        <p class="text-gray-500 text-lg">UAV Embodied Intelligence</p>
       </div>
     </div>
+    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
 
-    <!-- 课题 2: 三维空间理解 -->
-    <div class="card bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-      <figure class="px-4 pt-4 h-48">
-        <img src="img/research/3d_understanding.jpg" alt="三维空间理解" class="rounded-xl object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </figure>
-      <div class="card-body items-center text-center p-4">
-        <h2 class="card-title text-lg">三维空间理解</h2>
-        <p class="text-sm text-gray-500">复杂场景的语义分割与几何特征提取。</p>
-        <div class="card-actions mt-2">
-          <button class="btn btn-sm btn-outline btn-primary">了解更多</button>
+      <!-- 地点时间标题 -->
+      <!-- <div class="flex items-center gap-2 mb-6 text-primary font-bold text-lg">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Zhengzhou, CHN — April 2026</span>
+      </div> -->
+
+        <!-- 滚动容器 -->
+        <!-- 1. overflow-x-auto: 允许横向滚动 -->
+        <!-- 2. pb-4: 给滚动条留出空间 -->
+        <!-- 3. scrollbar-hide: 如果想隐藏原生滚动条，若要显示则去掉 -->
+        <div class="carousel w-full p-4 space-x-4 bg-white rounded-box border border-gray-100 shadow-sm overflow-x-auto">
+          
+          <!-- 图片单元 -->
+          <!-- flex-none: 保证图片不会被挤压 -->
+          <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+            <img src="#"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          </div>
+
+         <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+            <img src="#"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          </div>
+
+          <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+            <img src="#"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          </div>
+          
+          <div class="carousel-item flex-none w-118 h-72 relative rounded-xl overflow-hidden shadow-md group">
+            <img src="#"  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          </div>
+
         </div>
-      </div>
-    </div>
 
-    <!-- 课题 3: 地理城市分析 -->
-    <div class="card bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-      <figure class="px-4 pt-4 h-48">
-        <img src="img/research/urban_analysis.jpg" alt="地理城市分析" class="rounded-xl object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </figure>
-      <div class="card-body items-center text-center p-4">
-        <h2 class="card-title text-lg">地理城市分析</h2>
-        <p class="text-sm text-gray-500">大尺度城市三维建模与语义分析。</p>
-        <div class="card-actions mt-2">
-          <button class="btn btn-sm btn-outline btn-primary">了解更多</button>
-        </div>
-      </div>
-    </div>
 
-    <!-- 课题 4: 生态与深空 -->
-    <div class="card bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-      <figure class="px-4 pt-4 h-48">
-        <img src="img/research/eco_deepspace.jpg" alt="生态与深空" class="rounded-xl object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-      </figure>
-      <div class="card-body items-center text-center p-4">
-        <h2 class="card-title text-lg">生态与深空</h2>
-        <p class="text-sm text-gray-500">遥感大数据驱动下的生态与空间探测。</p>
-        <div class="card-actions mt-2">
-          <button class="btn btn-sm btn-outline btn-primary">了解更多</button>
-        </div>
-      </div>
     </div>
-
-  </div>
-    </section>
-    
+  </section>
   </main>
   
   <!-- 页脚由 common.js 自动注入 -->
