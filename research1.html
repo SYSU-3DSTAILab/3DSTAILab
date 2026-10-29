@@ -13,42 +13,60 @@
   <!-- 2. 引入 FontAwesome 图标 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- 添加这一段 CSS 来让滚动条更好看 -->
   <style>
-    /* 强制开启滚动条 */
-    .carousel {
-      display: flex !important;
-      overflow-x: auto !important;
-      overflow-y: hidden !important;
-      scroll-snap-type: x mandatory !important;
-      -webkit-overflow-scrolling: touch !important;
+    .uav-gallery {
+      display: flex;
+      gap: 1.5rem;
+      width: 100%;
+      padding-bottom: 0.75rem;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      overscroll-behavior-x: contain;
+      scrollbar-width: auto;
+      scrollbar-color: #94a3b8 #e2e8f0;
     }
 
-    /* 强制显示滚动条 */
-    .carousel::-webkit-scrollbar {
-      display: block !important;
-      height: 8px !important;
-      width: 8px !important;
-    }
-    
-    .carousel::-webkit-scrollbar-track {
-      background: #e2e8f0 !important;
-      border-radius: 10px !important;
-    }
-    
-    .carousel::-webkit-scrollbar-thumb {
-      background: #94a3b8 !important;
-      border-radius: 10px !important;
-    }
-    
-    .carousel::-webkit-scrollbar-thumb:hover {
-      background: #64748b !important;
+    .uav-gallery::-webkit-scrollbar { height: 8px; }
+    .uav-gallery::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
+    .uav-gallery::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+    .uav-gallery::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+    .uav-gallery:focus-visible {
+      outline: 2px solid #003366;
+      outline-offset: 4px;
     }
 
-    /* 确保滚动条在 Firefox 中可见 */
-    .carousel {
-      scrollbar-width: auto !important;
-      scrollbar-color: #94a3b8 #e2e8f0 !important;
+    .uav-media-card {
+      flex: 0 0 100%;
+      max-width: 36rem;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      background: white;
+      scroll-snap-align: start;
+    }
+
+    .uav-media-frame {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #f8fafc;
+    }
+
+    .uav-media-frame img,
+    .uav-media-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .uav-media-caption {
+      padding: 1rem;
+      color: #003366;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -70,17 +88,52 @@
         <p class="text-gray-500 text-lg">UAV Embodied Intelligence</p>
       </div>
     </div>
-    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 space-y-10">
+    <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-sm border border-gray-200 space-y-6">
+      <p class="text-gray-600 leading-relaxed">展示无人机数据采集、多模态环境感知与虚拟场景仿真等研究内容。</p>
+      <p class="text-gray-500 text-sm">左右滑动浏览，点击图片可查看原图，视频支持播放与全屏查看。</p>
 
-      <!-- 地点时间标题 -->
-      <!-- <div class="flex items-center gap-2 mb-6 text-primary font-bold text-lg">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Zhengzhou, CHN — April 2026</span>
-      </div> -->
+      <div class="uav-gallery" role="region" aria-label="无人机具身智能图片与视频" tabindex="0">
+        <figure class="uav-media-card">
+          <a href="img/research_topic/UAV_Data.png" target="_blank" rel="noopener noreferrer" class="uav-media-frame" aria-label="查看无人机采集轨迹原图">
+            <img src="img/research_topic/UAV_Data.png" alt="无人机在林地和建筑场景中的数据采集轨迹" width="407" height="286" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="uav-media-caption">无人机采集轨迹</figcaption>
+        </figure>
 
-        <p class="text-gray-500 text-center py-12">相关图片整理中。</p>
+        <figure class="uav-media-card">
+          <a href="img/research_topic/UAV_Data2.png" target="_blank" rel="noopener noreferrer" class="uav-media-frame" aria-label="查看多模态数据样例原图">
+            <img src="img/research_topic/UAV_Data2.png" alt="无人机场景的 RGB 图像、深度图、分割图、表面法线图及 RGB-D 与 LiDAR 点云" width="422" height="327" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="uav-media-caption">多模态数据样例</figcaption>
+        </figure>
 
+        <figure class="uav-media-card">
+          <a href="img/research_topic/UAV_Embedded.gif" target="_blank" rel="noopener noreferrer" class="uav-media-frame" aria-label="查看环境感知与建图动图">
+            <img src="img/research_topic/UAV_Embedded.gif" alt="无人机环境感知与点云建图的动态演示" width="341" height="198" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="uav-media-caption">环境感知与建图</figcaption>
+        </figure>
 
+        <figure class="uav-media-card">
+          <div class="uav-media-frame">
+            <video controls muted playsinline preload="metadata" width="1192" height="720" aria-label="三维场景重建演示">
+              <source src="img/research_topic/streem.mp4" type="video/mp4">
+              您的浏览器不支持视频播放，可<a href="img/research_topic/streem.mp4">下载视频</a>查看。
+            </video>
+          </div>
+          <figcaption class="uav-media-caption">三维场景重建演示</figcaption>
+        </figure>
+
+        <figure class="uav-media-card">
+          <div class="uav-media-frame">
+            <video controls muted playsinline preload="metadata" width="1280" height="720" aria-label="虚拟环境仿真演示">
+              <source src="img/research_topic/virtual_engine.mp4" type="video/mp4">
+              您的浏览器不支持视频播放，可<a href="img/research_topic/virtual_engine.mp4">下载视频</a>查看。
+            </video>
+          </div>
+          <figcaption class="uav-media-caption">虚拟环境仿真演示</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
   </main>
