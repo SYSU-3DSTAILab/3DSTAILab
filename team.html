@@ -133,7 +133,7 @@
       <!-- ========================
            1. 实验室简介 (使用 DaisyUI 原生 Carousel)
            ======================== -->
-      <section>
+      <section id="introduction" class="scroll-mt-32">
         <!-- 标题 (卡片外) -->
         <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
           <div class="border-l-8 border-primary pl-4">
@@ -247,7 +247,7 @@
             <figure class="px-8 pt-8 mb-4">
               <img src="img/people/YipingChen.jpg" alt="陈一平" 
                   class="object-cover aspect-[3/4] w-full rounded-md shadow-sm border border-gray-100 max-w-[220px]" 
-                  onerror="this.src='https://via.placeholder.com/300x400?text=Yiping+Chen'"/>
+                  onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
             </figure>
             
             <div class="card-body items-center text-center p-4 pt-0">
@@ -345,7 +345,7 @@
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <!-- 照片变小：w-36 -->
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/swt.jpg" alt="孙文涛" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=SWT'"/>
+                <img src="img/people/swt.jpg" alt="孙文涛" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <!-- 间距变小 pl-4，给右侧更多宽度 -->
               <div class="card-body p-0 pl-4 w-full justify-center">
@@ -361,10 +361,10 @@
             <!-- 韩汀 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/HT.jpg" alt="韩汀" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HT'"/>
+                <img src="img/people/HT.jpg" alt="韩汀" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
-                <a href="https://ting-devin-han.github.io/Homepage-main/index.html" target="_blank" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
+                <a href="https://ting-devin-han.github.io/Homepage-main/index.html" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
                 韩汀
                 </a>
                 <p class="text-sm text-gray-500 mb-4 font-medium">方向：城市三维理解</p>
@@ -377,7 +377,7 @@
             <!-- 罗阳 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/YangLuo.jpg" alt="罗阳" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=YL'"/>
+                <img src="img/people/YangLuo.jpg" alt="罗阳" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">罗阳</h2>
@@ -391,7 +391,7 @@
             <!-- 柯文宇 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/WenyuKe.jpg" alt="柯文宇" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=KW'"/>
+                <img src="img/people/WenyuKe.jpg" alt="柯文宇" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">柯文宇</h2>
@@ -405,7 +405,7 @@
             <!-- 范彦坤 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/fyk.png" alt="范彦坤" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=FYK'"/>
+                <img src="img/people/fyk.png" alt="范彦坤" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">范彦坤</h2>
@@ -419,7 +419,7 @@
             <!-- 关建龙 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/gjl.jpg" alt="关建龙" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=GJL'"/>
+                <img src="img/people/gjl.jpg" alt="关建龙" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">关建龙</h2>
@@ -449,10 +449,10 @@
             <!-- 王朝磊 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/WCL.jpg" alt="王朝磊" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=WCL'"/>
+                <img src="img/people/WCL.jpg" alt="王朝磊" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
-                <a href="https://wangchaolei7.github.io/" target="_blank" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
+                <a href="https://wangchaolei7.github.io/" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
                 王朝磊
                 </a>
                 <p class="text-sm text-gray-500 mb-4 font-medium">方向：点云分割与场景理解</p>
@@ -465,7 +465,7 @@
             <!-- 杜雨萌 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/dym.jpg" alt="杜雨萌" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=DYM'"/>
+                <img src="img/people/dym.jpg" alt="杜雨萌" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">杜雨萌</h2>
@@ -479,10 +479,10 @@
             <!-- 黄子龙 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/hzl.jpg" alt="黄子龙" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HZL'"/>
+                <img src="img/people/hzl.jpg" alt="黄子龙" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
-                <a href="https://serein-six.vercel.app/" target="_blank" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
+                <a href="https://serein-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
                 黄子龙
                 </a>
                 <p class="text-sm text-gray-500 mb-4 font-medium">方向：三维重建与生成</p>
@@ -495,7 +495,7 @@
             <!-- 黄晓彬 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/XiaobinHuang.jpg" alt="黄晓彬" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=XBH'"/>
+                <img src="img/people/XiaobinHuang.jpg" alt="黄晓彬" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">黄晓彬</h2>
@@ -509,7 +509,7 @@
             <!-- 欧阳洁 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/JieOuyang.jpg" alt="欧阳洁" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=OJ'"/>
+                <img src="img/people/JieOuyang.jpg" alt="欧阳洁" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">欧阳洁</h2>
@@ -523,7 +523,7 @@
             <!-- 何忠杰 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/ZhongjieHe.jpg" alt="何忠杰" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=ZJH'"/>
+                <img src="img/people/ZhongjieHe.jpg" alt="何忠杰" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">何忠杰</h2>
@@ -537,7 +537,7 @@
             <!-- 邹天颖 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/zty.jpg" alt="邹天颖" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=ZTY'"/>
+                <img src="img/people/zty.jpg" alt="邹天颖" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">邹天颖</h2>
@@ -567,7 +567,7 @@
             <!-- 陈桓 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/HuanChen.jpg" alt="陈桓" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HC'"/>
+                <img src="img/people/HuanChen.jpg" alt="陈桓" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">陈桓</h2>
@@ -580,7 +580,7 @@
             <!-- 陈春松 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/ChunsongChen.jpg" alt="陈春松" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=CC'"/>
+                <img src="img/people/ChunsongChen.jpg" alt="陈春松" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">陈春松</h2>
@@ -593,7 +593,7 @@
              <!-- 黄皓凌 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/hhl.jpg" alt="黄皓凌" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HHL'"/>
+                <img src="img/people/hhl.jpg" alt="黄皓凌" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">黄皓凌</h2>
@@ -607,7 +607,7 @@
             <!-- 邓杏儿 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/dxe.jpg" alt="邓杏儿" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=DXE'"/>
+                <img src="img/people/dxe.jpg" alt="邓杏儿" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">邓杏儿</h2>
@@ -620,7 +620,7 @@
             <!-- 侯懿宸 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/hyc.jpg" alt="侯懿宸" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HYC'"/>
+                <img src="img/people/hyc.jpg" alt="侯懿宸" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">侯懿宸</h2>
@@ -633,7 +633,7 @@
             <!-- 王梓佳 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/wzj.jpg" alt="王梓佳" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=WZJ'"/>
+                <img src="img/people/wzj.jpg" alt="王梓佳" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">王梓佳</h2>
@@ -646,7 +646,7 @@
             <!-- 任益澜 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/ryl.jpg" alt="任益澜" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=RYL'"/>
+                <img src="img/people/ryl.jpg" alt="任益澜" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">任益澜</h2>
@@ -659,7 +659,7 @@
             <!-- 虞启淇 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/yqq.jpg" alt="虞启淇" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=YQQ'"/>
+                <img src="img/people/yqq.jpg" alt="虞启淇" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">虞启淇</h2>
@@ -688,7 +688,7 @@
             <!-- 隋佳璐 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/sjl.jpg" alt="隋佳璐" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=SJL'"/>
+                <img src="img/people/sjl.jpg" alt="隋佳璐" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800">隋佳璐</h2>
@@ -699,7 +699,7 @@
             <!-- 徐禧 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/xx.jpg" alt="徐禧" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=XX'"/>
+                <img src="img/people/xx.jpg" alt="徐禧" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800">徐禧</h2>
@@ -726,7 +726,7 @@
             <!-- Naftaly -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/Naftaly.png" alt="Naftaly" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=Naftaly'"/>
+                <img src="img/people/Naftaly.png" alt="Naftaly" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">Naftaly Wambugu</h2>
@@ -738,7 +738,7 @@
             <!-- 刘小雪 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/lxx.jpg" alt="刘晓雪" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=LXX'"/>
+                <img src="img/people/lxx.jpg" alt="刘晓雪" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">刘小雪</h2>
@@ -750,7 +750,7 @@
             <!-- 罗智鹏 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/lzp.png" alt="罗智鹏" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=LZP'"/>
+                <img src="img/people/lzp.png" alt="罗智鹏" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">罗智鹏</h2>
@@ -762,7 +762,7 @@
             <!-- 黄鹏頔 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/hpd.png" alt="黄鹏頔" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=HPD'"/>
+                <img src="img/people/hpd.png" alt="黄鹏頔" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">黄鹏頔</h2>
@@ -774,7 +774,7 @@
             <!-- 张帅 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/zs.jpg" alt="张帅" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=ZS'"/>
+                <img src="img/people/zs.jpg" alt="张帅" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">张帅</h2>
@@ -786,7 +786,7 @@
             <!-- 谢相依 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/xxy.jpg" alt="谢相依" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=XXY'"/>
+                <img src="img/people/xxy.jpg" alt="谢相依" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">谢相依</h2>
@@ -798,7 +798,7 @@
              <!-- 丰慧芳 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/fhf.jpg" alt="丰慧芳" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=XXY'"/>
+                <img src="img/people/fhf.jpg" alt="丰慧芳" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">丰慧芳</h2>
@@ -810,7 +810,7 @@
             <!-- 马津 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/maj.jpg" alt="马津" class="object-cover w-full h-full" onerror="this.src='https://via.placeholder.com/150x200?text=MJ'"/>
+                <img src="img/people/maj.jpg" alt="马津" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">马津</h2>

@@ -37,19 +37,19 @@
 
 /* ========= 团队成员卡片（右侧内容区） ========= */
 /* 统一圆角 + 边框 */
-#faculty,#phd,#master,#bachelor,#graduate,#visitor .card{
+:is(#faculty, #phd, #master, #bachelor, #graduate, #visitor) .card{
   border:1px solid #e0e0e0;
   border-radius:.75rem;
   overflow:hidden;
   transition:all .2s ease-in-out;
 }
 /* 悬停形状：轻微放大 + 阴影 */
-#faculty,#phd,#master,#bachelor,#graduate,#visitor .card:hover{
+:is(#faculty, #phd, #master, #bachelor, #graduate, #visitor) .card:hover{
   transform:translateY(-3px);
   box-shadow:0 6px 16px rgba(0,0,0,.12);
 }
 /* 卡片内图片圆角 */
-#faculty,#phd,#master,#bachelor,#graduate,#visitor .card-img-top{
+:is(#faculty, #phd, #master, #bachelor, #graduate, #visitor) .card-img-top{
   border-top-left-radius:.75rem;
   border-top-right-radius:.75rem;
 }

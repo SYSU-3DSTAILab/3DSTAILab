@@ -10,6 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/resource.js" defer></script>
   <script src="https://cdn.clustrmaps.com/map_v2.js"></script>
   <!-- 2. 引入 FontAwesome 图标 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -137,7 +138,7 @@
                   一个大规模城市建筑立面数据集，专门用于 MLS LiDAR 点云的语义层和实例级分割。
                   该数据集涵盖了中国厦门的多样化街道场景，对于语义分割、城市精细化建模和点云补全的研究具有重要价值。
                 </p>
-                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问 City-Facade 项目
                 </a>
               </div>
@@ -180,7 +181,7 @@
                   一个涵盖厦门 1000+ 公里道路的综合数据集，包含高精度三维点云、GNSS 和视频图像数据。
                   它支持自动驾驶决策、驾驶行为分析等研究，并已被全球 600+ 个研究机构和组织采用。
                 </p>
-                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问 DBNet 项目
                 </a>
               </div>
@@ -237,7 +238,7 @@
                 <p class="text-gray-600 leading-relaxed text-base break-words">
                   一个大规模城市建筑立面数据集，专门用于 MLS LiDAR 点云的语义层和实例级分割。
                 </p>
-                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                <a href="https://github.com/Ting-Devin-Han/City-Facade" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问 City-Facade 项目
                 </a>
               </div>
@@ -277,7 +278,7 @@
                   一个涵盖厦门 1000+ 公里道路的综合数据集，包含高精度三维点云、GNSS 和视频图像数据，发表在CVPR,
                   它支持自动驾驶决策、驾驶行为分析等研究，。
                 </p>
-                <a href="https://github.com/driving-behavior/DBNet" target="_blank" class="btn btn-primary btn-sm text-white gap-2">
+                <a href="https://github.com/driving-behavior/DBNet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm text-white gap-2">
                   <i class="fab fa-github text-lg"></i> 访问 DBNet 项目
                 </a>
               </div>
@@ -295,18 +296,6 @@
 
   <!-- 4. 脚本  -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      new Swiper('.city-swiper', {
-        loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      });
-      new Swiper('.dbnet-swiper', {
-        loop: true,
-        autoplay: { delay: 3500, disableOnInteraction: false },
-      });
-    });
-    function openPreview(src) { window.open(src, '_blank'); }
     var _clustrmaps = {key:'sail-demo',path:'/',id:'clustrmaps'};
   </script>
 

@@ -30,8 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.warn('导航栏加载失败:', err));
 
     // 注入页脚 (插入到 body 的最后面)
-  fetch('footer.html')
-    .then(res => res.text())
+  if (!document.querySelector('footer')) fetch('footer.html')
+    .then(res => {
+      if (!res.ok) throw new Error('Footer response was not ok');
+      return res.text();
+    })
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
     })
