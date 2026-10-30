@@ -1,5 +1,28 @@
+<style>
+  /* 菜单占用 LOGO 右侧的剩余空间，窄窗口下可横向滚动。 */
+  .site-nav-links {
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-left: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #00336680 transparent;
+  }
+  .site-nav-links > a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .site-nav-links > a:first-child { margin-left: auto; }
+  .site-nav-links::-webkit-scrollbar { height: 5px; }
+  .site-nav-links::-webkit-scrollbar-thumb {
+    background: #00336680;
+    border-radius: 999px;
+  }
+  .site-nav-links::-webkit-scrollbar-track { background: transparent; }
+</style>
+
 <!-- DaisyUI 导航栏 -->
-<!-- 修改1: h-20 -> h-24 (增加高度，约96px) -->
 <div class="navbar bg-navbg text-navtext shadow-lg fixed top-0 z-50 h-20 transition-all duration-300 w-full font-sans">
   
   <!-- 容器: px-4 -> px-8 (增加左右留白，显得更从容) -->
@@ -12,13 +35,8 @@
       </a>
     </div>
 
-    <!-- 右侧: 桌面端菜单 (8个分类) -->
-    <!-- 
-       修改2: hidden md:flex -> hidden xl:flex 
-       (因为按钮变大了，为了防止拥挤换行，建议在超大屏 xl 才显示完整菜单，小于1280px显示汉堡菜单)
-       修改3: gap-0.5 -> gap-1 (稍微增加按钮之间的间距)
-    -->
-    <div class="hidden xl:flex flex-none items-center gap-1">
+    <!-- 右侧: 桌面端菜单，支持触屏、触控板和滚动条左右滚动 -->
+    <nav class="site-nav-links hidden xl:flex items-center gap-1" aria-label="主导航（可左右滚动）" tabindex="0">
       
       <!-- 
          通用按钮样式修改重点:
@@ -64,7 +82,7 @@
       <a href="contact.html" class="btn btn-ghost h-14 text-lg font-medium hover:bg-white/10 hover:text-secondary px-5 flex items-center gap-2">
         <i class="fas fa-envelope"></i> 联系
       </a>
-    </div>
+    </nav>
 
     <!-- 移动端/平板端: 汉堡菜单 -->
     <!-- 修改4: md:hidden -> xl:hidden (配合上面的修改，在小于 xl 屏幕时显示汉堡菜单) -->
