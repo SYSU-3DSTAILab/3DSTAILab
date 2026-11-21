@@ -127,6 +127,36 @@ test('all complete pages initialize when external scripts are unavailable', asyn
   }
 });
 
+test('faculty categories and each profile retain independent tab selections', async t => {
+  const { page, errors } = await openPage(t, 'team.html');
+  assert.equal(await page.locator('#faculty-professors').isVisible(), true);
+  assert.equal(await page.locator('#faculty-associate-professors').isVisible(), false);
+  await page.locator('#chen-work-tab').click();
+  await page.locator('#faculty-associate-professors-tab').click();
+  assert.equal(await page.locator('#faculty-professors').isVisible(), false);
+  assert.equal(await page.locator('#wang-edu').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-edu').isVisible(), true);
+
+  await page.locator('#wang-global-tab').click();
+  await page.locator('#chenpf-work-tab').click();
+  assert.equal(await page.locator('#wang-global').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-work').isVisible(), true);
+  await page.locator('#faculty-professors-tab').click();
+  assert.equal(await page.locator('#work').isVisible(), true);
+  await page.locator('#faculty-associate-professors-tab').click();
+  assert.equal(await page.locator('#wang-global').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-work').isVisible(), true);
+
+  await page.locator('#wang-global-tab').press('Home');
+  assert.equal(await page.locator('#wang-edu').isVisible(), true);
+  await page.locator('#wang-edu-tab').press('End');
+  assert.equal(await page.locator('#wang-global').isVisible(), true);
+  await page.locator('#wang-global-tab').press('ArrowRight');
+  assert.equal(await page.locator('#wang-edu').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-work').isVisible(), true);
+  assert.deepEqual(errors, []);
+});
+
 test('contact sends one POST without the word-cloud library and resets only on confirmed success', async t => {
   const { page } = await openPage(t);
   await fillContact(page);
