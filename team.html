@@ -45,14 +45,6 @@
       transform: translateY(-1px);
     }
 
-    .associate-summary::-webkit-details-marker { display: none; }
-    .associate-summary:focus-visible {
-      outline: 2px solid #003366;
-      outline-offset: -4px;
-    }
-    .associate-card[open] .associate-chevron { transform: rotate(180deg); }
-    .associate-card[open] .associate-expand-label,
-    .associate-card:not([open]) .associate-collapse-label { display: none; }
 
 
   </style>
@@ -325,91 +317,42 @@
 
         <div id="faculty-associate-professors" role="group" aria-labelledby="associate-professors-heading" class="mt-10">
           <h2 id="associate-professors-heading" class="text-2xl font-bold text-primary mb-6 pb-3 border-b border-gray-200">副教授</h2>
-          <div class="space-y-4">
-            <!-- 王路遥：展开后统一展示经历 -->
-            <details class="associate-card bg-white border border-gray-200 rounded-2xl shadow-sm">
-              <summary class="associate-summary flex items-center gap-4 sm:gap-6 p-5 sm:p-6 cursor-pointer list-none rounded-2xl" aria-labelledby="wang-name" aria-describedby="wang-research">
-                <img src="img/people/LuyaoWang.jpg" alt="王路遥" class="w-20 sm:w-24 aspect-[3/4] object-cover rounded-lg border border-gray-100 shrink-0" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
-                <div class="flex-1 min-w-0">
-                  <h3 id="wang-name" class="text-2xl font-bold text-slate-800 mb-2">
+          <div class="space-y-8">
+            <!-- 王路遥 -->
+            <article class="associate-card flex flex-col lg:flex-row gap-6 items-stretch" aria-labelledby="wang-name">
+              <div class="card bg-white border border-gray-200 w-full lg:w-1/3 shrink-0 shadow-sm pb-6">
+                <figure class="px-8 pt-8 mb-4">
+                  <img src="img/people/LuyaoWang.jpg" alt="王路遥" class="object-cover aspect-[3/4] w-full rounded-md shadow-sm border border-gray-100 max-w-[180px]" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
+                </figure>
+                <div class="card-body items-center text-center p-4 pt-0">
+                  <h3 id="wang-name" class="text-3xl text-slate-800 font-bold mb-1">
                     <a href="https://sges.sysu.edu.cn/teacher/1660" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">王路遥</a>
                   </h3>
-                  <p id="wang-research" class="text-sm sm:text-base text-gray-500 leading-relaxed">时空数据分析与地理大数据、遥感跨模态分析</p>
-                  <span class="inline-block mt-3 bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">逸仙学者计划新锐学者</span>
-                </div>
-                <span class="flex items-center gap-2 shrink-0 text-primary text-sm" aria-hidden="true">
-                  <span class="associate-expand-label hidden sm:inline">展开</span>
-                  <span class="associate-collapse-label hidden sm:inline">收起</span>
-                  <svg class="associate-chevron w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg>
-                </span>
-              </summary>
-              <div id="wang-details" class="border-t border-gray-100 p-5 sm:p-6 space-y-6">
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">教育经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">武汉大学</span> 测绘遥感信息工程国家重点实验室 硕博连读 (2015.09 – 2021.07)</li>
-                    <li><span class="font-bold">武汉大学</span> 测绘学院 工学学士 (2011.09 – 2015.06)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">工作经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">中山大学</span> 遥感科学与技术学院 副教授 (2026.01 – 至今)</li>
-                    <li><span class="font-bold">国防科技大学</span> 信息通信学院 副教授 (2023.11 – 2025.12)</li>
-                    <li><span class="font-bold">国防科技大学</span> 信息通信学院 讲师 (2022.10 – 2023.11)</li>
-                    <li><span class="font-bold">国防科技大学</span> 信息通信学院 博士后 (2021.12 – 2022.10)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">交流经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">美国麻省理工学院</span> 联合培养 (2019.10 – 2020.10)</li>
-                  </ul>
+                  <span class="mt-3 bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">逸仙学者计划新锐学者</span>
                 </div>
               </div>
-            </details>
-            <!-- 陈鹏飞：展开后统一展示经历 -->
-            <details class="associate-card bg-white border border-gray-200 rounded-2xl shadow-sm">
-              <summary class="associate-summary flex items-center gap-4 sm:gap-6 p-5 sm:p-6 cursor-pointer list-none rounded-2xl" aria-labelledby="chenpf-name" aria-describedby="chenpf-research">
-                <img src="img/people/PengfeiChen.png" alt="陈鹏飞" class="w-20 sm:w-24 aspect-[3/4] object-cover rounded-lg border border-gray-100 shrink-0" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
-                <div class="flex-1 min-w-0">
-                  <h3 id="chenpf-name" class="text-2xl font-bold text-slate-800 mb-2">
+              <div class="w-full lg:flex-1 min-w-0 bg-white border border-gray-200 rounded-xl p-6 lg:p-8 shadow-sm">
+                <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
+                <p id="wang-bio" class="text-lg text-gray-700 leading-loose">主要从事时空数据分析与地理大数据研究，重点关注自然地理条件对城市空间结构、交通运行、环境暴露与城市发展路径的影响；同时，也开展遥感跨模态分析研究，聚焦小目标识别、多时相变化的语义理解与跨模态检索。在Nature cities, TGRS, Building and Environment 等期刊上发表SCI论文30余篇。</p>
+              </div>
+            </article>
+            <!-- 陈鹏飞 -->
+            <article class="associate-card flex flex-col lg:flex-row gap-6 items-stretch" aria-labelledby="chenpf-name">
+              <div class="card bg-white border border-gray-200 w-full lg:w-1/3 shrink-0 shadow-sm pb-6">
+                <figure class="px-8 pt-8 mb-4">
+                  <img src="img/people/PengfeiChen.png" alt="陈鹏飞" class="object-cover aspect-[3/4] w-full rounded-md shadow-sm border border-gray-100 max-w-[180px]" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
+                </figure>
+                <div class="card-body items-center text-center p-4 pt-0">
+                  <h3 id="chenpf-name" class="text-3xl text-slate-800 font-bold mb-1">
                     <a href="https://sges.sysu.edu.cn/teacher/601" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">陈鹏飞</a>
                   </h3>
-                  <p id="chenpf-research" class="text-sm sm:text-base text-gray-500 leading-relaxed">城市地理信息系统、环境健康与暴露、时空数据建模与分析</p>
-                </div>
-                <span class="flex items-center gap-2 shrink-0 text-primary text-sm" aria-hidden="true">
-                  <span class="associate-expand-label hidden sm:inline">展开</span>
-                  <span class="associate-collapse-label hidden sm:inline">收起</span>
-                  <svg class="associate-chevron w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg>
-                </span>
-              </summary>
-              <div id="chenpf-details" class="border-t border-gray-100 p-5 sm:p-6 space-y-6">
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">教育经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 工学博士 (2015.09 – 2019.12)</li>
-                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 理学硕士 (2012.09 – 2015.07)</li>
-                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 工学学士 (2008.09 – 2012.07)</li>
-                    <li><span class="font-bold">武汉大学</span> WTO学院 经济学学士（辅修）(2008.09 – 2012.07)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">工作经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">中山大学</span> 副教授 (2023.06 – 至今)</li>
-                    <li><span class="font-bold">中山大学</span> 助理教授 (2020.06 – 2023.06)</li>
-                    <li><span class="font-bold">香港理工大学</span> 研究助理 (2015.02 – 2015.05)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-primary mb-3">交流经历</h4>
-                  <ul class="space-y-2 list-disc pl-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    <li><span class="font-bold">香港理工大学</span> 测绘与地理资讯学系 哲学博士（联合培养）(2015.09 – 2020.09)</li>
-                  </ul>
                 </div>
               </div>
-            </details>
+              <div class="w-full lg:flex-1 min-w-0 bg-white border border-gray-200 rounded-xl p-6 lg:p-8 shadow-sm">
+                <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
+                <p id="chenpf-bio" class="text-lg text-gray-700 leading-loose">主要从事城市地理信息系统、环境健康与暴露、时空数据建模与分析研究，关注城市绿地与医疗服务可达性、环境暴露评估、城市活力与韧性，以及地表覆盖数据的分类精度与不确定性分析。在IJGIS、IEEE TGRS、JAG等期刊发表研究成果。</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>

@@ -127,31 +127,19 @@ test('all complete pages initialize when external scripts are unavailable', asyn
   }
 });
 
-test('faculty groups stay visible and associate cards expand independently of the professor tabs', async t => {
+test('faculty groups and biographies remain visible while professor tabs switch', async t => {
   const { page, errors } = await openPage(t, 'team.html');
   assert.equal(await page.locator('#faculty-professors').isVisible(), true);
   assert.equal(await page.locator('#faculty-associate-professors').isVisible(), true);
   assert.equal(await page.locator('#faculty [role="tablist"]').count(), 1);
-  assert.equal(await page.locator('#faculty-associate-professors [role="tab"]').count(), 0);
-  assert.equal(await page.locator('#wang-details').isVisible(), false);
-  assert.equal(await page.locator('#chenpf-details').isVisible(), false);
+  assert.equal(await page.locator('#faculty-associate-professors details, #faculty-associate-professors summary, #faculty-associate-professors [role="tab"]').count(), 0);
+  assert.equal(await page.locator('#wang-bio').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-bio').isVisible(), true);
 
   await page.locator('#chen-work-tab').click();
-  const wang = page.locator('.associate-card').filter({ has: page.locator('#wang-name') });
-  const chenpf = page.locator('.associate-card').filter({ has: page.locator('#chenpf-name') });
-  await wang.locator('summary').click({ position: { x: 8, y: 8 } });
-  assert.equal(await page.locator('#wang-details').isVisible(), true);
-  for (const heading of ['教育经历', '工作经历', '交流经历']) {
-    assert.equal(await page.locator('#wang-details').getByRole('heading', { name: heading }).isVisible(), true);
-  }
   assert.equal(await page.locator('#work').isVisible(), true);
-
-  await chenpf.locator('summary').press('Enter');
-  assert.equal(await page.locator('#chenpf-details').isVisible(), true);
-  assert.equal(await page.locator('#wang-details').isVisible(), true);
-  await wang.locator('summary').press('Space');
-  assert.equal(await page.locator('#wang-details').isVisible(), false);
-  assert.equal(await page.locator('#chenpf-details').isVisible(), true);
+  assert.equal(await page.locator('#wang-bio').isVisible(), true);
+  assert.equal(await page.locator('#chenpf-bio').isVisible(), true);
   await page.locator('#chen-work-tab').press('End');
   assert.equal(await page.locator('#global').isVisible(), true);
   await page.locator('#chen-global-tab').press('Home');
