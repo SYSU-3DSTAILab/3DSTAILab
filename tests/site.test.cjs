@@ -131,7 +131,7 @@ test('faculty groups and biographies remain visible while professor tabs switch'
   const { page, errors } = await openPage(t, 'team.html');
   assert.equal(await page.locator('#faculty-professors').isVisible(), true);
   assert.equal(await page.locator('#faculty-associate-professors').isVisible(), true);
-  assert.equal(await page.locator('#faculty [role="tablist"]').count(), 1);
+  assert.equal(await page.locator('#faculty-professors [role="tablist"]').count(), 1);
   assert.equal(await page.locator('#faculty-associate-professors details, #faculty-associate-professors summary, #faculty-associate-professors [role="tab"]').count(), 0);
   assert.equal(await page.locator('#wang-bio').isVisible(), true);
   assert.equal(await page.locator('#chenpf-bio').isVisible(), true);
@@ -150,7 +150,7 @@ test('faculty groups and biographies remain visible while professor tabs switch'
 test('team sidebar anchors and active states follow the professor groups', async t => {
   const { page, errors } = await openPage(t, 'team.html');
   assert.equal(await page.locator('aside a[href="#faculty"]').count(), 0);
-  for (const id of ['faculty-professors', 'faculty-associate-professors', 'phd', 'faculty-professors']) {
+  for (const id of ['faculty-professors', 'faculty-associate-professors', 'postdoc', 'phd', 'faculty-professors']) {
     await page.locator(`aside a[href="#${id}"]`).evaluate(link => link.click());
     await page.waitForFunction(id => document.querySelector('aside .sidebar-link.active')?.getAttribute('href') === '#' + id, id);
     assert.equal(new URL(page.url()).hash, '#' + id);

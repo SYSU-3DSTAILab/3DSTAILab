@@ -132,6 +132,7 @@
       <a href="#introduction" class="sidebar-link active" data-target="introduction">简介</a>
       <a href="#faculty-professors" class="sidebar-link" data-target="faculty-professors">教授</a>
       <a href="#faculty-associate-professors" class="sidebar-link" data-target="faculty-associate-professors">副教授</a>
+      <a href="#postdoc" class="sidebar-link" data-target="postdoc">博士后</a>
       <a href="#phd" class="sidebar-link" data-target="phd">博士生</a>
       <a href="#master" class="sidebar-link" data-target="master">硕士生</a>
       <a href="#bachelor" class="sidebar-link" data-target="bachelor">本科生</a>
@@ -229,7 +230,7 @@
               陈一平教授领衔的“三维时空智能实验室”（3D Spatiotemporal AI Lab）隶属于<strong>中山大学遥感科学与技术学院</strong>，坐落于广东珠海。实验室面向激光雷达遥感与智能三维点云理解的前沿需求，聚焦<strong>三维点云表征学习、遥感要素提取、三维场景生成</strong>与<strong>点云时空大模型</strong>等关键技术研究，并探索其在实景三维与数字孪生、城市与森林精细化测绘、生态环境可持续发展等领域的应用。
             </p>
             <p class="indent-8">
-              课题组致力于多平台、多源传感数据融合，构建稳健可泛化的三维场景理解方法与工程化流程。实验室负责人<strong>陈一平教授</strong>入选<strong>国家级青年人才</strong>，共有副教授2人，博硕士研究生11人，本科生8人。近年来实验室在<strong>ISPRS JPRS、CVPR、JAG、IEEE TGRS</strong>等顶刊与顶会发表100余篇高水平论文，并主持或承担国家自然科学基金面上/青年项目，部委基金/预研项目，与广东省面上项目等十余项科研项目，授权国家发明专利20余项。
+              课题组致力于多平台、多源传感数据融合，构建稳健可泛化的三维场景理解方法与工程化流程。实验室负责人<strong>陈一平教授</strong>入选<strong>国家级青年人才</strong>，共有副教授2人，博士后1人，博硕士研究生11人，本科生8人。近年来实验室在<strong>ISPRS JPRS、CVPR、JAG、IEEE TGRS</strong>等顶刊与顶会发表100余篇高水平论文，并主持或承担国家自然科学基金面上/青年项目，部委基金/预研项目，与广东省面上项目等十余项科研项目，授权国家发明专利20余项。
             </p>
             <p class="indent-8">
               团队成员获<strong>中国遥感应用协会青年女科学家奖特等奖</strong>，<strong>中国测绘学会测绘科学技术奖二等奖</strong>，<strong>中国地理信息产业协会科技进步奖一等奖</strong>，<strong>北京市技术发明一等奖</strong>等奖励。实验室与<strong>加拿大滑铁卢大学、挪威科技大学、香港大学</strong>等高校保持密切国际合作，毕业生均入职一线科技企业与遥感测绘相关政府单位，或在国际顶尖高校深造。
@@ -245,17 +246,14 @@
       <!-- 分割线：使用 border-primary (深蓝) + 20%透明度 -->
       <hr class="my-24 border-t-4 border-primary w-full" />
 
-      <!-- ==================== 教师 Faculty ==================== -->
-      <section id="faculty" class="scroll-mt-32">
+      <!-- ==================== 教授 Professors ==================== -->
+      <section id="faculty-professors" class="scroll-mt-32" aria-labelledby="professors-heading">
         <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
           <div class="border-l-8 border-primary pl-4">
-            <h1 class="text-4xl font-bold text-primary">教师</h1>
-            <p class="text-gray-500 text-lg">Faculty</p>
+            <h1 id="professors-heading" class="text-4xl font-bold text-primary">教授</h1>
+            <p class="text-gray-500 text-lg">Professors</p>
           </div>
         </div>
-
-        <div id="faculty-professors" role="group" aria-labelledby="professors-heading" class="scroll-mt-32">
-          <h2 id="professors-heading" class="text-2xl font-bold text-primary mb-6 pb-3 border-b border-gray-200">教授</h2>
             <article class="faculty-profile flex flex-col lg:flex-row gap-6 items-stretch" data-tab-group aria-labelledby="chen-name">
               <div class="card bg-white border border-gray-200 w-full lg:w-1/3 shrink-0 shadow-sm pb-6">
                 <figure class="px-8 pt-8 mb-4">
@@ -314,10 +312,18 @@
                 </div>
               </div>
             </article>
-        </div>
+      </section>
 
-        <div id="faculty-associate-professors" role="group" aria-labelledby="associate-professors-heading" class="scroll-mt-32 mt-10">
-          <h2 id="associate-professors-heading" class="text-2xl font-bold text-primary mb-6 pb-3 border-b border-gray-200">副教授</h2>
+      <hr class="my-24 border-t-4 border-primary w-full" />
+
+      <!-- ==================== 副教授 Associate Professors ==================== -->
+      <section id="faculty-associate-professors" class="scroll-mt-32" aria-labelledby="associate-professors-heading">
+        <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+          <div class="border-l-8 border-primary pl-4">
+            <h1 id="associate-professors-heading" class="text-4xl font-bold text-primary">副教授</h1>
+            <p class="text-gray-500 text-lg">Associate Professors</p>
+          </div>
+        </div>
           <div class="space-y-8">
             <!-- 王路遥 -->
             <article class="associate-card flex flex-col lg:flex-row gap-6 items-stretch" aria-labelledby="wang-name">
@@ -355,7 +361,6 @@
               </div>
             </article>
           </div>
-        </div>
       </section>
 
       <!-- 分割线：使用 border-primary (深蓝) + 20%透明度 -->
@@ -363,6 +368,30 @@
 
       <!-- ==================== 学生板块 ==================== -->
       <div class="flex-1">
+        <!-- 博士后 -->
+        <section id="postdoc" class="scroll-mt-32 mt-24">
+          <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+            <div class="border-l-8 border-primary pl-4">
+              <h1 class="text-4xl font-bold text-primary">博士后</h1>
+              <p class="text-gray-500 text-lg">Postdoctoral Researchers</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+            <!-- 马津 -->
+            <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
+              <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
+                <img src="img/people/maj.jpg" alt="马津" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
+              </figure>
+              <div class="card-body p-0 pl-4 w-full justify-center">
+                <h2 class="text-2xl font-bold text-slate-800 mb-1">马津</h2>
+                <p class="text-sm text-gray-500 font-medium">方向：生态与植被遥感</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="my-24 border-t-4 border-primary w-full" />
+
         <!-- 博士生 -->
         <section id="phd" class="scroll-mt-32 mt-24">
           <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
@@ -809,18 +838,6 @@
               </div>
             </div>
 
-            <!-- 马津 -->
-            <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
-              <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
-                <img src="img/people/maj.jpg" alt="马津" class="object-cover w-full h-full" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
-              </figure>
-              <div class="card-body p-0 pl-4 w-full justify-center">
-                <h2 class="text-2xl font-bold text-slate-800 mb-1">马津</h2>
-                <p class="text-sm text-gray-600 mb-2 font-semibold">2021级博士生</p>
-                <!-- <p class="text-sm text-gray-500">高校教职</p> -->
-              </div>
-            </div>
-
             <!-- 王朝磊 -->
             <div class="card card-side bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all p-4 items-center h-56 max-w-[500px] mx-auto w-full">
               <figure class="w-36 h-48 flex-shrink-0 overflow-hidden rounded-lg ml-1">
@@ -868,7 +885,7 @@
         
         // 遍历所有区块
         sections.forEach(section => {
-          // 使用视口坐标，兼容教师区域内嵌套的教授、副教授分组。
+          // 使用视口坐标定位当前目录对应的板块。
           if (section.getBoundingClientRect().top <= 200) {
             currentId = section.getAttribute('id');
           }
