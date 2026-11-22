@@ -147,6 +147,19 @@ test('faculty groups and biographies remain visible while professor tabs switch'
   assert.deepEqual(errors, []);
 });
 
+test('team sidebar anchors and active states follow the professor groups', async t => {
+  const { page, errors } = await openPage(t, 'team.html');
+  assert.equal(await page.locator('aside a[href="#faculty"]').count(), 0);
+  for (const id of ['faculty-professors', 'faculty-associate-professors', 'phd', 'faculty-professors']) {
+    await page.locator(`aside a[href="#${id}"]`).evaluate(link => link.click());
+    await page.waitForFunction(id => document.querySelector('aside .sidebar-link.active')?.getAttribute('href') === '#' + id, id);
+    assert.equal(new URL(page.url()).hash, '#' + id);
+    const top = await page.locator('#' + id).evaluate(element => element.getBoundingClientRect().top);
+    assert.ok(Math.abs(top - 128) <= 1, `${id}: heading is not clear of the fixed navigation`);
+  }
+  assert.deepEqual(errors, []);
+});
+
 test('contact sends one POST without the word-cloud library and resets only on confirmed success', async t => {
   const { page } = await openPage(t);
   await fillContact(page);
