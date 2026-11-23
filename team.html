@@ -45,6 +45,11 @@
       transform: translateY(-1px);
     }
 
+    .associate-info-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+
 
 
   </style>
@@ -335,29 +340,52 @@
                   <h3 id="wang-name" class="text-3xl text-slate-800 font-bold mb-1">
                     <a href="https://sges.sysu.edu.cn/teacher/1660" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">王路遥</a>
                   </h3>
-                  <span class="mt-3 bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">逸仙学者计划新锐学者</span>
+                  <p class="text-lg text-gray-700 font-medium">博士生导师</p>
+                  <p class="text-base text-gray-600 leading-relaxed">逸仙学者计划新锐学者</p>
+                  <a href="mailto:wangly276@mail.sysu.edu.cn" class="mt-4 block w-full min-w-0 rounded border border-gray-300 bg-gray-50 px-2 py-2 text-xs text-gray-600 break-all hover:text-primary transition-colors">wangly276@mail.sysu.edu.cn</a>
                 </div>
               </div>
-              <div class="w-full lg:flex-1 min-w-0 bg-white border border-gray-200 rounded-xl p-6 lg:p-8 shadow-sm">
-                <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
-                <p id="wang-bio" class="text-lg text-gray-700 leading-loose">主要从事时空数据分析与地理大数据研究，重点关注自然地理条件对城市空间结构、交通运行、环境暴露与城市发展路径的影响；同时，也开展遥感跨模态分析研究，聚焦小目标识别、多时相变化的语义理解与跨模态检索。在Nature cities, TGRS, Building and Environment 等期刊上发表SCI论文30余篇。</p>
+              <div class="w-full lg:flex-1 min-w-0 min-h-0 relative bg-white border border-gray-200 rounded-xl shadow-sm">
+                <div class="associate-info-scroll max-h-[28rem] lg:max-h-none lg:absolute lg:inset-0 min-h-0 overflow-y-auto custom-scroll p-6 lg:p-8" role="region" aria-label="王路遥的个人简介与教育背景" tabindex="0">
+                  <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
+                  <p id="wang-bio" class="text-lg text-gray-700 leading-loose">主要从事时空数据分析与地理大数据研究，重点关注自然地理条件对城市空间结构、交通运行、环境暴露与城市发展路径的影响；同时，也开展遥感跨模态分析研究，聚焦小目标识别、多时相变化的语义理解与跨模态检索。在Nature cities, TGRS, Building and Environment 等期刊上发表SCI论文30余篇。</p>
+                  <h4 id="wang-education-heading" class="text-xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200">教育背景</h4>
+                  <ul class="space-y-3 list-disc pl-5 text-gray-700 leading-relaxed" aria-labelledby="wang-education-heading">
+                    <li><span class="font-bold">武汉大学</span> 测绘学院 工学学士 (2011.09 – 2015.06)</li>
+                    <li><span class="font-bold">武汉大学</span> 测绘遥感信息工程国家重点实验室 硕博连读 (2015.09 – 2021.07)</li>
+                    <li><span class="font-bold">美国麻省理工学院</span> 联合培养 (2019.10 – 2020.10)</li>
+                  </ul>
+                </div>
               </div>
             </article>
             <!-- 陈鹏飞 -->
             <article class="associate-card flex flex-col lg:flex-row gap-6 items-stretch" aria-labelledby="chenpf-name">
               <div class="card bg-white border border-gray-200 w-full lg:w-1/3 shrink-0 shadow-sm pb-6">
                 <figure class="px-8 pt-8 mb-4">
-                  <img src="img/people/PengfeiChen.png" alt="陈鹏飞" class="object-cover aspect-[3/4] w-full rounded-md shadow-sm border border-gray-100 max-w-[180px]" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
+                  <img src="img/people/PengfeiChen.jpg" alt="陈鹏飞" class="object-cover aspect-[3/4] w-full rounded-md shadow-sm border border-gray-100 max-w-[180px]" onerror="this.onerror=null;this.src='img/people/placeholder.svg'"/>
                 </figure>
                 <div class="card-body items-center text-center p-4 pt-0">
                   <h3 id="chenpf-name" class="text-3xl text-slate-800 font-bold mb-1">
                     <a href="https://sges.sysu.edu.cn/teacher/601" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition-colors">陈鹏飞</a>
                   </h3>
+                  <p class="text-lg text-gray-700 font-medium">博士生导师</p>
+                  <p class="text-base text-gray-600 leading-relaxed">中山大学中山眼科中心双聘教授</p>
+                  <a href="mailto:chenpf9@mail.sysu.edu.cn" class="mt-4 block w-full min-w-0 rounded border border-gray-300 bg-gray-50 px-2 py-2 text-xs text-gray-600 break-all hover:text-primary transition-colors">chenpf9@mail.sysu.edu.cn</a>
                 </div>
               </div>
-              <div class="w-full lg:flex-1 min-w-0 bg-white border border-gray-200 rounded-xl p-6 lg:p-8 shadow-sm">
-                <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
-                <p id="chenpf-bio" class="text-lg text-gray-700 leading-loose">主要从事城市地理信息系统、环境健康与暴露、时空数据建模与分析研究，关注城市绿地与医疗服务可达性、环境暴露评估、城市活力与韧性，以及地表覆盖数据的分类精度与不确定性分析。在IJGIS、IEEE TGRS、JAG等期刊发表研究成果。</p>
+              <div class="w-full lg:flex-1 min-w-0 min-h-0 relative bg-white border border-gray-200 rounded-xl shadow-sm">
+                <div class="associate-info-scroll max-h-[28rem] lg:max-h-none lg:absolute lg:inset-0 min-h-0 overflow-y-auto custom-scroll p-6 lg:p-8" role="region" aria-label="陈鹏飞的个人简介与教育背景" tabindex="0">
+                  <h4 class="text-xl font-bold text-primary mb-4 pb-2 border-b border-gray-200">个人简介</h4>
+                  <p id="chenpf-bio" class="text-lg text-gray-700 leading-loose">研究兴趣包括城市环境计算与感知、空间可达性建模与公共资源优化，以及人地交互的空间关联与因果分析等方向。主持国家自然科学基金、广东省自然科学基金、国家重点研发计划子课题等多项科研项目。在国内外主流期刊发表学术论文30余篇，其中以第一作者或通讯作者身份在IJGIS、CEUS、IG等期刊发表论文20余篇。长期担任IJGIS、TGIS、SCS、TITS等多个国际期刊审稿人。</p>
+                  <h4 id="chenpf-education-heading" class="text-xl font-bold text-primary mt-8 mb-4 pb-2 border-b border-gray-200">教育背景</h4>
+                  <ul class="space-y-3 list-disc pl-5 text-gray-700 leading-relaxed" aria-labelledby="chenpf-education-heading">
+                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 工学学士 (2008.09 – 2012.07)</li>
+                    <li><span class="font-bold">武汉大学</span> WTO学院 经济学学士（辅修）(2008.09 – 2012.07)</li>
+                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 理学硕士 (2012.09 – 2015.07)</li>
+                    <li><span class="font-bold">武汉大学</span> 遥感信息工程学院 工学博士 (2015.09 – 2019.12)</li>
+                    <li><span class="font-bold">香港理工大学</span> 土地测量与地理空间科学系 哲学博士（联合培养）(2015.09 – 2020.09)</li>
+                  </ul>
+                </div>
               </div>
             </article>
           </div>
@@ -384,7 +412,8 @@
               </figure>
               <div class="card-body p-0 pl-4 w-full justify-center">
                 <h2 class="text-2xl font-bold text-slate-800 mb-1">马津</h2>
-                <p class="text-sm text-gray-500 font-medium">方向：生态与植被遥感</p>
+                <p class="text-sm text-gray-500 mb-4 font-medium">方向：生态与植被遥感</p>
+                <a href="mailto:majin8@mail.sysu.edu.cn" class="block w-full rounded border border-gray-300 bg-gray-50 px-2 py-2 text-xs text-gray-600 text-center break-all hover:text-primary transition-colors">majin8@mail.sysu.edu.cn</a>
               </div>
             </div>
           </div>
